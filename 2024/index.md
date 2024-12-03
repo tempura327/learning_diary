@@ -8,6 +8,8 @@
 12/4
 
 12/3
+- 讀完Redux Essential 2
+- 讀Redux Essential 3 ~Showing the Posts List
 
 12/2
 - 讀Redux Essential 2 ~Defining Pre-Typed React-Redux Hooks
@@ -66,7 +68,7 @@
 - 了解操作DOM對效能的影響
 
 11/20
-- Svelte
+- Svelte [📗](https://ithelp.ithome.com.tw/articles/10350711)
   - 了解其優點
     - 無virtual DOM
     - 因為不以Svelte作為執行環境，所以只要裝在devDependecies就好，bundle size小
@@ -94,13 +96,12 @@
 
 11/6
 - 學片語
-- Vivus.js
+- Vivus.js [📗](https://maxwellito.github.io/vivus/)
 - CSS
   - stroke-dasharray, stroke-dashoffset
 
 11/5
 - 聽Lemon tree練英文
-
 
 11/4
 - 聽Lemon tree練英文
