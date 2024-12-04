@@ -6,6 +6,9 @@
 12/5
 
 12/4
+- 學英文
+  - It's up to you ... (取決於你)
+- 讀完Redux Essential 3，並照著做一個小練習 [🖌](https://codesandbox.io/p/sandbox/epic-hill-3sryps)
 
 12/3
 - 讀完Redux Essential 2
@@ -49,7 +52,7 @@
 
 11/25
 - React
-  - 複習controlled component、uncontrolled component的優缺點
+  - 複習controlled component、uncontrolled component的優缺點 [📗](https://medium.com/starbugs/%E4%BB%80%E9%BA%BC-%E5%85%83%E4%BB%B6%E7%AB%9F%E7%84%B6%E4%B9%9F%E6%9C%89%E5%88%86%E5%8F%AF%E6%8E%A7%E5%88%B6%E8%88%87%E4%B8%8D%E5%8F%AF%E6%8E%A7%E5%88%B6-%E6%8E%A2%E8%A8%8E-react-controlled-%E4%BB%A5%E5%8F%8A-uncontrolled-component-d6b8285d8939)
 
 11/24(S)
 
@@ -64,7 +67,7 @@
 - 了解甚麼是UMD
 
 11/21
-- 了解甚麼是reflow、replant [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbgs)
+- 了解甚麼是reflow、replant [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
 - 了解操作DOM對效能的影響
 
 11/20
