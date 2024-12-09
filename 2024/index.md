@@ -1,9 +1,22 @@
+12/10
+
+12/9
+- 學英文
+  - crash course (速成班)
+- 讀完Redux Essential 4
+  - 每個component都該只取取需要的資料就好
+  - 使用extraReducers讓reducer可監聽其他slice的reducer
+  - reducers和extractReducers的差異，前者會幫我們產生新的action物件，後者則不會，而是處理其他slice的action
+
 12/8(S)
 
 12/6~7
 北埔旅遊
 
 12/5
+- 讀完Redux Essential 3
+- 讀Redux Essential 4 ~Adding a Users Slice
+  - 傳遞prepare function給slice底下的reducer，以此自定義action creator
 
 12/4
 - 學英文
