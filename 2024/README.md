@@ -13,6 +13,9 @@
 12/9
 - 學英文
   - crash course (速成班)
+  - Someone should have ... (表達悔恨、責備)
+    - I should have known he was a cheater. (我早該知道他是個騙子)
+    - I shouldn't have left home without locking the door. (我不應該沒鎖門就離開家)
 - 讀完Redux Essential 4
   - 每個component都該只取取需要的資料就好
   - 使用extraReducers讓reducer可監聽其他slice的reducer
@@ -132,5 +135,6 @@
 11/4
 - 聽Lemon tree練英文
   - all that I can see is ...
-  - hang around
+  - hang around (閒逛)
   - nothing ever happes
+    - Every time I buy a lottery ticket, nothing ever happens — I have never won.
