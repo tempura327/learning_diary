@@ -9,6 +9,11 @@
 12/11
 
 12/10
+- 讀API Reference/createApi ~ baseQuery、endpoints、reducerPath，其餘部分等用到時再查閱  [📗](https://redux-toolkit.js.org/rtk-query/api/createApi)
+  - createApi是RTK Query的核心function，它會回傳API slice、action creator、用於query的hook ，其中前兩者是createApi呼叫createSlice幫它產生的
+- 讀完API Reference/Generated API Slices/API Slice Overview  [📗](https://redux-toolkit.js.org/rtk-query/api/created-api/overview)
+  - API slice是個物件，內含封裝fetch和cache的邏輯的reducer、管理cached data的生命週期、和訂閱的middle ware，以及其他可以跟endpoint互動的function
+  - 為了效能最好整個網站只用一個crateApi，但如果endpoint真的不同，仍然可以用多個createApi，只是要記得定義reducerPath 作為unique key
 
 12/9
 - 學英文
