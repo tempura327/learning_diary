@@ -5,6 +5,12 @@
 12/13
 
 12/12
+- 了解box-sizing: border-box和content-box的差異
+    ```
+    width: 30px; height: 30px; padding: 9px; border: 1px;
+    ```
+    前者扣掉padding、border內容區域會縮小成10×10，整個大小則維持30×30
+    後者內容區域則不會縮小，整個大小則成50×50
 
 12/11
 
