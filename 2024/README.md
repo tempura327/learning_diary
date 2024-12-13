@@ -3,6 +3,18 @@
 12/14(S)
 
 12/13
+- 學新的委婉說不喜歡某事物的句子[📘](https://www.youtube.com/watch?v=LfMySVL5ikM)
+    - It's not my thing.
+        - Alcohol is not my thing. 
+    - It's not my favorite.
+    - I don't particularly enjoy...
+        - I don't particularly enjoy jogging.
+    - I'm not (really) into...
+        - I'm not really into drumstick.
+- 學英文
+    - grab a coffee
+        - Let's grab some coffee.
+        - Do you wanna grab a coffee with me tomorrow?
 
 12/12
 - 了解box-sizing: border-box和content-box的差異
