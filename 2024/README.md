@@ -1,3 +1,23 @@
+12/22(S)
+
+12/21(S)
+
+12/20
+
+12/19
+
+12/18
+
+12/17
+
+12/16
+- 讀完RTK Query Quick Start [📗](https://redux-toolkit.js.org/tutorials/rtk-query)
+    - RTK Query是一個撈資料、快取資料的lib，旨在取代createAsyncThunk 與 createSlice構成的用於撈資料的繁雜的code
+    - 不過由於它依賴於Redux，且現在Redux的使用者不如Zustand多，所以使用者並不如React query、Axios多
+    - 使用`createApi`可為`單一個url建立API slice`(內含query hook)，fetchBaseQuery則是redux/toolkit封裝過的fetch
+    - 把建立好的API slice加入store的reducer，並為它設定store的middleware。`middleware`用於`管理快取`生命週期和到期時間
+        - 有了middleware，RTK query就能在多個組件同時打某支API取相同資源時，自動省去重複的requst
+
 12/15(S)
 
 12/14(S)
