@@ -9,6 +9,12 @@
 12/18
 
 12/17
+- 讀完Redux Essentials 7
+    - 了解如何用RTK Query來做mutation
+- 讀Redux Essentials 5 ~Thunks and Async Logic [📗](https://redux.js.org/tutorials/essentials/part-5-async-logic#middleware-and-redux-data-flow)
+    - `Redux`本身並`不處理非同步`的邏輯，因為其核心概念是一切都要pure，而非同步並非pure。非同步只發生在store之外，因此`需要透過middleware做額外的處理`，thunk就是最常見的middleware
+    - middleware會把dispatch切成兩段，並在兩段dispatch中加上額外的邏輯
+
 
 12/16
 - 讀完RTK Query Quick Start [📗](https://redux-toolkit.js.org/tutorials/rtk-query)
@@ -60,7 +66,7 @@
   - Someone should have ... (表達悔恨、責備)
     - I should have known he was a cheater. (我早該知道他是個騙子)
     - I shouldn't have left home without locking the door. (我不應該沒鎖門就離開家)
-- 讀完Redux Essential 4
+- 讀完Redux Essentials 4
   - 每個component都該只取取需要的資料就好
   - 使用extraReducers讓reducer可監聽其他slice的reducer
   - reducers和extractReducers的差異，前者會幫我們產生新的action物件，後者則不會，而是處理其他slice的action
@@ -71,8 +77,8 @@
 北埔旅遊
 
 12/5
-- 讀完Redux Essential 3
-- 讀Redux Essential 4 ~Adding a Users Slice
+- 讀完Redux Essentiasl 3
+- 讀Redux Essentials 4 ~Adding a Users Slice
   - 傳遞prepare function給slice底下的reducer，以此自定義action creator
 
 12/4
@@ -81,11 +87,11 @@
 - 讀完Redux Essential 3，並照著做一個小練習 [🖌](https://codesandbox.io/p/sandbox/epic-hill-3sryps)
 
 12/3
-- 讀完Redux Essential 2
-- 讀Redux Essential 3 ~Showing the Posts List
+- 讀完Redux Essentials 2
+- 讀Redux Essentials 3 ~Showing the Posts List
 
 12/2
-- 讀Redux Essential 2 ~Defining Pre-Typed React-Redux Hooks
+- 讀Redux Essentials 2 ~Defining Pre-Typed React-Redux Hooks
   - 了解如何用slice，以及它如何集中管理action、reducer，並產出產出actoion creator
   - `reducer一定是pure function，且它不做非同步的事`
     - slice的reducers中的code看起來是mutable，可以這麼做是因為createSlice使用的Immer會自己幫你copy state，意味著reducer收到的state並不是原本的那份，所以不會造成side effect
@@ -100,11 +106,11 @@
 
 11/29
 - 聽Chains練英文
-- 讀Redux Essential 2 ~Redux Slices
+- 讀Redux Essentials 2 ~Redux Slices
   - 了解如何使用Redux dev tool
 
 11/28
-- 讀完Redux Essential 1
+- 讀完Redux Essentials 1
   - action是物件，描述要用哪個reducer、傳甚麼paylod給reducer
   - reducer是一個function，它會取得當下的state的copy，然後根據action.playload去計算新的state，並return出去讓store自己更新state
     - 之所以copy是因為要保持immutable，來減少side effect
@@ -114,7 +120,7 @@
 
 11/27
 - 聽一篇BBC 6mins English
-- 讀Redux Essential 1 ~State Management
+- 讀Redux Essentials 1 ~State Management
   - 了解Redux的核心精神，immutable(pure)
 
 11/26
