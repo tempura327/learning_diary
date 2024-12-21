@@ -1,6 +1,11 @@
 12/22(S)
 
 12/21(S)
+- 讀Redux Essentials 5 ~Writing Async Thunks
+    - action creator回傳action物件，而thunk action creator回傳thunk function(或稱thunk)
+    - thunk function內會用dispatch來送action，action會先讓middleware處理過，再送給store，再送給reducer
+    - thunk function內常會用3個dispatch，分別為「把狀態切為loading」、「把狀態切為success」、「把狀態切為failed」
+        - 使用createAsyncThunk可以簡化，因為它會自動產生thunk function，去呼叫dispatch送action，並做好error handling(區分request和dispatch的錯誤)
 
 12/20
 
@@ -16,7 +21,7 @@
     - 了解如何用RTK Query來做mutation
 - 讀Redux Essentials 5 ~Thunks and Async Logic [📗](https://redux.js.org/tutorials/essentials/part-5-async-logic#middleware-and-redux-data-flow)
     - `Redux`本身並`不處理非同步`的邏輯，因為其核心概念是一切都要pure，而非同步並非pure。非同步只發生在store之外，因此`需要透過middleware做額外的處理`，thunk就是最常見的middleware
-    - middleware會把dispatch切成兩段，並在兩段dispatch中加上額外的邏輯
+    - middleware會用額外的邏輯處理dispatch送來的action。當中的邏輯可以是非同步，也可以是同步的
 
 
 12/16
