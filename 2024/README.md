@@ -1,3 +1,33 @@
+12/31
+
+12/30
+
+12/29(S)
+
+12/28(S)
+
+12/27
+
+12/26
+
+12/25
+
+12/24
+- 讀Redux Essentials 5 ~Typing createAsyncThunk
+    - 跟useSelector、useDispatch一樣，.withTypes()也可以幫createAsyncThunk做預先型別定義 [📗](https://redux.js.org/usage/usage-with-typescript)
+      ```js
+        import { createAsyncThunk } from '@reduxjs/toolkit'
+
+        import type { RootState, AppDispatch } from './store'
+
+        export const createAppAsyncThunk = createAsyncThunk.withTypes<{
+          state: RootState
+          dispatch: AppDispatch
+        }>()
+      ```
+
+12/23
+
 12/22(S)
 
 12/21(S)
