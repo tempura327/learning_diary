@@ -11,6 +11,9 @@
 12/26
 
 12/25
+- 學用英文表達禮貌否決 [📘](https://tw.blog.voicetube.com/archives/64676/?mtc=campaign_managertoday_blog_20190423&utm_source=managertoday&utm_campaign=64676&utm_medium=blog&ref=20180423)
+    - I see your point, but...
+    - That's one way we can go, but what about...
 
 12/24
 - 讀Redux Essentials 5 ~Typing createAsyncThunk
