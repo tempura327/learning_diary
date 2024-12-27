@@ -7,6 +7,8 @@
 12/28(S)
 
 12/27
+- 讀完理解React的setState到底是同步還是非同步(下) [📗](https://ithelp.ithome.com.tw/articles/10257994)
+- 讀完Redux Essentials 5
 
 12/26
 
