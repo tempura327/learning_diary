@@ -5,6 +5,12 @@
 12/29(S)
 
 12/28(S)
+- 學用really表示強調、委婉否定 [📘](https://ell.stackexchange.com/questions/241452/i-dont-really-vs-i-really-dont)
+    - I really don't...
+        - I really don't like swimming. (強調)
+    - I don't really...
+        - I don't really like swimming. (委婉)
+    
 
 12/27
 - 讀完理解React的setState到底是同步還是非同步(下) [📗](https://ithelp.ithome.com.tw/articles/10257994)
