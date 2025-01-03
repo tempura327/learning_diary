@@ -3,6 +3,34 @@
 1/4(S)
 
 1/3
+- 學TanStack query (React Query) [📗](https://www.youtube.com/watch?v=I-qGvLln-pg)
+  - 了解refetchInterval、retry、retryDelay、refetchOnWindowFocus、refetchOnReconnect等useQuery常用的設定
+    ```
+    const {data} = useQuery({
+      queryKey: ['todo'],
+      queryFn: async() => {
+        // get是一個包裝過的axios function，實作可以忽略
+        return await get('/todos');
+      },
+      // 每10分鐘refetch
+      refetchInterval: 60_000 * 10,
+
+      // 失敗時重撈2次，預設為3次
+      retry: 2,
+
+      // 每次間隔5秒
+      retryDelay: 5_000,
+
+      // 重別的視窗切回來時refetch，預設為true
+      refetchOnWindowFocus: true,
+
+      // 斷網後恢復連線時refetch，預設為true
+      refetchOnReconnect: true
+    })
+    ```
+- 了解甚麼是`樂觀更新`、`悲觀恢復`
+  - 樂觀更新，不等response回來，直接當作更新成功，並把資料顯示在畫面上，以此提升UX。通常用於低風險的動作，且會和悲觀恢復一起用
+  - 悲觀恢復，request失敗時，把資料恢復到操作之前的正確狀態
 
 1/2
 - 學TanStack query (React Query) [📗](https://www.youtube.com/watch?v=7MDI54nlEbc)
