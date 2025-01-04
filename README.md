@@ -1,9 +1,11 @@
 1/5(S)
 
 1/4(S)
+- 學TanStack query [📗](https://www.youtube.com/watch?v=I-qGvLln-pg)
+  - 了解如何用useMutation實作樂觀更新、悲觀恢復
 
 1/3
-- 學TanStack query (React Query) [📗](https://www.youtube.com/watch?v=I-qGvLln-pg)
+- 學TanStack query [📗](https://tanstack.com/query/v4/docs/framework/react/reference/useQuery) 
   - 了解refetchInterval、retry、retryDelay、refetchOnWindowFocus、refetchOnReconnect等useQuery常用的設定
     ```
     const {data} = useQuery({
