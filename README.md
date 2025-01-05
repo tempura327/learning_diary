@@ -1,4 +1,20 @@
+1/12(S)
+
+1/11(S)
+
+1/10
+
+1/9
+
+1/8
+
+1/7
+
+1/6
+
 1/5(S)
+- 了解JSON Server的用法
+- 認識[MistCSS](https://github.com/typicode/mistcss)
 
 1/4(S)
 - 學TanStack query [📗](https://www.youtube.com/watch?v=I-qGvLln-pg)
