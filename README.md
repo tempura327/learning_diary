@@ -11,6 +11,11 @@
 1/7
 
 1/6
+- 學TanStack query
+  - `usePrefetchQuery`用於使用者很常要看的資料，在某個事件發生時已經猜到使用者要看資料了，就先撈起來放，可以減少使用者等待時間，以此提升UX
+  - `invalidateQueries`用於把撈回來的資料標記為stale，這樣就會自動再重撈，常用於建立、更新完後，重撈資料
+- 了解object和Map的差異 [📗](https://www.explainthis.io/zh-hant/swe/map-vs-object)
+  - Map可簡單地迭代、知道有幾個key、key可以是任何型別 
 
 1/5(S)
 - 了解JSON Server的用法
