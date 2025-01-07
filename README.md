@@ -9,6 +9,7 @@
 1/8
 
 1/7
+- 讀React的生命週期 [📗](https://www.explainthis.io/zh-hant/swe/react-lifecycle)
 
 1/6
 - 學TanStack query
