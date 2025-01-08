@@ -5,8 +5,17 @@
 1/10
 
 1/9
+- 了解HTTP cache機制 [📗](https://web.dev/articles/http-cache?hl=zh-tw)
 
 1/8
+- 了解HTTP cache機制 [📗](https://www.youtube.com/watch?v=1Ahl3ah3UBU)
+  - 瀏覽器快取內存的資源是否過期是以[Cache-Control]([https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Headers/Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control))做判斷
+    - Cache-Control在request header和response header出現時可設定的指令會有些微不同
+      - 但兩者都可以設定`max-age=<秒數>`、`no-cache`、`no-store`
+  - 當瀏覽器快取過期時，`304代表`client端有去問server資源是否有更新，server回`資源沒變，可以繼續用瀏覽器的快取`
+    - 向server詢問資源是否過期時會用request header、response header中的屬性對比判斷
+      - [If-None-Match](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match)和[E-Tag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
+      - [If-Modified-Since](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since)和[Last-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)
 
 1/7
 - 讀React的生命週期 [📗](https://www.explainthis.io/zh-hant/swe/react-lifecycle)
