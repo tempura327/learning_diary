@@ -10,6 +10,8 @@
 
 1/7
 - 讀React的生命週期 [📗](https://www.explainthis.io/zh-hant/swe/react-lifecycle)
+  - class component才有lifecycle，分為mount, update, unmount三個階段，各個階段有不同的lifecycle method可用
+  - funtion component只能用hook模擬生命週期
 
 1/6
 - 學TanStack query
