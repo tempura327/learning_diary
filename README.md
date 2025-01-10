@@ -1,9 +1,10 @@
 1/12(S)
 
 1/11(S)
+- 了解HTTP cache機制 [📗](https://web.dev/articles/http-cache?hl=zh-tw)
 
 1/10
-- 了解HTTP cache機制 [📗](https://web.dev/articles/http-cache?hl=zh-tw)
+- 聽AI分享會 [📚](https://ai-hurry-up.zeabur.app/1)
 
 1/9
 - 讀The ultimate guide to cache-busting for React production applications，了解瀏覽器 cache機制 [📗](https://maxtsh.medium.com/the-ultimate-guide-to-cache-busting-for-react-production-applications-d583e4248f02)
