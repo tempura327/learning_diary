@@ -1,4 +1,7 @@
 1/12(S)
+- 了解JS自訂事件、compsition event
+  - new一個Event instance，然後綁到element上，再用.dispatchEvent就可以手動觸發
+  - composition event 是指 compositionstart 、 compositionend ，以及 compositionupdate 
 
 1/11(S)
 - 了解HTTP cache機制 [📗](https://web.dev/articles/http-cache?hl=zh-tw)
