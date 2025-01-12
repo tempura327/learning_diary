@@ -102,6 +102,9 @@
 
 1/1
 - 複習事件捕獲、事件冒泡 [📗](https://ithelp.ithome.com.tw/articles/10191970)
+  - addEventListener的第三個參數用於設定事件補獲，或事件冒泡。預設為false，即事件冒泡
+  - 點擊的element的父層會先執行事件捕獲，再執行事件冒泡
+  - 點擊的目標element的事件捕獲、冒泡執行順序和程式碼寫的順序有關
 - 看stand-up show學英文 [📘](https://www.youtube.com/watch?v=dI38GtWFihY)
   - cut the music off
   - I'd like a table for 3 people, please.
