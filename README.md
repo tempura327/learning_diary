@@ -1,3 +1,26 @@
+1/19(S)
+
+1/18(S)
+
+1/17
+
+1/16
+
+1/15
+
+1/14
+
+1/13
+- 初步了解Zustand
+  - 為了簡化使用context、Redux時，會出現的複雜的狀態管理而生的狀態管理library
+    - 試圖解決Zombie Child Problem、React Concurrency、Context Loss
+  - 採用Flux
+    - Redux也是採用Flux。它的目標是`將資料與View去做分離`，好處是`讓狀態更好維護`、變化變得較好追蹤
+- 學英文
+  - toiletries (盥洗用品)
+  - throw the baby out with the bathwater (把有價值的東西不小心跟不重要的東西一起丟掉)
+    - I know the wallpaper is ugly, but this is a lovely house. We can always redecorate.
+
 1/12(S)
 - 了解JS自訂事件、compsition event
   - new一個Event instance，然後綁到element上，再用.dispatchEvent就可以手動觸發
