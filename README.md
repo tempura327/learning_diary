@@ -9,6 +9,17 @@
 1/15
 
 1/14
+- 看stand-up show學英文 [📘]([https://www.youtube.com/watch?v=dI38GtWFihY](https://www.youtube.com/watch?v=0t8QCW78oDE))
+  - free-range (放牧)
+  - don't trust somebody
+    - What he said was complete nonsense. Don't listen to him.
+  - Don't get me wrong.
+    - Don't get me wrong, I really enjoy helping out, but I can't handle this all on my own.
+  - I'm all about...
+    - I'm all about exploring new cuisines when I travel.
+  - public shaming (公開羞辱)
+  - check out (結帳)
+  
 
 1/13
 - 初步了解Zustand
