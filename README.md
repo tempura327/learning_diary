@@ -7,6 +7,26 @@
 1/16
 
 1/15
+- color: light-dark(); [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark)
+  - 簡單切換dark mode、light mode顏色的方式
+    ```css
+    .light {
+      /* forces light color-scheme */
+      color-scheme: light;
+    }
+    .dark {
+      /* forces dark color-scheme */
+      color-scheme: dark;
+    }
+
+    code {
+      color: light-dark(var(--light-code), var(--dark-code));
+    }
+    ```
+  - paint-order: stroke fill markers; [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order)
+    - 調整text-stroke、text-fill的執行順序以畫出不同的文字效果
+      - 先stroke，後fill文字效果看起來會較細。反之則較粗
+      - 再搭配text-shadow的話可以產生立體效果 [📗](https://codepen.io/web-dot-dev/pen/dyxryKE)
 
 1/14
 - 看stand-up show學英文 [📘]([https://www.youtube.com/watch?v=dI38GtWFihY](https://www.youtube.com/watch?v=0t8QCW78oDE))
