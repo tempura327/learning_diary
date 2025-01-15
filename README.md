@@ -65,6 +65,10 @@
 
 1/10
 - 聽AI分享會 [📚](https://ai-hurry-up.zeabur.app/1)
+  - [HuggingFace](https://huggingface.co/)
+    - 放了很多AI模型的網站，部分可免費用
+  - [Napkin AI](https://www.napkin.ai/)
+    - 根據文字畫圖表、關係圖的AI
 
 1/9
 - 讀The ultimate guide to cache-busting for React production applications，了解瀏覽器 cache機制 [📗](https://maxtsh.medium.com/the-ultimate-guide-to-cache-busting-for-react-production-applications-d583e4248f02)
