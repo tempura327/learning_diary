@@ -5,6 +5,20 @@
 1/17
 
 1/16
+- 了解Zombie Child Problem [📗](https://medium.com/@adithyaviswam/can-the-context-api-result-in-the-zombie-children-issue-a00d52af8c8)
+  - zombie child component是指「是一個應該被銷毀但暫時沒有被銷毀的子元件」
+    - zombie child component可能會嘗試讀取store中不存在的資料，可能會引起memory leak、不一致的UI、錯誤的資料更新等問題
+  - 這個問題和React中的父、子component的生命週期執行順序有關
+      ```
+      Parent initialized
+      Parent rendered for first time
+      Child initialized
+      Child rendered for the first time
+      Child componentDidMount (useEffect is invoked)
+      Parent componentDidMount (useEffect is invoked)
+      Child componentDidUpdate (useEffect is invoked)
+      Parent componentDidUpdate (useEffect is invoked)
+      ```
 
 1/15
 - color: light-dark(); [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark)
