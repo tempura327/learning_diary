@@ -3,6 +3,7 @@
 1/18(S)
 
 1/17
+- 了解Zustand的基本用法 [📗](https://www.youtube.com/watch?v=Nru6yGYivvg)
 
 1/16
 - 了解Zombie Child Problem [📗](https://medium.com/@adithyaviswam/can-the-context-api-result-in-the-zombie-children-issue-a00d52af8c8)
@@ -19,6 +20,8 @@
       Child componentDidUpdate (useEffect is invoked)
       Parent componentDidUpdate (useEffect is invoked)
       ```
+      
+      ![_- visual selection](https://github.com/user-attachments/assets/b5dcda4e-209c-44c8-87fd-1fba90aa7c0c)
 
 1/15
 - color: light-dark(); [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark)
