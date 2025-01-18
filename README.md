@@ -1,6 +1,12 @@
 1/19(S)
 
 1/18(S)
+- 學英文
+  - As the saying goes
+  - puts in an appearance (出現一下下)
+    - I didn't really want to go to the party, but I thought I'd better put in an appearance.
+  - on the scene (去有事情發生的地方)
+    - Firefighters were on the scene within minutes.
 
 1/17
 - 了解Zustand的基本用法 [📗](https://www.youtube.com/watch?v=Nru6yGYivvg)
