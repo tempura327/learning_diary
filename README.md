@@ -1,4 +1,11 @@
+1/22
+
+1/21
+
+1/20
+
 1/19(S)
+- 了解如何使用Zustand的create function [📗](https://www.youtube.com/watch?v=Nru6yGYivvg)
 
 1/18(S)
 - 學英文
