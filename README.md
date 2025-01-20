@@ -3,6 +3,9 @@
 1/21
 
 1/20
+- 了解Zustand和Vanilla Zustand的差異
+  - 它們的關係就像React Redux和Redux，前者能直接用於React，後者是整個library的核心，可以獨立於框架之外使用
+  - `Zustand`的create`回傳`可直接跟store互動的`hook`，而`Vanilla Zustand`的createStore則`回傳`值則是store `instance`
 
 1/19(S)
 - 了解如何使用Zustand的create function [📗](https://www.youtube.com/watch?v=Nru6yGYivvg)
@@ -77,6 +80,10 @@
     - 試圖解決Zombie Child Problem、React Concurrency、Context Loss
   - 採用Flux
     - Redux也是採用Flux。它的目標是`將資料與View去做分離`，好處是`讓狀態更好維護`、變化變得較好追蹤
+  - immutable state
+    - 跟Redux一樣，因為它們都採用Flux
+  - `不需要用context provider`把整個app包起來
+    - 因此可以避免zombie child component的問題
 - 學英文
   - toiletries (盥洗用品)
   - throw the baby out with the bathwater (把有價值的東西不小心跟不重要的東西一起丟掉)
