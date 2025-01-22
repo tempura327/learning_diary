@@ -1,6 +1,10 @@
 1/22
+- 了解Zustand的useSelector
+  - Zustand跟Redux一樣都建議使用useSelector來只取出需要的部分，以減少因為store變動而造成的re-render
+  - 可以把處理重複邏輯包進去useSelector
 
 1/21
+返鄉，休息一天
 
 1/20
 - 了解Zustand和Vanilla Zustand的差異
