@@ -1,3 +1,8 @@
+1/23
+- 聽Johnny Stimson - Flower練英文
+  - the end of the edge of sky (形容很遠的地方、遠在天邊)
+    - My wife divorced me, then moved to Canada from Taiwan. I feel like she's on the edge of the sky.
+
 1/22
 - 了解Zustand的useSelector
   - Zustand跟Redux一樣都建議使用useSelector來只取出需要的部分，以減少因為store變動而造成的re-render
