@@ -1,7 +1,17 @@
+1/25~2/2
+過年休息
+
+1/24
+- 用Zustand做TodoList練習 [🖌](https://codesandbox.io/p/sandbox/try-zustand-and-chakaraui-1-dn5qkv?file=%2Fsrc%2FApp.tsx%3A21%2C16)
+
 1/23
 - 聽Johnny Stimson - Flower練英文
   - the end of the edge of sky (形容很遠的地方、遠在天邊)
     - My wife divorced me, then moved to Canada from Taiwan. I feel like she's on the edge of the sky.
+  - get something out of my thoughts (將某事物從短期的思緒中移除)
+    - I need to focus on work, but I can't get my vacation out of my thoughts.
+  - get something out of my mind (將某事物從長期的思緒、記憶中移除)
+    - My wife divorced me, and then moved to Canada. I know she won't come back to me. It's time to get her out of my mind.
 
 1/22
 - 了解Zustand的useSelector
