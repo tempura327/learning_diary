@@ -1,5 +1,25 @@
-1/25~2/2
+1/29~2/2
 過年休息
+
+1/28
+- 閱讀[選工作前，先了解該公司怎麼做事故檢討](https://www.explainthis.io/zh-hant/career/how-companies-handle-incident-reviews)
+  - `不指責人的事故檢討很重要`
+    - 若事故檢討的方式是找戰犯，當問題發生時，犯錯的那個人或團隊，很可能會試圖掩蓋問題，這對於解決問題反而是不利的
+- 閱讀[選一間冷靜的公司](https://www.explainthis.io/zh-hant/career/calm-company)
+  - 冷靜的公司
+    - 平緩地成長、有穩定的收益
+    - 自由、彈性、平靜的工作環境
+    - 對於決策深思熟慮
+  - 喪心病狂的公司
+    - `收益不好，導致需要不斷的資金注入`，且基本面不佳，難以改善
+    - 明示、暗示地威脅、施壓，使員工感到壓力、焦慮
+    - `員工`常常在吸收負面情緒，導致下班後感到`筋疲力盡`
+    - `時程不合理`，只能靠不斷加班完成
+    
+- 閱讀[21 項給軟體工程師的職涯提醒](https://www.explainthis.io/zh-hant/career/21-career-tips-for-software-engineers)
+
+1/25~1/27
+嘉義旅遊、達康表演、吉伊卡哇燈會
 
 1/24
 - 用Zustand做TodoList練習 [🖌](https://codesandbox.io/p/sandbox/try-zustand-and-chakaraui-1-dn5qkv?file=%2Fsrc%2FApp.tsx%3A21%2C16)
