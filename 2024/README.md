@@ -191,10 +191,10 @@
 11/22
 - 了解甚麼是UMD
 
-11/21
-- 了解甚麼是reflow、repaint [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
+##### 11/21
+- 了解甚麼是reflow、repaint [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg) [📗](https://ithelp.ithome.com.tw/articles/10217427)
     - reflow是重新計算畫面上的element的位置
-        - 由root element開始往下計算元素的位置
+        - 由root element開始往下計算元素的位置，越深的話計算會越久
         - reflow完必定會再次replaint
         - 變更margin、padding、display、border、font-size等和layout有關的CSS屬性會觸發
         - 以JS新增、刪除、更新DOM上node會觸發
