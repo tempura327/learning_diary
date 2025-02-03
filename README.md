@@ -1,3 +1,35 @@
+2/8(S)
+
+2/7
+
+2/6
+
+2/5
+
+2/4
+
+2/3
+- 了解stacking context [📗](https://ithelp.ithome.com.tw/articles/10217945)
+  - stacking context是指使用positioned box建立的環境堆疊，可以透過以下CSS屬性建立
+    ```css
+    position: fixed;
+    
+    position: sticky;
+    
+    position: relative;
+    z-index:100;
+
+    position: absolute;
+    z-index:100;
+
+    translate: translate(100px, 100ox);
+
+    /* 只要小於1就可以 */
+    opacity: 0.9;
+    ```
+  - stacking context內的元素不會觸發[reflow](https://github.com/tempura327/learning-diary/blob/master/2024/README.md#1121)
+  - 位於不同stacking context的元素間不會互相比較z-index
+
 1/29~2/2
 過年休息
 
