@@ -192,7 +192,27 @@
 - 了解甚麼是UMD
 
 11/21
-- 了解甚麼是reflow、replant [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
+- 了解甚麼是reflow、repaint [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
+    - reflow是重新計算畫面上的element的位置
+        - 由root element開始往下計算元素的位置
+        - reflow完必定會再次replaint
+        - 變更margin、padding、display、border、font-size等和layout有關的CSS屬性會觸發
+        - 以JS新增、刪除、更新DOM上node會觸發
+            - 如果必須插入多個新的element到DOM上時可以`批次新增，減少reflow次數，以此效能上的開銷`
+              ```
+                const items = [1,2,3,4].map((i) => {
+                    const span = document.createElement('span');
+                    span.innerText = i;
+    
+                    return span;
+                });
+
+                const container = document.querySelector('.container');
+
+                container.append(...items);
+              ```
+    - replaint則是外觀改變時重新渲染
+        - color、visibility、outline...等只會觸發repaint
 - 了解操作DOM對效能的影響
 
 11/20
