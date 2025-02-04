@@ -7,6 +7,12 @@
 2/5
 
 2/4
+- 了解mapStateToProps [📗](https://www.dhiwise.com/post/mapstatetoprops-or-useselector-a-quick-comparison)
+  - mapStateToProps是配合Redux使用的一種function，它是connect component的一部分，用於取得store
+    - mapStateToProps會把整個store中的某個屬性當作props往下傳，而useSelector則是訂閱store的部分屬性，所以後者re-render次數會較少，故效能較好
+  - 最早推出是為了`配合class component使用`，已經成為一種古早味設計模式
+    - function component出了以後，Redux也推出功能類似的useSelector來搭配它
+    - `不要跟function component一起用，會導致zombie child component`
 
 2/3
 - 了解stacking context [📗](https://ithelp.ithome.com.tw/articles/10217945)
@@ -94,7 +100,7 @@
 1/17
 - 了解Zustand的基本用法 [📗](https://www.youtube.com/watch?v=Nru6yGYivvg)
 
-1/16
+##### 1/16
 - 了解Zombie Child Problem [📗](https://medium.com/@adithyaviswam/can-the-context-api-result-in-the-zombie-children-issue-a00d52af8c8)
   - zombie child component是指「是一個應該被銷毀但暫時沒有被銷毀的子元件」
     - zombie child component可能會嘗試讀取store中不存在的資料，可能會引起memory leak、不一致的UI、錯誤的資料更新等問題
