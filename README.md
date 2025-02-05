@@ -8,6 +8,7 @@
 - 聽Johnny Stimson的You can do it 學英文 [📘](https://www.youtube.com/watch?v=L2ADdk3w-rg&list=RDMM&index=4)
   - put your heart into something/put your heart and soul into something (全心投入)
   - brush someting off (拍掉、刷掉)
+    - I brushed the dirt off my shoes.
   - It is a part of life. (表達某件事情是人生中不可避免的經歷，無論是好是壞。通常用來安慰別人，或者表達一種對人生的理解)
     - Failure is a part of life.
 
