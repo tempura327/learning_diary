@@ -1,6 +1,31 @@
+2/16(S)
+
+2/15(S)
+
+2/14
+
+2/13
+
+2/12
+
+2/11
+
+2/10
+
+2/9(S)
+
 2/8(S)
 
 2/7
+- 學習用於描述衝動行為、人的詞彙、片語 [📘](https://dictionaryblog.cambridge.org/2025/02/05/reckless-and-impulsive-acting-without-enough-thought/)
+  - with no thought for something
+    - He bought a expensive camera, with no thought for his financial condition.
+  - hotheaded
+  - [rash](https://www.thesaurus.com/browse/rash)
+    - It was rash of him to buy such a expensive camera.
+    - I think it was a bit rash of them to get married when they'd only known each other for a few weeks. (marry in haste, repent at leisure )
+  - rush [headlong](https://www.thesaurus.com/browse/headlong) into something
+    - She rushed headlong into marriage without really getting to know her partner.
 
 2/6
 - 了解React-Redux的connect function [📗](https://react-redux.js.org/api/connect)
