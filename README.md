@@ -13,6 +13,14 @@
 2/10
 
 2/9(S)
+- 初步了解Docker [📗](https://www.youtube.com/watch?v=ZKdlglAxr7g)
+  - Docker是一種實現容器化的工具
+    - 容器化是指把應用程式跟它的依賴打包到一個獨立的環境。這個獨立的環境就是容器(container)
+      - container初始狀態是映像檔(image)，透過指令執行image就會變成container
+    - K8S是另一個目前主流的容器化工具
+  - container具有一致性，可攜性、隔離性
+    - 基於隔離性，容器內內只能放一種應用程式
+ 
 
 2/8(S)
 
@@ -23,7 +31,7 @@
   - hotheaded
   - [rash](https://www.thesaurus.com/browse/rash)
     - It was rash of him to buy such a expensive camera.
-    - I think it was a bit rash of them to get married when they'd only known each other for a few weeks. (marry in haste, repent at leisure )
+    - I think it was a bit rash of them to get married when they'd only known each other for a few weeks. (marry in haste, repent at leisure)
   - rush [headlong](https://www.thesaurus.com/browse/headlong) into something
     - She rushed headlong into marriage without really getting to know her partner.
 
@@ -63,7 +71,7 @@
     position: absolute;
     z-index:100;
 
-    translate: translate(100px, 100ox);
+    transform: translate(100px, 100ox);
 
     /* 只要小於1就可以 */
     opacity: 0.9;
