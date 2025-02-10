@@ -11,6 +11,23 @@
 2/11
 
 2/10
+- 試試看[安裝](https://docs.docker.com/desktop/setup/install/mac-install/)、啟動docker [📗](https://medium.com/%E5%AE%B8-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/mac-%E5%AE%89%E8%A3%9D-docker-%E5%8F%8A%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4-6a9cfaa55979)
+  - 安裝好桌面版之後，只要點兩下圖示就可以啟動docker
+  - 下載、執行image
+    - 可以用docker應用程式下載，並執行image
+      <img width="1266" alt="截圖 2025-02-10 下午6 07 02" src="https://github.com/user-attachments/assets/4820d1f7-53e1-4d58-849c-0491c40febfb" />
+      <img width="979" alt="截圖 2025-02-10 下午6 07 16" src="https://github.com/user-attachments/assets/6645bc53-3bff-4dba-8552-8e30e777f943" />
+    - 也可以使用指令下載，並執行image
+      ```
+      docker pull <image namw>
+      ```
+
+      這個指令用於執行image，如果沒有安裝相符名稱的image，就會自動安裝
+      ```
+      docker run <image namw>
+      ```
+      <img width="739" alt="截圖 2025-02-10 下午6 02 33" src="https://github.com/user-attachments/assets/746463d8-c57c-4703-a852-0cb8469fd30b" />
+
 
 2/9(S)
 - 初步了解Docker [📗](https://www.youtube.com/watch?v=ZKdlglAxr7g)
