@@ -7,34 +7,87 @@
 2/13
 
 2/12
+- 看Docker快速入門教學[📗](https://www.youtube.com/watch?v=1wfgS31LcgQ&list=PLVVMQF8vWNCLsTAWVvGRyQP0ajj0Rx1--&index=2&t=20s)
+  - 建立image的方式有2種
+    - `docker build`
+      - 用dockerfile是用於建立image
+    - docker commit
+      - 將image初始化成container，進行修改後再建立成另一個image
+- 了解docker指令
+  - docker指令有分新舊版，雖然舊版仍能使用，但推薦使用新的
+  - 查看image
+    ```
+    # 本機所有的image
+    # 舊版
+    docker images
+    # 新版
+    docker image ls
+
+    # 本機某個image
+    docker images <image name>
+    ```
+  - 查看所有的container
+    <img width="1017" alt="截圖 2025-02-11 下午6 15 35" src="https://github.com/user-attachments/assets/0cd9ac9f-837a-476c-89ed-e49150c4e40c" />
+    ```
+    # 舊版
+    docker ps -a
+    # 新版
+    docker container ls
+    ```
+  - 移除image
+    ```
+    # 舊版
+    docker rmi <image name>
+    # 新版
+    docker image rm <image name>
+    ```
+  - 移除container
+    - image每次執行後就會產生一個container，如果用完不需要了可以把這些container刪掉
+    ```
+    # 舊版
+    docker rm <container id或name>
+    # 新版
+    docker container rm <container id或name>
+    ```
 
 2/11
 - 試試看在Windows11[安裝HyperV](https://www.youtube.com/watch?v=ExZIQj-DvI8)或WSL
   - 在Windows使用docker會需要它
   - 可以透過[官方文件](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows)內指示，使用shell command安裝
   - 可以照[影片](https://www.youtube.com/watch?v=ExZIQj-DvI8)的指示，來建立bat檔安裝
-    ![0211-1](https://github.com/user-attachments/assets/807e2d91-a2b5-49a8-b1c4-3305fcd6a74c)
+    <img width="739" alt="截圖 2025-02-10 下午6 02 33" src="https://github.com/user-attachments/assets/e7a047f8-72ee-4f20-baa1-6b7a858c704a" />
 - 試試看在Windows11[安裝](https://docs.docker.com/desktop/setup/install/windows-install/)、啟動docker
+  ![螢幕擷取畫面 2025-02-11 221118](https://github.com/user-attachments/assets/35d0e04f-947b-484a-a86a-e4bd1a79bf67)
+  `啟動之後發現電腦效能太差，會導致風扇狂轉，所以刪除了，之後docekr的東西都只用Mac試`
 
 2/10
 - 試試看在Mac[安裝](https://docs.docker.com/desktop/setup/install/mac-install/)、啟動docker [📗](https://medium.com/%E5%AE%B8-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/mac-%E5%AE%89%E8%A3%9D-docker-%E5%8F%8A%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4-6a9cfaa55979)
   - 安裝好桌面版之後，只要點兩下圖示就可以啟動docker
-  - 下載、執行image
-    - 可以用docker應用程式下載，並執行image
+- 了解docker指令
+  - 下載image
+    - 指令
+      ```
+      # 舊版
+      docker pull <image name>
+      # 新版
+      docker image pull <image_name>
+      ```
+    - docker應用程式下載
       <img width="1266" alt="截圖 2025-02-10 下午6 07 02" src="https://github.com/user-attachments/assets/4820d1f7-53e1-4d58-849c-0491c40febfb" />
       <img width="979" alt="截圖 2025-02-10 下午6 07 16" src="https://github.com/user-attachments/assets/6645bc53-3bff-4dba-8552-8e30e777f943" />
-    - 也可以使用指令下載，並執行image
+  - 搜尋想要使用的image
+    - 指令
       ```
-      docker pull <image namw>
+      docker search <image name>
       ```
-
-      這個指令用於執行image，如果沒有安裝相符名稱的image，就會自動安裝
-      ```
-      docker run <image namw>
-      ```
-      <img width="739" alt="截圖 2025-02-10 下午6 02 33" src="https://github.com/user-attachments/assets/746463d8-c57c-4703-a852-0cb8469fd30b" />
-
-
+    - 到[DockerHub](https://hub.docker.com/)搜尋
+  - 執行image以產生container
+    ```
+    # 舊版
+    docker run <image name>
+    # 新版
+    docker container run <image name>
+    ```
 2/9(S)
 - 初步了解Docker [📗](https://www.youtube.com/watch?v=ZKdlglAxr7g)
   - Docker是一種實現容器化的工具
