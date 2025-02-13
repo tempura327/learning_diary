@@ -5,6 +5,50 @@
 2/14
 
 2/13
+- 了解如何使用docker部署網站
+  - 撰寫Dockerfile
+
+  - 執行build image，並幫它打tag
+    ```
+    # -t 是tag的意思，用於幫image命名
+    # image name 後方是指Dockerfile所在的目錄，.代表當前的目錄
+    docker build --tag my-app .
+    ```
+
+    以上指令相當於以下多個指令
+    ```
+    docker build .
+    docker image ls
+    docker tag <image id> my-app
+    ```
+
+  - 把image 推到image儲存庫
+    ```
+    docker image push myrepo/my-app:latest
+    ```
+  - 在server上把image拉下來，並把它初始化變成一個容器(執行容器)
+    ```
+    docker image pull myrepo/my-app:latest
+    ```
+
+    ```
+    # -d 是detach的意思，讓container在背景執行，不會佔用終端機
+    # -p 是port的意思，將server的port 80連接container的port 3000
+    # --name 後方是container的名字，可以省略
+    # myrepo/my-app 是image的名字，即在步驟2中打的名稱
+    docker container run -d -p 80:3000 --name hello123 myrepo/my-app
+    ```
+
+  - (optional) 根據需求在當下正在執行的container 設定環境變數
+    ```
+    # -e 是environment的意思，用於設定環境變數
+    docker container run -e MY_ENV=production -e PORT=3000 myrepo/my-app
+    ```
+    之所以不直接在build image時就直接把環境變數包進去是因為這樣該image就跟特定環境綁定了，不能在多個環境複用
+
+- 初步了解AWS的ECR服務
+    - AWS的ECR是image的儲存庫，相當於私有的Docker Hub，Github也有提供私有image儲存庫的服務
+    - 可和其他AWS 服務整合
 
 2/12
 - 看Docker快速入門教學[📗](https://www.youtube.com/watch?v=1wfgS31LcgQ&list=PLVVMQF8vWNCLsTAWVvGRyQP0ajj0Rx1--&index=2&t=20s)
@@ -72,6 +116,9 @@
       # 新版
       docker image pull <image_name>
       ```
+      如果pull image時省略repo名，則預設會從Docker Hub拉取image
+      如果是要從AWS ECR拉取image，則要在image名稱前加上ECR的網址還有repo名稱
+
     - docker應用程式下載
       <img width="1266" alt="截圖 2025-02-10 下午6 07 02" src="https://github.com/user-attachments/assets/4820d1f7-53e1-4d58-849c-0491c40febfb" />
       <img width="979" alt="截圖 2025-02-10 下午6 07 16" src="https://github.com/user-attachments/assets/6645bc53-3bff-4dba-8552-8e30e777f943" />
