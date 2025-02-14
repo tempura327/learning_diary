@@ -3,6 +3,7 @@
 2/15(S)
 
 2/14
+- 讀Svelte教學 ~Basic Svelte/Props/Spread props [📗](https://svelte.dev/tutorial/svelte/spread-props)
 
 2/13
 - 了解如何使用docker部署網站
@@ -443,7 +444,7 @@
     - According to my rule of thumb, it will take about 40 minutes to get to Taipei Train Station from here if we take the subway. (根據我的經驗，從這裡搭捷運去台北車站要花40分鐘)
  
 
-1/1
+1/re
 - 複習事件捕獲、事件冒泡 [📗](https://ithelp.ithome.com.tw/articles/10191970)
   - addEventListener的第三個參數用於設定事件補獲，或事件冒泡。預設為false，即事件冒泡
   - 點擊的element的父層會先執行事件捕獲，再執行事件冒泡
