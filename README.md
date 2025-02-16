@@ -1,4 +1,23 @@
+2/23(S)
+
+2/22(S)
+
+2/21
+
+2/20
+
+2/19
+
+2/18
+
+2/17
+
 2/16(S)
+- 了解如何用Svelte store實作API狀態管理 [📗](https://www.youtube.com/watch?v=umnSLfR_VkM)
+  - writable
+  - readable
+- 了解AbortController
+  - 用於取消request  
 
 2/15(S)
 
