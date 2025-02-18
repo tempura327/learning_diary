@@ -10,6 +10,9 @@
 
 2/18
 - 讀Svelte教學 ~Basic Svelte/Logic/Await blocks [📗]([https://svelte.dev/tutorial/svelte/spread-props](https://svelte.dev/tutorial/svelte/await-blocks))
+- 了解如何在AWS上設置一個純前端專案
+  - S3
+  - Cloudfront
 
 
 2/17
