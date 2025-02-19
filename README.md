@@ -7,13 +7,24 @@
 2/20
 
 2/19
+- 在Svelte專案試用[shadcn-svelte](https://www.shadcn-svelte.com/)
+  - Svelte的生態圈真的是比起React實在是小太多，簡直像是孤兒
+  - 了解到新的選library的方式。可以看repo的最後一次commit時間距離當下多久
+    - 如果是一個很新的repo最好在1~2個月以內
+    - 已經算成熟的(ex: ajv)則半年左右都在允許範圍
+    - 超成熟的(ex: lodash)則超過一年也行
 
 2/18
 - 讀Svelte教學 ~Basic Svelte/Logic/Await blocks [📗]([https://svelte.dev/tutorial/svelte/spread-props](https://svelte.dev/tutorial/svelte/await-blocks))
 - 了解如何在AWS上設置一個純前端專案
   - S3
+    - bucket
   - Cloudfront
-
+    - distribution
+      - error page
+      - behavior
+    - function
+- 試著使用Github Actions做PR merge後自動部署到S3 bucket的dev folder
 
 2/17
 - 了解如何在Svelte專案設置formatOnSave功能 [📗](https://hoishing.medium.com/auto-format-svelte-in-vs-code-c0208c2010c9) [📗](https://github.com/sveltejs/prettier-plugin-svelte?tab=readme-ov-file)
