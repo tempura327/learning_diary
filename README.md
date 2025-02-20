@@ -5,6 +5,15 @@
 2/21
 
 2/20
+- 學習一些更禮貌地說英文方式
+
+|一般|禮貌|例句|
+| --- | --- | ---|
+|Tell me|I was wondering if... |I was wondering if you could do me a favor. |
+|Can I...|Could I... please| Could I please have your name? |
+|Can I...|Do you mind if I...| Do you mind if I sit here? |
+|Can I...|Would it be possible to...| Would it be possible to reschedule the meeting?|
+||By any chance| Are you, by any chance, available this weekend?|
 
 2/19
 - 在Svelte專案試用[shadcn-svelte](https://www.shadcn-svelte.com/)
