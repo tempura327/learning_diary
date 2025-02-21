@@ -3,17 +3,27 @@
 2/22(S)
 
 2/21
+- 學習一些更禮貌地說英文方式 [📘](https://www.youtube.com/watch?v=rQN4-l5AXE0)
+
+|分類||例句|
+| --- | --- | ---|
+|請求|I was hoping you...|I was hoping you could help me.|
+|請求|I don't suppose..., could you?|I don't suppose you could lend me a hand, could you?|
+|表達意見| Aren't you kind of...| Aren't you kind of young to be getting marry?|
+|討論|someone seems to...| You seem to have made a mistake here.|
+|拒絕|I'm not sure I'll be able to...| I'm not sure I'll be able to make it to the meeting.|
+|拒絕|It's looking unlikely that...|It's looking unlikely that we'll finish on time.|
 
 2/20
 - 學習一些更禮貌地說英文方式
 
-|一般|禮貌|例句|
+|分類||例句|
 | --- | --- | ---|
-|Tell me|I was wondering if... |I was wondering if you could do me a favor. |
-|Can I...|Could I... please| Could I please have your name? |
-|Can I...|Do you mind if I...| Do you mind if I sit here? |
-|Can I...|Would it be possible to...| Would it be possible to reschedule the meeting?|
-||By any chance| Are you, by any chance, available this weekend?|
+|請求 |I was wondering if... |I was wondering if you could do me a favor. |
+|請求|Could I please ... | Could I please have your name? |
+|請求|Do you mind if I...| Do you mind if I sit here? |
+|請求|Would it be possible to...| Would it be possible to reschedule the meeting?|
+|其他|By any chance| Are you, by any chance, available this weekend?|
 
 2/19
 - 在Svelte專案試用[shadcn-svelte](https://www.shadcn-svelte.com/)
