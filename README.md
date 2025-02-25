@@ -1,3 +1,23 @@
+3/2(S)
+
+3/1(S)
+
+2/28
+
+2/27
+
+2/26
+
+2/25
+- 閱讀 [Things only senior React engineers know](https://medium.com/@meric.emmanuel/things-only-senior-react-engineers-know-618d81154cb6)
+  - 可以不用useEffect就不要用，尤其是在useEffect的callback中操作和UI有關的邏輯，因為會提高出現bug的風險
+  - 當key prop的值改變時，會直接把整個element unmount，並mount一個新的element到DOM
+  - 組件的children型別應該設為ReactNode，這樣才不會過度限縮彈性
+    - ReactNode包含所有可以被渲染的東西，string、number、boolean、undefined、null、\<p>text<\/p>
+    - ReactElement 則只有\<p>text<\/p>
+
+2/24
+
 2/23(S)
 
 2/22(S)
