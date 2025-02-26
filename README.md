@@ -7,6 +7,102 @@
 2/27
 
 2/26
+試著在Svelte+Vite專案設定Graphql codegen
+
+1. 安裝以下codegen套件
+```
+    // 用於GraphQL codegen產出type、schema
+    "@graphql-codegen/typescript-graphql-request"
+    "@graphql-codegen/cli"
+    "@graphql-codegen/introspection"
+    "@graphql-codegen/typescript-apollo-client-helpers"
+    "@graphql-codegen/typescript-resolvers"
+    "@parcel/watcher"
+
+    // 用於fetch，且有plugin可以在codegen時產出document
+    "graphql-request"
+
+    // graphql-request的依賴
+    "graphql-tag"
+    "graphql"
+```
+
+
+2. 設定codegen config
+   
+  [設定檔可以用多種格式撰寫](https://the-guild.dev/graphql/codegen/docs/config-reference/codegen-config)
+  ```ts
+  // codegen.ts
+
+  import { type CodegenConfig } from '@graphql-codegen/cli';
+
+  const config: CodegenConfig = {
+    schema: '你的GraphQL endpoint',
+    documents: ['src/**/*.(svelte|ts|graphql)'],
+    ignoreNoDocuments: true,
+    // 每次執行codegen都把舊的檔案覆蓋
+    overwrite: true,
+    // 開啟watch模式，只要document有變動就會跑codegen
+    watch: true,
+    generates: {
+      // codegen產出的type、document存放的位置
+      './src/generated/graphql.ts': {
+        plugins: [
+          'typescript',
+          'typescript-operations',
+          '@graphql-codegen/typescript-graphql-request',
+          'typescript-apollo-client-helpers',
+          'typescript-resolvers',
+        ],
+      },
+      // codegen產出的schema存放的位置
+      './src/generated/graphql.schema.json': {
+        plugins: ['introspection'],
+      },
+    },
+  };
+
+  export default config;
+  ```
+
+3. 在package.json新增script
+  ```
+  "scripts": {
+      "dev": "yarn codegen & vite dev",
+      "codegen": "graphql-codegen",
+    },
+  ```
+
+4. 根據需求建立GraphQLClient集中管理headers之類的設定
+  ```ts
+  const apiClient = new GraphQLClient('你的GraphQL endpoint', {
+    headers: () => ({
+      // GraphQL的不論是query或mutation，method都是POST
+      method: 'POST',
+      authorization: `Bearer ${token}`,
+    }),
+      // 因為graphql-request沒有狀態管理功能，所以需要使用middleware和Svelte store製作API狀態管理
+    requestMiddleware: async (request) => {
+      apiStateManagementStore.set({
+        isLoading: true,
+      });
+      return request;
+    },
+    responseMiddleware: async (response) => {
+      if (response instanceof ClientError || response instanceof Error || response.errors) {
+        apiStateManagementStore.set({
+          isError: true,
+        });
+      }
+
+      apiStateManagementStore.set({
+        isLoading: false,
+      });
+    },
+  });
+
+  export default apiClient
+  ```
 
 2/25
 - 閱讀 [Things only senior React engineers know](https://medium.com/@meric.emmanuel/things-only-senior-react-engineers-know-618d81154cb6)
