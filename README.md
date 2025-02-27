@@ -5,6 +5,7 @@
 2/28
 
 2/27
+- 了解如何使用Svelte `bind:this` 取得DOM element [📗](https://svelte.dev/tutorial/svelte/bind-this)
 
 2/26
 試著在Svelte+Vite專案設定Graphql codegen
