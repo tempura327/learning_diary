@@ -3,6 +3,7 @@
 3/1(S)
 
 2/28
+- 讀Svelte教學 ~Basic Svelte/Events/Spreading events [📗](https://svelte.dev/tutorial/svelte/spreading-events)
 
 2/27
 - 了解如何使用Svelte `bind:this` 取得DOM element [📗](https://svelte.dev/tutorial/svelte/bind-this)
@@ -77,11 +78,16 @@
 4. 根據需求建立GraphQLClient集中管理headers之類的設定
   ```ts
   const apiClient = new GraphQLClient('你的GraphQL endpoint', {
-    headers: () => ({
-      // GraphQL的不論是query或mutation，method都是POST
-      method: 'POST',
-      authorization: `Bearer ${token}`,
-    }),
+    // 因為token可能會動態改變，所以headers需要定義為function
+    headers: () => {
+        const token = localStorage.getItem('key的名稱');
+
+        return {
+          // GraphQL的不論是query或mutation，method都是POST
+          method: 'POST',
+          authorization: `Bearer ${token}`,
+        }
+    },
       // 因為graphql-request沒有狀態管理功能，所以需要使用middleware和Svelte store製作API狀態管理
     requestMiddleware: async (request) => {
       apiStateManagementStore.set({
