@@ -1,3 +1,24 @@
+3/9(S)
+
+3/8(S)
+
+3/7
+
+3/6
+
+3/5
+
+3/4
+
+3/3
+- 了解IndexedDB [📗](https://developer.chrome.com/docs/apps/offline_storage)
+    - 針對indexedDB的操作是非同步的
+    - indexDB的容量配額會根據瀏覽器有差異，當超過容量配額時先刪除哪些資料的標準也不同
+    - 無痕模式下indexedDB容量配額會比較低
+    - Safari是目前唯一有實作主動驅離資料的瀏覽器
+        - [主動資料驅離](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria#proactive_eviction)是指超過一定時間沒有操作網站的話，就把IndexedDB資料清除
+- 了解如何用dev tool查看及變更 IndexedDB 資料 [📗](https://developer.chrome.com/docs/devtools/storage/indexeddb?hl=zh-tw)
+
 3/2(S)
 
 3/1(S)
