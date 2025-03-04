@@ -9,15 +9,45 @@
 3/5
 
 3/4
+- 學到新的繪製半透明形狀，但不影響子元素的方法
+  ```html
+      <!-- 使用Tailwind的作法 -->
+      <div id="parent" class="w-48 h-48 relative before:absolute before:top-0 before:left-0 before:content-[''] before:w-full before:h-full before:bg-blue-300">
+          <p>child element</p>
+      </div>
+  ```
+
+    相當於以下的手寫CSS
+
+  ```css
+      #parent {
+          width: 12rem;
+          height: 12rem;
+          position: relative;
+      }
+
+      #parent::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #93c5fd; /* Tailwind 的 bg-blue-300 */
+      }
+  ```
+
+- 閱讀 [忙不是藉口，開不好 One-on-One 就是主管的問題](https://medium.com/@stevenyeh/%E5%BF%99%E4%B8%8D%E6%98%AF%E8%97%89%E5%8F%A3-%E9%96%8B%E4%B8%8D%E5%A5%BD-one-on-one-%E5%B0%B1%E6%98%AF%E4%B8%BB%E7%AE%A1%E7%9A%84%E5%95%8F%E9%A1%8C-bae77b0f466e)
 
 3/3
 - 了解IndexedDB [📗](https://developer.chrome.com/docs/apps/offline_storage)
     - 針對indexedDB的操作是非同步的
-    - indexDB的容量配額會根據瀏覽器有差異，當超過容量配額時先刪除哪些資料的標準也不同
+    - indexedDB的容量配額會根據瀏覽器有差異，當超過容量配額時先刪除哪些資料的標準也不同
+        - `超過容量配額`時刪除資料的動作稱作`資料驅離`，localStorage、sessionStorage也有這個機制
     - 無痕模式下indexedDB容量配額會比較低
     - Safari是目前唯一有實作主動驅離資料的瀏覽器
         - [主動資料驅離](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria#proactive_eviction)是指超過一定時間沒有操作網站的話，就把IndexedDB資料清除
-- 了解如何用dev tool查看及變更 IndexedDB 資料 [📗](https://developer.chrome.com/docs/devtools/storage/indexeddb?hl=zh-tw)
+- 了解如何用dev tool查看及變更 indexedDB 資料 [📗](https://developer.chrome.com/docs/devtools/storage/indexeddb?hl=zh-tw)
 
 3/2(S)
 
