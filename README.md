@@ -12,7 +12,7 @@
 - 學到新的繪製半透明形狀，但不影響子元素的方法
   ```html
       <!-- 使用Tailwind的作法 -->
-      <div id="parent" class="w-48 h-48 relative before:absolute before:top-0 before:left-0 before:content-[''] before:w-full before:h-full before:bg-blue-300">
+      <div id="parent" class="w-48 h-48 relative before:absolute before:top-0 before:left-0 before:content-[''] before:w-full before:h-full before:bg-blue-300 before:opacity-50">
           <p>child element</p>
       </div>
   ```
@@ -34,6 +34,7 @@
           width: 100%;
           height: 100%;
           background-color: #93c5fd; /* Tailwind 的 bg-blue-300 */
+          opacity: 50%;
       }
   ```
 
