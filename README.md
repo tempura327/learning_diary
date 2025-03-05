@@ -7,6 +7,75 @@
 3/6
 
 3/5
+- 閱讀[橡果學院貼文](https://www.threads.net/@the.acorn.academy/post/DGxeAzZyZo5?xmt=AQGzXXUj_EAErEbaUiXTyZXJwqQ60Txv2xp8qNroyVQ1GJQ)
+```
+To即將要畢業找美商or海外工作的各位：
+過去三天，我提供了幾大重點給大家，
+給大家技巧上的建議還有心理建設，
+前天講了履歷，昨天講Coffee Chat，
+今天講英文面試，
+明天會短暫回歸輕鬆小故事
+這篇會專攻大家都適用的英文面試觀念，
+會稍微籠統一點，
+但我相信至少有一項會讓你覺得耳目一新
+不要把這篇當作我的Google面試分享，
+要看谷歌面試的話，去留言區看之前文章
+-不管大家說什麼架構最棒，
+其實來來去去都差不多，反正就是：
+1-2句話講你的任務，
+1-2句話講為什麼這件事很困難，
+3-4句話講解決過程，1-2句話講結論，
+1-2句話講你學到什麼，或是未來如何調整
+（要詳細！看留言示範）
+-只要有5個故事可以說，
+基本上可以面對任何問題，
+剩下的就是隨機應變去小調整，
+我個人認為大家可以去查一下P&G八大問，
+這八題都能回答的話，就完全沒問題了，
+同一個故事可以回答好幾題
+-儘量不要拿到面試了才準備，
+尤其對我們英文非母語者來說，
+要練到嘴巴腦袋都習慣英文，
+是需要不少時間的，我之前還在上班的時候，
+甚至會沒事去面試，練練手感
+
+-如果你的英文程度在多益700以上的話，
+英文面試強烈建議大家寫稿，
+我知道大家都說，寫稿會限制你的發揮，
+但最大原因是因為你寫了稿，
+但沒有真的花很多時間把他變熟，
+或是沒有人真的陪你練過，
+自我介紹+五個故事，共六篇稿，
+用AI三天一篇綽綽有餘，先不論完美不完美，
+兩個禮拜就可以搞定
+-大部分的外商其實對英文口說程度，
+沒有真的很高的要求，
+但如果是海外求職就真的要很好了，
+除非能靠硬實力碾壓別人，但即使這樣，
+很容易進去之後遇到天花板，
+所以英文口說要加油，
+我知道聽起來有點在販賣焦慮，
+但某種程度上確實是，
+要不然我就不會離開谷歌創業了，
+對嚮往國際生活風格的人來說，
+英文口說是硬需求
+-英文口說要練到高低起伏的訣竅，
+就是儘量讓你的句子短一點，每一個逗號都暫停，
+每一個重點動詞、比較級形容詞、數字都加重音
+
+什麼叫詳細，舉例：
+不只要說
+we created content that increase conversion rate
+而且還要回答
+what content, why this content, how did you come up with this content
+又或者：
+We believe that A is the better investment choice because they have lower risk.
+還可以再加一點細節
+A is the better investment choice because of their higher free cash flow, which can be a contingency if an event raises energy cost.
+```
+
+- 了解如何使用dev tool查看CSS animation [📗](https://developer.chrome.com/docs/devtools/css/animations?hl=zh-tw)
+
 
 3/4
 - 學到新的繪製半透明形狀，但不影響子元素的方法
