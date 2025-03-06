@@ -5,6 +5,13 @@
 3/7
 
 3/6
+- 學習如何在Svelte專案設置default route [📗](https://svelte.dev/docs/kit/advanced-routing)
+- 看standup show學英文 [📘](https://www.youtube.com/watch?v=0t8QCW78oDE)
+  - That's messed up
+    - A: That guy let his dog poop in front my door. He didn't even  clean it, he just left.
+    - B: That's messed up.
+  - tick someone off
+    - I definitely get road rage. Once I start driving, a lot of things start to tick me off.
 
 3/5
 - 閱讀[橡果學院貼文](https://www.threads.net/@the.acorn.academy/post/DGxeAzZyZo5?xmt=AQGzXXUj_EAErEbaUiXTyZXJwqQ60Txv2xp8qNroyVQ1GJQ)
