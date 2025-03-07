@@ -3,21 +3,139 @@
 3/8(S)
 
 3/7
+- 了解發生push時發生`error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400`的原因
+  - 原因是push的檔案超過緩衝區大小，最簡單的解法是拆開分成幾次push
+  - push時 git 不會一個一個檔案即時送出，而是把多個檔案或變更合併到一個git物件，並放進緩衝區，再送到server
+  - http.postBuffer是緩衝區的大小，http.postBuffer 預設值通常是 1024000 Byte (=1MB) [📗](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httppostBuffer) [](https://git-scm.com/docs/gitfaq#Documentation/gitfaq.txt-WhatdoescodehttppostBuffercodereallydo)
+  - 把http.postBuffer調大送給server的git物件也會變更大，所以調越大的話會導致push越慢 [📗](https://learn.microsoft.com/en-us/azure/devops/repos/git/rpc-failures-http-postbuffer?view=azure-devops)
+    - 基於push會變慢，所以並不推薦修改http.postBuffer的值
+  - 如果把http.postBuffer[調到超過server能接受的上限，那push還是會失敗](https://blog.miniasp.com/post/2014/09/07/Handle-large-Git-repository-on-Visual-Studio-Online)
+  - server接受的檔案大小可以調整，但需要有權限，且不建議這麼做 [📗](https://docs.gitlab.com/topics/git/troubleshooting_git/#increase-the-post-buffer-size-in-git)
+  - 如果push一個1.4MB的檔案，經過git的演算法壓縮成git 物件後容量會變小，所以只要單獨push還是會成功的
+
+
 
 3/6
+- 學習如何在Svelte專案設置default route [📗](https://svelte.dev/docs/kit/advanced-routing)
+- 看standup show學英文 [📘](https://www.youtube.com/watch?v=0t8QCW78oDE)
+  - That's messed up
+    - A: That guy let his dog poop in front my door. He didn't even  clean it, he just left.
+    - B: That's messed up.
+  - tick someone off
+    - I definitely get road rage. Once I start driving, a lot of things start to tick me off.
 
 3/5
+- 閱讀[橡果學院貼文](https://www.threads.net/@the.acorn.academy/post/DGxeAzZyZo5?xmt=AQGzXXUj_EAErEbaUiXTyZXJwqQ60Txv2xp8qNroyVQ1GJQ)
+```
+To即將要畢業找美商or海外工作的各位：
+過去三天，我提供了幾大重點給大家，
+給大家技巧上的建議還有心理建設，
+前天講了履歷，昨天講Coffee Chat，
+今天講英文面試，
+明天會短暫回歸輕鬆小故事
+這篇會專攻大家都適用的英文面試觀念，
+會稍微籠統一點，
+但我相信至少有一項會讓你覺得耳目一新
+不要把這篇當作我的Google面試分享，
+要看谷歌面試的話，去留言區看之前文章
+-不管大家說什麼架構最棒，
+其實來來去去都差不多，反正就是：
+1-2句話講你的任務，
+1-2句話講為什麼這件事很困難，
+3-4句話講解決過程，1-2句話講結論，
+1-2句話講你學到什麼，或是未來如何調整
+（要詳細！看留言示範）
+-只要有5個故事可以說，
+基本上可以面對任何問題，
+剩下的就是隨機應變去小調整，
+我個人認為大家可以去查一下P&G八大問，
+這八題都能回答的話，就完全沒問題了，
+同一個故事可以回答好幾題
+-儘量不要拿到面試了才準備，
+尤其對我們英文非母語者來說，
+要練到嘴巴腦袋都習慣英文，
+是需要不少時間的，我之前還在上班的時候，
+甚至會沒事去面試，練練手感
+
+-如果你的英文程度在多益700以上的話，
+英文面試強烈建議大家寫稿，
+我知道大家都說，寫稿會限制你的發揮，
+但最大原因是因為你寫了稿，
+但沒有真的花很多時間把他變熟，
+或是沒有人真的陪你練過，
+自我介紹+五個故事，共六篇稿，
+用AI三天一篇綽綽有餘，先不論完美不完美，
+兩個禮拜就可以搞定
+-大部分的外商其實對英文口說程度，
+沒有真的很高的要求，
+但如果是海外求職就真的要很好了，
+除非能靠硬實力碾壓別人，但即使這樣，
+很容易進去之後遇到天花板，
+所以英文口說要加油，
+我知道聽起來有點在販賣焦慮，
+但某種程度上確實是，
+要不然我就不會離開谷歌創業了，
+對嚮往國際生活風格的人來說，
+英文口說是硬需求
+-英文口說要練到高低起伏的訣竅，
+就是儘量讓你的句子短一點，每一個逗號都暫停，
+每一個重點動詞、比較級形容詞、數字都加重音
+
+什麼叫詳細，舉例：
+不只要說
+we created content that increase conversion rate
+而且還要回答
+what content, why this content, how did you come up with this content
+又或者：
+We believe that A is the better investment choice because they have lower risk.
+還可以再加一點細節
+A is the better investment choice because of their higher free cash flow, which can be a contingency if an event raises energy cost.
+```
+
+- 了解如何使用dev tool查看CSS animation [📗](https://developer.chrome.com/docs/devtools/css/animations?hl=zh-tw)
+
 
 3/4
+- 學到新的繪製半透明形狀，但不影響子元素的方法
+  ```html
+      <!-- 使用Tailwind的作法 -->
+      <div id="parent" class="w-48 h-48 relative before:absolute before:top-0 before:left-0 before:content-[''] before:w-full before:h-full before:bg-blue-300 before:opacity-50">
+          <p>child element</p>
+      </div>
+  ```
+
+    相當於以下的手寫CSS
+
+  ```css
+      #parent {
+          width: 12rem;
+          height: 12rem;
+          position: relative;
+      }
+
+      #parent::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #93c5fd; /* Tailwind 的 bg-blue-300 */
+          opacity: 50%;
+      }
+  ```
+
+- 閱讀 [忙不是藉口，開不好 One-on-One 就是主管的問題](https://medium.com/@stevenyeh/%E5%BF%99%E4%B8%8D%E6%98%AF%E8%97%89%E5%8F%A3-%E9%96%8B%E4%B8%8D%E5%A5%BD-one-on-one-%E5%B0%B1%E6%98%AF%E4%B8%BB%E7%AE%A1%E7%9A%84%E5%95%8F%E9%A1%8C-bae77b0f466e)
 
 3/3
 - 了解IndexedDB [📗](https://developer.chrome.com/docs/apps/offline_storage)
     - 針對indexedDB的操作是非同步的
-    - indexDB的容量配額會根據瀏覽器有差異，當超過容量配額時先刪除哪些資料的標準也不同
+    - indexedDB的容量配額會根據瀏覽器有差異，當超過容量配額時先刪除哪些資料的標準也不同
+        - `超過容量配額`時刪除資料的動作稱作`資料驅離`，localStorage、sessionStorage也有這個機制
     - 無痕模式下indexedDB容量配額會比較低
     - Safari是目前唯一有實作主動驅離資料的瀏覽器
         - [主動資料驅離](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria#proactive_eviction)是指超過一定時間沒有操作網站的話，就把IndexedDB資料清除
-- 了解如何用dev tool查看及變更 IndexedDB 資料 [📗](https://developer.chrome.com/docs/devtools/storage/indexeddb?hl=zh-tw)
+- 了解如何用dev tool查看及變更 indexedDB 資料 [📗](https://developer.chrome.com/docs/devtools/storage/indexeddb?hl=zh-tw)
 
 3/2(S)
 
