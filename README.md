@@ -4,16 +4,15 @@
 
 3/7
 - 了解發生push時發生`error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400`的原因
-  - 原因是push的檔案超過緩衝區大小，最簡單的解法是拆開分成幾次push
+  - 原因是push的檔案超過緩衝區大小，或者是網路訊號不好，最簡單的解法是拆開分成幾次push
   - push時 git 不會一個一個檔案即時送出，而是把多個檔案或變更合併到一個git物件，並放進緩衝區，再送到server
-  - http.postBuffer是緩衝區的大小，http.postBuffer 預設值通常是 1024000 Byte (=1MB) [📗](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httppostBuffer) [](https://git-scm.com/docs/gitfaq#Documentation/gitfaq.txt-WhatdoescodehttppostBuffercodereallydo)
+  - http.postBuffer是緩衝區的大小，http.postBuffer 預設值通常是 1048576  Byte (=1MB) [📗](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httppostBuffer) [📗](https://git-scm.com/docs/gitfaq#Documentation/gitfaq.txt-WhatdoescodehttppostBuffercodereallydo)
   - 把http.postBuffer調大送給server的git物件也會變更大，所以調越大的話會導致push越慢 [📗](https://learn.microsoft.com/en-us/azure/devops/repos/git/rpc-failures-http-postbuffer?view=azure-devops)
     - 基於push會變慢，所以並不推薦修改http.postBuffer的值
   - 如果把http.postBuffer[調到超過server能接受的上限，那push還是會失敗](https://blog.miniasp.com/post/2014/09/07/Handle-large-Git-repository-on-Visual-Studio-Online)
   - server接受的檔案大小可以調整，但需要有權限，且不建議這麼做 [📗](https://docs.gitlab.com/topics/git/troubleshooting_git/#increase-the-post-buffer-size-in-git)
-  - 如果push一個1.4MB的檔案，經過git的演算法壓縮成git 物件後容量會變小，所以只要單獨push還是會成功的
-
-
+  - 檔案本身的大小不等於git物件的大小，因為git演算法會把檔案壓縮後變成git物件
+  - `git config --get http.postBuffer` 可查看postBuffer大小，若無回傳值則代表為預設值
 
 3/6
 - 學習如何在Svelte專案設置default route [📗](https://svelte.dev/docs/kit/advanced-routing)
