@@ -6,7 +6,7 @@
 3/11
 
 3/10
-- 學在Svelte component的props定義class的方法 [V5](https://svelte.dev/docs/svelte/$props#Renaming-props) [V4]([https://stackoverflow.com/questions/71573868/svelte-alias-rename-props](https://stackoverflow.com/questions/75896304/add-class-to-svelte-component))
+- 學在Svelte component的props定義class的方法 [V5](https://svelte.dev/docs/svelte/$props#Renaming-props) [V4](https://stackoverflow.com/questions/75896304/add-class-to-svelte-component)
 - 學在Svelte component內 export function [📗](https://svelte.dev/docs/svelte/legacy-export-let#Component-exports)
 
 3/9(S)
