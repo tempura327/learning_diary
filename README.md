@@ -4,6 +4,12 @@
 3/12
 
 3/11
+- 讀完MDN的canvas教學 Basic usage of canvas [📗](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
+  - canvas的預設大小為300px × 150px，透過HTML width、height 屬性可以調整大小
+    - 不要同時用HTML跟CSS調整canvas大小，當兩者比例不同時會導致canvas扭曲
+  - canvas可以有有一或多個渲染環境(rendering context)，渲染環境又分為2D跟3D
+  - 照著做rect練習 [✏️](https://codesandbox.io/p/sandbox/try-canvas-1-dt3338?file=%2Fsrc%2Fcomponents%2FLine.tsx%3A31%2C17)
+
 
 3/10
 - 學在Svelte component的props定義class的方法 [V5](https://svelte.dev/docs/svelte/$props#Renaming-props) [V4](https://stackoverflow.com/questions/75896304/add-class-to-svelte-component)
