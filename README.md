@@ -1,7 +1,43 @@
+3/23(S)
+
+3/22(S)
+
+3/21
+
+3/20
+
+3/19
+
+3/18
+
+3/17
+
 3/13~3/16(S)
 澎湖旅遊
 
 3/12
+- 了解用JS取得上一頁網址的方法
+	- document.referrer [📗](https://medium.com/@tariibaba/javascript-get-last-page-url-dc47a2ca5087)
+		- document.referrer只有在點擊link時才能生效，但如果a tag上有`rel="noreferrer"`，即便是點擊連結進入網站的，其值一樣會是空字串
+		```
+		const lastPageUrl = document.referrer;
+		```
+	- 出於安全和隱私原因，window.history 允許跳轉頁面，但不允許存取session內的 URL [📗](https://stackoverflow.com/questions/3528324/how-to-get-the-previous-url-in-javascript)
+		- `history.back() + return location.href`會先跳回上一頁再回傳網址不適用於只想取得上一頁網址的場景
+
+- 讀Svelte教學 ~Basic SvelteClasses and styles [📗](https://svelte.dev/tutorial/svelte/classes)
+	- 了解如何根據條件切換class、style
+	```
+	<button class="font-bold {isActive? 'bg-blue-300' : ''}">
+		Try
+	</button>
+
+	// 官方文件沒寫，但實際試過有效
+	<button class="font-bold" class:bg-blue-300={isActive}>
+		Try
+	</button>
+	```
+	- 了解如何用`:global`讓parent component內撰寫的style也能套用到child component
 
 3/11
 - 讀完MDN的canvas教學 Basic usage of canvas [📗](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
