@@ -1,6 +1,24 @@
+3/31
+
+3/30(S)
+
+3/29(S)
+
+3/28
+
+3/27
+
+3/26
+
+3/25
+
+3/24
+
 3/23(S)
 
 3/22(S)
+- 讀MDN關於切裁圖案的內容 [📗](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip)
+  - 練習在canvas上畫文字、圖片、切裁圖片 [✏️](https://codesandbox.io/p/sandbox/try-canvas-1-dt3338?file=%2Fsrc%2Fcomponents%2FImage.tsx%3A53%2C29)
 
 3/21
 - 完成canvas drag練習 [✏️](https://codesandbox.io/p/sandbox/try-canvas-2-vz4pcm?file=%2Fsrc%2Fcomponents%2FDrag.tsx%3A122%2C38)
