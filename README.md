@@ -9,6 +9,30 @@
 3/27
 
 3/26
+- 練習LeetCode 412. Fizz Buzz
+```js
+function fizzBuzz(n: number): string[] {
+    const res = Array.from({length: n}, (_, i)=>{
+        const num = i + 1;
+        const is3Divisor = num % 3 < 1;
+        const is5Divisor = num % 5 < 1;
+
+        let str = '';
+
+        if(is3Divisor){
+            str += 'Fizz';
+        }
+
+        if(is5Divisor){
+            str += 'Buzz';
+        }
+
+        return str || `${num}`;
+    })
+
+    return res;
+};
+```
 
 3/25
 - 了解cursor相關的CSS屬性 [📗](https://www.w3schools.com/cssref/pr_class_cursor.php)
