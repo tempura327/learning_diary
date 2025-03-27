@@ -7,6 +7,34 @@
 3/28
 
 3/27
+- 練習Leetcode 2033. Minimum Operations to Make a Uni-Value Grid
+```js
+function minOperations(grid: number[][], x: number): number {
+  const nums = grid.flat().sort((a, b) => a - b);
+  
+  const isEvenLength = nums.length % 2 === 0;
+  const middleIndex = Math.floor(nums.length / 2);
+  const middleNumbers = nums.slice(middleIndex, middleIndex+ (isEvenLength ? 2 : 1));
+
+  const results = middleNumbers.map((m) => {
+    const res = nums.reduce((acc, curr) => {
+      const difference = Math.abs(curr-m) / x;
+
+      return {
+        total: acc.total + difference,
+        isOk: acc.isOk && Number.isInteger(difference)
+      }
+    }, {
+      total:0,
+      isOk: true
+    })
+
+    return res.isOk? res.total : -1;
+  })
+
+  return Math.min(...results);
+};
+```
 
 3/26
 - 練習LeetCode 412. Fizz Buzz
