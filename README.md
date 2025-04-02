@@ -1,3 +1,5 @@
+4/7
+
 4/6(S)
 
 4/5(S)
@@ -7,6 +9,10 @@
 4/3
 
 4/2
+- 讀完[How React Compiler Performs on Real Code](https://adevnadia.medium.com/how-react-compiler-performs-on-real-code-5241110febc5#197d)
+- 調查如何在mono repo使用VSCode extension [i18n-ally](https://github.com/lokalise/i18n-ally)
+  - https://github.com/lokalise/i18n-ally/issues/1246
+  - https://github.com/lokalise/i18n-ally/issues/997
 
 4/1
 - 了解CSS field-sizing數性 [📗](https://levelup.gitconnected.com/the-new-css-field-sizing-property-just-solved-one-of-the-hardest-problems-in-styling-aa6eb7352440)
