@@ -3,6 +3,9 @@
 4/6(S)
 
 4/5(S)
+- 閱讀[[Day 04] DOM 與 Virtual DOM](https://ithelp.ithome.com.tw/articles/10293802)
+  - 實體DOM是樹狀資料結構，它和瀏覽器的畫面渲染引擎綁定，因此操作 DOM 就會連動更新畫面繪製
+  - virtual DOM也是樹狀資料結構，但是因為沒跟渲染引擎綁定，所以操作virtual DOM的成本較低
 
 4/4
 
