@@ -1,11 +1,27 @@
+4/13(S)
+
+4/12(S)
+
+4/11
+
+4/10
+
+4/9
+
+4/8
+
 4/7
 
 4/6(S)
+- 閱讀[[Day 05] 建構一切 UI 的最基本單位 — React element](https://ithelp.ithome.com.tw/articles/10294538)
+  - ReactElement是一種type為object的資料，用於描述DOM element
+  - ReactElement經過React轉換過後會產生對應的DOM
+  - ReactNode則是任何可以由 React 渲染的東西。ReactElement是它的子集
 
 4/5(S)
 - 閱讀[[Day 04] DOM 與 Virtual DOM](https://ithelp.ithome.com.tw/articles/10293802)
-  - 實體DOM是樹狀資料結構，它和瀏覽器的畫面渲染引擎綁定，因此操作 DOM 就會連動更新畫面繪製
-  - virtual DOM也是樹狀資料結構，但是因為沒跟渲染引擎綁定，所以操作virtual DOM的成本較低
+  - DOM是樹狀資料結構，它和瀏覽器的畫面渲染引擎綁定，因此操作 DOM 就會連動更新畫面繪製
+  - virtual DOM也是樹狀結構資料，它`定義整個畫面結構`，但是因為`沒跟渲染引擎綁定`，所以操作virtual DOM的成本較低
 
 4/4
 
