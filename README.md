@@ -11,17 +11,39 @@
 4/8
 
 4/7
+- 閱讀[[Day 06] Render React elements](https://ithelp.ithome.com.tw/articles/10295277)
+  - reconciler
+    - 管理、產生virtual DOM tree
+    - 負責產生新的 Virtual DOM Tree，再比較新舊Virtual DOM Tree比較，並將兩者差異告知 Renderer
+    - 以上步驟稱 Reconciliation
+  - renderer
+    - 將 reconciler 所產生virtual DOM Tree，在目標環境（ex: 瀏覽器）中轉換並產生對應DOM Tree
+    - 用於瀏覽器環境的 React renderer 為 react-dom 
+    ```js
+      import ReactDOM from 'react-dom/client';
+      // 使用.render()可以呼叫renderer產生DOM
+      ReactDOM.createRoot(document.getElementById('root')!).render(
+        <React.StrictMode>
+          <Root />
+        </React.StrictMode>,
+      );
+    ```  
+    - 不建議去手動操作 DOM element，因為這有可能會導致 Virtual DOM Tree 與對應的真實的 DOM Tree 不一致，進而引發一些意外的問題
+
+- 閱讀[[Day 07] JSX 根本就不是在 JavaScript 中寫 HTML](https://ithelp.ithome.com.tw/articles/10296066)
+  - React使用Babel定義如何將JSX轉換成React.createElement()，所以JSX才能順利在瀏覽器上被變成virtual DOM，再產生出DOM
 
 4/6(S)
 - 閱讀[[Day 05] 建構一切 UI 的最基本單位 — React element](https://ithelp.ithome.com.tw/articles/10294538)
-  - ReactElement是一種type為object的資料，用於描述DOM element
-  - ReactElement經過React轉換過後會產生對應的DOM
+  - ReactElement是一種type為object的資料，用於描述DOM element。它也是 virtual DOM 的一部分，相當於virtual DOM element
+    - `ReactElement` 從概念上來說就像是在`表達「某一刻當下的畫面結構」`，因此一旦被`建立之後`就永遠`不能修改`
+  - ReactElement經過React轉換過後會產生對應的DOM element
   - ReactNode則是任何可以由 React 渲染的東西。ReactElement是它的子集
 
 4/5(S)
 - 閱讀[[Day 04] DOM 與 Virtual DOM](https://ithelp.ithome.com.tw/articles/10293802)
-  - DOM是樹狀資料結構，它和瀏覽器的畫面渲染引擎綁定，因此操作 DOM 就會連動更新畫面繪製
-  - virtual DOM也是樹狀結構資料，它`定義整個畫面結構`，但是因為`沒跟渲染引擎綁定`，所以操作virtual DOM的成本較低
+  - DOM (DOM tree)是樹狀資料結構，它和瀏覽器的畫面渲染引擎綁定，因此操作 DOM element就會連動更新畫面繪製
+  - virtual DOM(virtual DOM tree)也是樹狀結構資料，它`定義整個畫面結構`，但是因為`沒跟渲染引擎綁定`，所以操作virtual DOM的成本較低
 
 4/4
 
