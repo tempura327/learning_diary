@@ -9,6 +9,24 @@
 4/9
 
 4/8
+- 閱讀[[Day 08] JSX 的重要特性與規則以及其背後緣由](https://ithelp.ithome.com.tw/articles/10296741)
+  - 一段 JSX 就是呼叫一次 React.createElement()，所以JSX 的第一層只能有一個節點
+  - transpiler (ex: Babel) 無法直接在 JSX 裡以標籤的語法定義來分辨tag name是想表達字串內容還是一個函式名稱(function component)，所以會用tag name首字母大小寫來判斷
+ 
+  ```js
+     // 首字小寫，判斷是一個對應真實 DOM 的 element type
+     const hello = <div className="text-blue-300">hello world</div>;
+     // 相當於 createElement('div', {className: 'text-blue-300'}, 'hello world');
+
+     // 首字母大寫，判斷是一個 function component
+     const helloWorld = <HelloWorld className="text-blue-300" />;
+     // 相當於 createElement(HelloWorld, {className: 'text-blue-300'});
+  ``` 
+
+- 閱讀[[Day 09] 單向資料流 & DOM 渲染策略](https://ithelp.ithome.com.tw/articles/10296750)
+  - 單向資料流的核心概念是「畫面是資料延伸的結果」，且這個過程是單向且不可逆的
+    - Vue雖然是雙向綁定，但也是單向資料流
+  - 在真正的產品中實作單向資料流的時候，會面開發上的臨心智負擔、效能衝擊兩種問題，但使用前端框架就可以避掉兩個問題
 
 4/7
 - 閱讀[[Day 06] Render React elements](https://ithelp.ithome.com.tw/articles/10295277)
@@ -28,7 +46,7 @@
         </React.StrictMode>,
       );
     ```  
-    - 不建議去手動操作 DOM element，因為這有可能會導致 Virtual DOM Tree 與對應的真實的 DOM Tree 不一致，進而引發一些意外的問題
+    - 不建議去`手動操作 DOM element`，因為這有可能`會導致 Virtual DOM Tree 與對應的真實的 DOM Tree 不一致`，進而引發一些意外的問題
 
 - 閱讀[[Day 07] JSX 根本就不是在 JavaScript 中寫 HTML](https://ithelp.ithome.com.tw/articles/10296066)
   - React使用Babel定義如何將JSX轉換成React.createElement()，所以JSX才能順利在瀏覽器上被變成virtual DOM，再產生出DOM
