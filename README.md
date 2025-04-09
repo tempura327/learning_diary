@@ -7,6 +7,11 @@
 4/10
 
 4/9
+- 閱讀[[Day 10] React 畫面更新的核心機制（上）：一律重繪渲染策略](https://ithelp.ithome.com.tw/articles/10298007)
+  - 在 React 中在講「渲染」，通常都是指 Virtual DOM elements（React elements）的產生
+  - React 以 Virtual DOM 來進行一律重繪，React會比較新舊 Virtual DOM，然後只更新有變化的部分對應的DOM
+    - 使用Virtual DOM重繪的策略可以避免掉DOM重繪帶來的巨大效能衝擊
+  - Virtual DOM的重繪範圍是以component為單位。當呼叫setState時，React只會重繪該 state 所屬的 component 以及其後裔component
 
 4/8
 - 閱讀[[Day 08] JSX 的重要特性與規則以及其背後緣由](https://ithelp.ithome.com.tw/articles/10296741)
