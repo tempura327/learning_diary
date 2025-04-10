@@ -5,6 +5,12 @@
 4/11
 
 4/10
+- [[Day 11] React 畫面更新的核心機制（下）：Reconciliation](https://ithelp.ithome.com.tw/articles/10298053)
+  - 當呼叫 setState 後，React 會先以 Object.is() 來檢查新傳入的 state 是否與舊的不同，如果相同的畫面不用更新，反之則產生新的Virtual DOM Tree，用於比較、更新畫面
+    - 基本型別的值，Object.is()判斷值是否相同的，是的話則為true
+    - 物件型別的值，Object.is()判斷reference是否相同的，是的話則為true
+  - 「將新產生的 Virtual DOM Tree 並與舊的進行比較，再更新DOM Tree」的流程，在 React 中被稱為 Reconciliation
+  - state 所屬的父組件進行 re-render，會引起其子組件re-render，並傳入新的 props
 
 4/9
 - 閱讀[[Day 10] React 畫面更新的核心機制（上）：一律重繪渲染策略](https://ithelp.ithome.com.tw/articles/10298007)
