@@ -1,8 +1,15 @@
+4/16
+
+4/15
+
+4/14
+
 4/13(S)
 
 4/12(S)
 
 4/11
+- 初步了解pnpm，以及其運作方式 [📗](https://www.youtube.com/watch?v=DKulVqlQYa8)
 
 4/10
 - [[Day 11] React 畫面更新的核心機制（下）：Reconciliation](https://ithelp.ithome.com.tw/articles/10298053)
