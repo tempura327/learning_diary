@@ -1,3 +1,44 @@
+4/22
+
+4/21
+
+4/20(S)
+
+4/21(S)
+
+4/18
+
+4/17
+- 了解如何在TS+React+Vite的專案設置alias [📗](https://notes.boshkuo.com/docs/Vite/vite-problem2)
+```
+pnpm path
+pnpm i @types/node -D
+```
+
+```
+// tsconfig.app.json加上
+
+compilerOptions: {
+  // …略
+
+  /* Path Aliases */
+  "baseUrl": ".",
+    "paths": {
+   “@/*”: ["src/*"]
+  }
+}
+```
+
+```js
+// vite.config.ts改alias路徑
+
+resolve: {
+  alias: {
+    '@: path.resolve('./src'),
+  }
+}
+```
+
 4/16
 
 4/15
