@@ -7,6 +7,24 @@
 4/21(S)
 
 4/18
+- 閱讀 [What’s new in React 19](https://react.dev/blog/2024/12/05/react-19)
+  - React 19的`action`指的是`處理非同步的動作的function`
+  - 更簡單的管理call api的狀態
+    - useTransition
+      - 回傳的第一個值是代表pending狀態，第二個值是接受async callback的function
+    - useActionState
+      - 直接接受一個async callback，回傳error、pending狀態、action function
+      - 前身是react dom的useFormState
+    - optimisticName
+      - 樂觀更新結果到UI，失敗時也會自動rollback
+  - 簡單讀取promise resolve的值、context值
+    - use
+  - server component
+    - 在server上執行，所以只有SSR可以用
+    - 用於先在server上把資料撈出來放進HTML讓使用者可以快速看到第一幕，類似pre-render
+    - 因為在server上執行，所以沒有辦法像瀏覽器執行JS，也就不能做一些互動效果、state管理
+  - component內可以放meta tag (ex: title, meta, link)
+    - 以後可以不使用react-helmet的Helmet包裹meta tag，或者用自己用JS插入title到head tag了
 
 4/17
 - 了解如何在TS+React+Vite的專案設置alias [📗](https://notes.boshkuo.com/docs/Vite/vite-problem2)
