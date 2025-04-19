@@ -4,7 +4,10 @@
 
 4/20(S)
 
-4/21(S)
+4/19(S)
+- 閱讀 [軟體工程師的修煉與成長 (5) — 1:1該談什麼才能讓職涯起飛](https://readwise.io/reader/shared/01gsa0ypxcayenh9pm5zv9j8hx/)
+  - 直球對決問對方對自己的回饋、想前往下一個職級的需要做的事、想做某些事，請對方幫忙注意機會
+  - 主管的好壞在於他們對於幫助團隊裡每個人的職涯成長有多用心
 
 4/18
 - 閱讀 [What’s new in React 19](https://react.dev/blog/2024/12/05/react-19)
