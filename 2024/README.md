@@ -12,7 +12,7 @@
         - I don't really like swimming. (委婉)
     
 
-12/27
+#### 12/27
 - 讀完理解React的setState到底是同步還是非同步(下) [📗](https://ithelp.ithome.com.tw/articles/10257994)
 - 讀完Redux Essentials 5
 
@@ -52,7 +52,7 @@
 
 12/19
 
-12/18
+#### 12/18
 - 讀完理解React的setState到底是同步還是非同步(上) [📗](https://ithelp.ithome.com.tw/articles/10257993)
     - setState的batching機制，讓setState是非同步的。每次呼叫setState並不會馬上去更新state，而是先排到queue，之後再一次更新state，減少state變更導致的re-render
     - 若子組件的prop來自父組件的state，為了讓它們的值永遠一致，所以props的更新也會是非同步的
