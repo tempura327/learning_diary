@@ -10,6 +10,45 @@
 
 4/22
 - 閱讀[[Day 14] 以 functional updater 來呼叫 setState](https://ithelp.ithome.com.tw/articles/10300743)
+- 練習Leetcode 20. Valid Parentheses
+    ```js
+    const map = {
+        '(' :')',
+        '{' :'}',
+        '[' :']',
+    };
+
+    const keys = Object.keys(map);
+
+    function isValid(s: string): boolean {
+        const stringLength = s.length;
+
+        if(stringLength % 2 === 1){
+            return false;
+        }
+
+        const arr = [];
+
+        for(let i = 0; i < stringLength; i++){
+            const isLeftPart = keys.includes(s[i]);
+
+            if(isLeftPart){
+                arr.push(s[i]);
+                continue;
+            }
+
+            if( map[arr[arr.length - 1]] === s[i]){
+                arr.pop();
+                continue;
+            }
+
+            return false;
+        }
+
+        return arr.length === 0;
+
+    };
+    ```
 
 4/21
 - 閱讀[[Day 12] 如何在子 component 裡觸發更新父 component 的資料](https://ithelp.ithome.com.tw/articles/10299348)
