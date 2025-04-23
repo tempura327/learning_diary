@@ -7,6 +7,27 @@
 4/24
 
 4/23
+- 練習Leetcode 3. Longest Substring Without Repeating Characters
+  ```js
+    function lengthOfLongestSubstring(s: string): number {
+        let n = 0;
+        let arr = [];
+    
+        for(let i = 0; i < s.length; i++) {
+            const targetIndex = arr.findIndex((a)=> a === s[i]);
+    
+            if(targetIndex > -1){
+                n = Math.max(arr.length, n);
+    
+                arr = [...arr.slice(targetIndex+1, arr.length)]
+            }
+    
+            arr.push(s[i]);
+        }
+    
+        return Math.max(arr.length, n);
+    };
+  ```
 
 4/22
 - 閱讀[[Day 14] 以 functional updater 來呼叫 setState](https://ithelp.ithome.com.tw/articles/10300743)
