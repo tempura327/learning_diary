@@ -14,17 +14,20 @@
         let arr = [];
     
         for(let i = 0; i < s.length; i++) {
-            const targetIndex = arr.findIndex((a)=> a === s[i]);
-    
+            const targetIndex = arr.findIndex((ele)=> ele === s[i]);
+
+  	    // 目前指到的字符已存在於arr，其index為targetIndex，所以要把arr從頭到targetIndex砍掉
+  	    // 砍掉前要記錄目前的長度
             if(targetIndex > -1){
                 n = Math.max(arr.length, n);
     
-                arr = [...arr.slice(targetIndex+1, arr.length)]
+                arr = [...arr.slice(targetIndex+1, arr.length)];
             }
     
             arr.push(s[i]);
         }
-    
+
+  	// 比較最後的arr長度跟最後一次砍掉重複部分時紀錄的長度，較大的就是字串s中不重複的最長長度
         return Math.max(arr.length, n);
     };
   ```
@@ -53,21 +56,24 @@
         for(let i = 0; i < stringLength; i++){
             const isLeftPart = keys.includes(s[i]);
 
+    	    // 如果是左括弧，就無腦push
             if(isLeftPart){
                 arr.push(s[i]);
                 continue;
             }
 
-            if( map[arr[arr.length - 1]] === s[i]){
+	    // 如果目前指到的符號等於「arr內最後一個符號對應的右括弧」，就把arr內最後一個符號(跟他一對的左括弧)從arr踢出
+            if(s[i] === map[arr[arr.length - 1]]){
                 arr.pop();
                 continue;
             }
 
+	    // 如果目前指到的符號不是左括弧，且也不等於「arr內最後一個符號對應的右括弧」，那就代表出現不成對的狀況了，直接return false
             return false;
         }
 
+	// 如果迴圈跑完後arr為空，代表所有符號皆成對
         return arr.length === 0;
-
     };
     ```
 
