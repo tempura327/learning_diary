@@ -3,6 +3,29 @@
 4/26(S)
 
 4/25
+- 練習類Leetcode 8. Second Largest Element in an Array
+    ```js
+    const findSecondBiggestNum = (arr:number[]): number => {
+        let biggestNum = 0;
+        let res = 0;
+
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] > biggestNum){
+                res = biggestNum;
+                biggestNum = arr[i];
+
+            }else if(arr[i] < biggestNum && arr[i] > res){
+                res = arr[i];
+            }
+        }
+
+        return res;
+    }
+
+    console.log(findSecondBiggestNum([1, 3, 4, 5, 0, 2])) //4
+    console.log(findSecondBiggestNum([1, 0, -1, -2])) // 0
+    console.log(findSecondBiggestNum([20, 20, 10, 8, 20])) // 10
+    ```
 
 4/24
 
@@ -274,14 +297,19 @@ function minOperations(grid: number[][], x: number): number {
   
   const isEvenLength = nums.length % 2 === 0;
   const middleIndex = Math.floor(nums.length / 2);
+  // 通常讓大家往中間數(middleNumeber)移動總移動距離會最少
   const middleNumbers = nums.slice(middleIndex, middleIndex+ (isEvenLength ? 2 : 1));
 
   const results = middleNumbers.map((m) => {
+     // 查看middleNumeber和其他的數字差多少，再除以x就是移動的次數
+     // 舉例來說4和10差6，若x為2，則移動3次
     const res = nums.reduce((acc, curr) => {
       const difference = Math.abs(curr-m) / x;
 
       return {
         total: acc.total + difference,
+        // 如果某個數字跟middleNumber差的值無法被x整除，意味著永遠沒辦法移動到那個數字
+        // 只要有一個不能被整除，就可以直接return false
         isOk: acc.isOk && Number.isInteger(difference)
       }
     }, {
