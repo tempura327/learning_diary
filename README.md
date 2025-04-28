@@ -1,3 +1,52 @@
+5/5
+
+5/4(S)
+
+5/3(S)
+
+5/2
+
+5/1
+
+4/30
+
+4/29
+
+4/28
+
+- 閱讀[[Day 15] 維持 React 資料流可靠性的核心關鍵：Immutable state](https://ithelp.ithome.com.tw/articles/10301603)
+  - React 會純粹用 Object.is() 去判斷reference是否相同來斷定資料是否改變，
+    ```js
+    // 如果傳遞內容完全一樣，但reference不同的物件，React必會re-render
+
+    const [data, setData] = useState({ name: 'Tempura' });
+
+    return (
+        <div>
+            <h1>{data.name}</h1>
+
+            {/* 按了會重渲染 */}
+            <button onClick={() => {setData({ name: 'Tempura' })}}>
+                set name to Tempura
+            </button>
+
+            {/* 按了會不會重渲染 */}
+            <button onClick={() => {
+                setData(data);
+            }}>
+                set name to same Tempura
+            </button>
+            <button onClick={() => {
+                data.name = 'Jasmine';
+                setData(data);
+            }}>
+                set name to same Jasmine
+            </button>
+        </div>
+    )
+    ```
+- 閱讀[[Day 16] Immutable update 物件與陣列的基本功](https://ithelp.ithome.com.tw/articles/10302252)
+
 4/27(S)
 
 4/26(S)
