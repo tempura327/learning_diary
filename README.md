@@ -7,6 +7,14 @@
 5/2
 
 5/1
+- 了解[flex-basis](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis)
+  - flex-basis 指定 flex 元素在主軸方向的預設大小 (但用 box-sizing 改變盒模型的話就除外)
+    - 當flex-direction: row 時(預設)，主軸為x軸，對應的屬性是width
+    - 當flex-direction: column 時，主軸為y軸，對應的屬性是height
+    - 優先權: min-width = max-width > flex-basis(flex-basis: auto 除外) > width > content
+  - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
+    - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
+    - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
 
 4/30
 
