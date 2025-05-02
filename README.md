@@ -5,6 +5,63 @@
 5/3(S)
 
 5/2
+- 了解TS的any和unknown [📗](https://medium.com/@s.chandrakethan9/this-is-how-much-typescript-you-need-to-know-as-a-react-developer-74947fc130a0)
+  - any代表可以是任何型別，unknown則是我不知道型別
+  - unknown的type check會更嚴格，不把type narrow down的話會報錯
+  ```js
+    const foo = (str: any) => {
+      console.log(str[0]);
+    }
+
+    const bar = (str: unknown) => {
+      // 'str' is of type 'unknown'.
+      console.log(str[0]);
+    }
+  ```
+- 了解TS的void、never差異 [📗](https://mariusschulz.com/blog/the-never-type-in-typescript)
+  - function的回傳值若是void代表沒有回傳值，`never則代表永遠不會抵達執行的終點`(have no reachable end)
+  ```js
+    // void
+    const foo = (str:string) => {
+      console.log(str);
+    }
+
+    const foo2 = (str:string) => {
+      const isOk = true;
+
+      do{
+        console.log(str);
+      }while(isOk);
+    }
+
+    // never    
+    const bar = (str:string)=> {
+      throw new Error(str);
+    }
+
+    const bar2 = (str:string) => {
+      do{
+        console.log(str);
+      }while(true)
+    }
+  ```
+  - 用於變數時，never則代表沒有可能的型別(impossible type)
+  ```js
+    const foo = (value: string) => {
+      if (typeof value === 'string') {
+        console.log(value); // Type string
+      } else {
+        console.log(value); // Type never
+      }
+    }
+  ```
+
+  ```js
+  const foo: any = 123;
+
+  // Type '123' is not assignable to type 'never'
+  const bar: never = 123;
+  ```
 
 5/1
 - 了解[flex-basis](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis)
