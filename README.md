@@ -11,6 +11,10 @@
 5/6
 
 5/5
+- 閱讀 [Scroll progress animations in CSS
+](https://developer.mozilla.org/en-US/blog/scroll-progress-animations-in-css/)
+- 了解更多Scroll-driven Animations的實際使用場景 [📗](https://medium.com/@aaabear320/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-scroll-driven-animations-8b68242ad300)
+
 
 5/4(S)
 - 閱讀[[Day 18] Function component & class component 你可能不知道的關鍵區別](https://ithelp.ithome.com.tw/articles/10303533)
