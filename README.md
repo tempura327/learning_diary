@@ -9,6 +9,14 @@
 5/7
 
 5/6
+- 閱讀[[Day 20] 每一次 render 都有自己的 effects](https://ithelp.ithome.com.tw/articles/10304650)
+  - React 用的是「整個框架本體是一個閉包」的設計，來記憶每個 component 的 hook 狀態
+    - React用「閉包 + 指針」的設計來讓hook可以記憶狀態，也因此set function才能取得前一次的state值 (ex: setState((prev)=> prev + 1))
+    - component 本身不是閉包，反而是 stateless 的 pure function
+  - 由於閉包的特性，function所記得的props、state會是當次 render 時的狀態
+
+- 閱讀[為什麼只能在最頂端層呼叫 Hook？從 useState 實作原理來回答](https://www.explainthis.io/zh-hant/swe/why-call-react-hook-top-level)
+  - React 用的是「呼叫順序(index)」配對 hook，所以呼叫順序一亂，整個 state 就會亂掉，因此hook才只能在top-level呼叫
 
 5/5
 - 閱讀 [Scroll progress animations in CSS
