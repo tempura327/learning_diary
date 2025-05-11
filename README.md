@@ -1,4 +1,20 @@
+5/18(S)
+
+5/17(S)
+
+5/16
+
+5/15
+
+5/14
+
+5/13
+
+5/12
+
 5/11(S)
+- 閱讀[[Day 23] 保持資料流 — 不要欺騙 hooks 的 dependencies（下）](https://ithelp.ithome.com.tw/m/articles/10306185)
+  - 除了使用useCallback把function包住來優化效能以外，也可以視情況把function直接宣告在useEffect內，或者宣告在component外
 
 5/10(S)
 
