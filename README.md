@@ -11,9 +11,26 @@
 5/13
 
 5/12
+- 閱讀[[Day 24] useEffect dependencies 的經典錯誤用法](https://ithelp.ithome.com.tw/articles/10306703)
+  - 誠實填寫dependencies。不然未來React官方如果改變了useEffect的實作，讓useEffect適度忘記dependencies的值，就可能會導致意想不到的錯誤
+  - 當「y需要在x變動時+1」這類的情況發生時，可以用useRef記住x前一次的值，並和x當下的值比較，來判斷要不要幫y+1。而不是直接拿x當dependencies
+  ```js
+  // bad
+  useEffect(() => {
+    y += 1;
+  }, [x])
+
+  // good
+  useEffect(() => {
+    if (xRef.current !== x) {
+      yRef.current += 1;
+    }
+    xRef.current = x;
+  }, [x])
+  ```
 
 5/11(S)
-- 閱讀[[Day 23] 保持資料流 — 不要欺騙 hooks 的 dependencies（下）](https://ithelp.ithome.com.tw/m/articles/10306185)
+- 閱讀[[Day 23] 保持資料流 — 不要欺騙 hooks 的 dependencies（下）](https://ithelp.ithome.com.tw/articles/10306185)
   - 除了使用useCallback把function包住來優化效能以外，也可以視情況把function直接宣告在useEffect內，或者宣告在component外
 
 5/10(S)
