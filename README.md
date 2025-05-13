@@ -9,6 +9,40 @@
 5/14
 
 5/13
+- 了解Leetcode 46. Permutations解法 [📗](https://blog.csdn.net/chencl1986/article/details/109293303) [📗](https://bclin.tw/2022/06/25/leetcode-46/)
+  ```js
+    const recursion = (nums: number[], res: number[][], permutation: number[], used:boolean[]) => {
+        if(permutation.length === nums.length){
+            res.push(permutation.slice());
+            return;
+        }
+    
+        for(let i = 0; i < nums.length; i++){
+            if(used[i]){
+                continue;
+            }
+    
+            used[i] = true;
+            permutation.push(nums[i]);
+            
+            recursion(nums, res, permutation, used);
+    
+            used[i] = false;
+    
+            permutation.pop();
+        }
+    }
+    
+    const permute = (nums: number[]) => {
+        const res: number[][] = [];
+        const permutation: number[] = [];
+        const used = new Array(nums.length).fill(false);
+    
+        recursion(nums, res, permutation, used);
+    
+        return res;
+    }
+  ```
 
 5/12
 - 閱讀[[Day 24] useEffect dependencies 的經典錯誤用法](https://ithelp.ithome.com.tw/articles/10306703)
