@@ -5,6 +5,19 @@
 5/16
 
 5/15
+- 閱讀[[Day 26] Effects & cleanups 常見情境的設計技巧](https://ithelp.ithome.com.tw/articles/10307558)
+  - 常見的 effects 設計問題
+    - race condition
+    - memory leak
+  - 在effect內執行非同步動作，並使用其回傳的值時，如果沒有設置cleanup、宣告變數當作flag，不然可能第一次的response比較晚回來導致使用到舊的response的資料
+    - ReactQuery之類的第三方套件已經幫忙處理掉了，也可以使用它 
+  - 在effect內持續性的監聽，但是沒有設置cleanup來取消監聽的話，就可能在 component unmount 之後仍持續監聽，導致 memory leak
+    - setTimeout、setInterval
+    - 綁定event handler
+      ```js
+      window.addEventListener('scroll', () => {})
+      ```
+  - 在effect內不斷new instance也會浪費記憶體，所以最好把initialize 的code放到React 頂層 App component，以確保在整個網頁只會執行一次 
 
 5/14
 - 閱讀[[Day 25] Reusable state — React 18 的 useEffect 在 mount 時為何會執行兩次？](https://ithelp.ithome.com.tw/articles/10307083)
