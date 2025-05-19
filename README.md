@@ -11,12 +11,19 @@
 5/20
 
 5/19
+- 閱讀[[Day 28] 一次弄懂 React hooks 的運作原理與設計思維（上）](https://ithelp.ithome.com.tw/articles/10308283)
+  - component 在被呼叫時會產生一個對應的「狀態管理節點」，即 fiber node
+  - 當reconciliation的流程開始時，reconciler 就會做以下幾件事
+    1. 調度 component 的 render ，並將資料的改動更新到 fiber nodes 裡
+    2. 將該次 render 出來的 新的 Virtual DOM Tree， 與前一次的進行比較，並將有差異的部分移交 renderer 處理真實的 DOM 更新
+  - hook只能在component 的頂層調用，而不可以在條件式或迴圈裡調用，因為React用fiber node內的memorizeState來一層一層紀錄state的下一個順序的state是什麼(即其他文章常提到的用一個queue把state裝起來)，所以如果在條件式呼叫hook，就會導致state的紀錄不會對齊而出錯
+
 
 5/18(S)
 - 讀完[[Day 27] useCallback 與 useMemo 的正確使用時機](https://ithelp.ithome.com.tw/articles/10308018)
 
 5/17(S)
-- 閱讀[[Day 27] useCallback 與 useMemo 的正確使用時機](https://ithelp.ithome.com.tw/m/articles/10308018) ~useCallback
+- 閱讀[[Day 27] useCallback 與 useMemo 的正確使用時機](https://ithelp.ithome.com.tw/articles/10308018) ~useCallback
 
 5/16
 
