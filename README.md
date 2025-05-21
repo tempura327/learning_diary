@@ -7,6 +7,10 @@
 5/22
 
 5/21
+- 閱讀[[Day 29] 一次弄懂 React hooks 的運作原理與設計思維（下）](https://ithelp.ithome.com.tw/articles/10308689)
+  - 在 class component 的時代，有許多社群提出的 patterns 來`處理在component之間重用邏輯的問題`，主流的像是 higher order component 以及 render props
+  - hook的出現是為了以更方便的方式解決上述問題，它讓 function component 能擁有狀態，且每次 render 夠不互相干擾
+  - React用fiber node內的memorizeState來一層一層紀錄state是為了避免命名問題衝突
 
 5/20
 
