@@ -5,12 +5,28 @@
 5/23
 
 5/22
+- 了解MongoDB的aggregation [📗](https://www.mongodb.com/zh-cn/docs/manual/aggregation/)
+  - aggregation處理多個document並傳回計算結果，可用於以下場景
+    - 對分組資料執行操作，傳回單一結果
+    - 將多個documnet中的值組合在一起
+  - pipeline是由一個或多個處理document的stage組成，每個stage的output會被傳給下個stage
+  - 常見的stage
+    |stage|功能|SQL對應keyword|
+    |---|---|---|
+    |$match|篩選資料|WHERE|
+    |$group|分組 + 統計運算|GROUP BY|
+    |$project|控制回傳值顯示的欄位|SELECT|
+    |$limit|控制回傳的筆數，常用搭配$skip使用|LIMIT|
+    |$skip|跳過跳過前n個document，常用搭配$limit使用|OFFSET|
+    |$sort|排序|ORDER BY|
+- 了解[$match](https://www.mongodb.com/zh-cn/docs/manual/reference/operator/aggregation/match/)
 
 5/21
 - 閱讀[[Day 29] 一次弄懂 React hooks 的運作原理與設計思維（下）](https://ithelp.ithome.com.tw/articles/10308689)
   - 在 class component 的時代，有許多社群提出的 patterns 來`處理在component之間重用邏輯的問題`，主流的像是 higher order component 以及 render props
   - hook的出現是為了以更方便的方式解決上述問題，它讓 function component 能擁有狀態，且每次 render 夠不互相干擾
   - React用fiber node內的memorizeState來一層一層紀錄state是為了避免命名問題衝突
+- 閱讀[[Day 30] 一次打破 React 常見的的學習門檻與觀念誤解：系列文總結以及完賽感言](https://ithelp.ithome.com.tw/articles/10308940)
 
 5/20
 
