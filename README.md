@@ -1,4 +1,18 @@
+5/30
+
+5/29
+
+5/28
+
+5/27
+
+5/26
+
 5/25(S)
+- 初步了解Vitest [📗](https://www.youtube.com/watch?v=5ddeTxyfgcE)
+  - 不用額外設定Babel，就可以使用TS寫test
+  - 當你修改測試檔並存檔時，它會幫你自動跑跟該測試，以及有關的所有測試，而不是像Jest會重跑所有測試
+  - test suite可以直接寫在component同個檔案內
 
 5/24(S)
 
