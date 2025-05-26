@@ -14,6 +14,9 @@
 	![螢幕擷取畫面 2025-05-26 211452](https://github.com/user-attachments/assets/2990b5a5-254e-4918-99d3-065949d298a2)
 
   - component test可以分為2種
+    <img src="https://github.com/user-attachments/assets/6138bf90-a0f6-4bfe-8061-569d4785767e" width="400" />
+    <img src="https://github.com/user-attachments/assets/e1e94f5c-7fa3-4218-b2b0-2025c25ee650" width="400" />
+
     - integration test，把整個component當成一個黑盒子，包含其所有children component的行為與結果都是這個元件應該負責的部分
     - shallow test，只關心最外層component的行為與它直接使用的child component。如果某個行為來自於更深層的sub component，它就不是這個元件負責的範圍，所以測試時不會去理會它
 	![螢幕擷取畫面 2025-05-26 211225](https://github.com/user-attachments/assets/c401b489-f070-4660-ae76-528576478d82)
