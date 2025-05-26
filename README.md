@@ -7,6 +7,16 @@
 5/27
 
 5/26
+- 了解component test的核心概念 [📗](https://www.youtube.com/watch?v=OIpfWTThrK8)
+  - component test的核心為「把待測物當成黑盒子，專注於測試interface」。只要interface維持一致，都能保證測試正常運行，才不會讓測試本身變得過於脆弱、難以維護
+    - 只測試component的contract，而不測試元件內部的私有屬性和邏輯(實作)
+    - component的contract通常指template、props、event等對外公開的interface
+	![螢幕擷取畫面 2025-05-26 211452](https://github.com/user-attachments/assets/2990b5a5-254e-4918-99d3-065949d298a2)
+
+  - component test可以分為2種
+    - integration test，把整個component當成一個黑盒子，包含其所有children component的行為與結果都是這個元件應該負責的部分
+    - shallow test，只關心最外層component的行為與它直接使用的child component。如果某個行為來自於更深層的sub component，它就不是這個元件負責的範圍，所以測試時不會去理會它
+	![螢幕擷取畫面 2025-05-26 211225](https://github.com/user-attachments/assets/c401b489-f070-4660-ae76-528576478d82)
 
 5/25(S)
 - 初步了解Vitest [📗](https://www.youtube.com/watch?v=5ddeTxyfgcE)
