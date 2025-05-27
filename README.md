@@ -5,6 +5,7 @@
 5/28
 
 5/27
+- 看[React Vite Testing Tutorial For Beginners - Vitest Testing Crash Course](https://www.youtube.com/watch?v=CxSL0knFxAs) ~19:00
 
 5/26
 - 了解component test的核心概念 [📗](https://www.youtube.com/watch?v=OIpfWTThrK8)
