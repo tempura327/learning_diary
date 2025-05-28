@@ -3,6 +3,8 @@
 5/29
 
 5/28
+- 看完[React Vite Testing Tutorial For Beginners - Vitest Testing Crash Course](https://www.youtube.com/watch?v=CxSL0knFxAs）
+  - 作者建議儘量把UI和邏輯拆開，因為這樣既可以測`使用者進行互動時，UI的改變`，也可以`測邏輯`
 
 5/27
 - 看[React Vite Testing Tutorial For Beginners - Vitest Testing Crash Course](https://www.youtube.com/watch?v=CxSL0knFxAs) ~19:00
