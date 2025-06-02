@@ -1,9 +1,40 @@
+6/8(S)
+
+6/7(S)
+
+6/6
+
+6/5
+
+6/4
+
+6/3
+
+6/2
+- 初步了解vitest
+  - 在vite.config.js內設定test即可
+    - 如果以TS撰寫unit test需要設定TS reference
+      ```js
+      // vite 2只要在vite.config.js內加入以下內容
+      <reference types="vitest" />
+
+      // vite >=3 則是修改tsconfig.json
+      include: ['放測試檔案的資料夾路徑']
+      ```
+    - 如果vite.config.js中部分的設定只想讓跑unit test時才生效，可以透過`env.mode === 'test'`來判斷
+  - 支援TS，不像Jest一樣需要設定Babel來轉譯TS才能執行unit test
+  - 可以把unit test寫在跟組件同個檔案內
+  - 當source code或unit test改變時，vite會自動重跑跟改動部分有關的unit test，以及和該unit test有關的unit test
+ 
+
+6/1 🚲
+
 5/30
 
 5/29
 
 5/28
-- 看完[React Vite Testing Tutorial For Beginners - Vitest Testing Crash Course](https://www.youtube.com/watch?v=CxSL0knFxAs）
+- 看完[React Vite Testing Tutorial For Beginners - Vitest Testing Crash Course](https://www.youtube.com/watch?v=CxSL0knFxAs)
   - 作者建議儘量把UI和邏輯拆開，因為這樣既可以測`使用者進行互動時，UI的改變`，也可以`測邏輯`
 
 5/27
@@ -17,8 +48,9 @@
 	![螢幕擷取畫面 2025-05-26 211452](https://github.com/user-attachments/assets/2990b5a5-254e-4918-99d3-065949d298a2)
 
   - component test可以分為2種
-    <img src="https://github.com/user-attachments/assets/6138bf90-a0f6-4bfe-8061-569d4785767e" width="400" />
-    <img src="https://github.com/user-attachments/assets/e1e94f5c-7fa3-4218-b2b0-2025c25ee650" width="400" />
+    <br/>
+    <img src="https://github.com/user-attachments/assets/6138bf90-a0f6-4bfe-8061-569d4785767e" width="45%" />
+    <img src="https://github.com/user-attachments/assets/e1e94f5c-7fa3-4218-b2b0-2025c25ee650" width="45%" />
 
     - integration test，把整個component當成一個黑盒子，包含其所有children component的行為與結果都是這個元件應該負責的部分
     - shallow test，只關心最外層component的行為與它直接使用的child component。如果某個行為來自於更深層的sub component，它就不是這個元件負責的範圍，所以測試時不會去理會它
