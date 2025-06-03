@@ -8,7 +8,38 @@
 
 6/4
 
-6/3
+6/3 🚲
+- 了解vitest cli的test filtering功能 [📗](https://vitest.dev/guide/filtering.html)
+  - 在`vitest`後面打上字串就會只執行檔名包含該字串的test 
+  - 在`vitest`後面使用 -t 或 --testNamePattern在打上字串就會只執行特定名稱的test case
+- 了解如何在mono repo幫不同類型、workspace的測試做設定 [📗](https://vitest.dev/guide/projects.html#configuration)
+  - 不同類的test可以透過test.projects.extends來簡單設定
+  - 不同workspace的test則可以建立共用的base config，再透過mergeConfig來達到extend的效果
+    ```js
+        // vitest.shared.js
+        import { defineConfig } from 'vitest/config';
+        import react from '@vitejs/plugin-react';
+
+        export const baseConfig = defineConfig({
+          plugins: [react()],
+        })
+    ```
+
+    ```js
+        import { defineConfig, mergeConfig } from 'vitest/config';
+        import tailwindcss from 'tailwindcss';
+        import { baseConfig } from '../../vitest.shared.js';
+        import { resolve } from 'path';
+
+        export default mergeConfig(baseConfig, defineConfig({
+          plugins: [tailwindcss()],
+          resolve: {
+            alias: {
+              '@': resolve(__dirname, './src'),
+            },
+          },
+        }))
+   ```
 
 6/2
 - 初步了解vitest
