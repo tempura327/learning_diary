@@ -4,7 +4,14 @@
 
 6/6
 
-6/5
+6/5 🚲
+- 初步了解vitest的mock功能[📗](https://vitest.dev/guide/mocking.html)
+  - mock是指在編寫測試時，建立內部或外部package的假版本
+  - 使用vitest提供的vi可以簡單地mock function、全域變數、第三方library、timer
+  - mock function分為spy和mock
+    - spy用於想知道某個function 是否被呼叫時
+    - mock則是真的產生一個假的function
+  - mock timer是而用於縮短測試的等待時間
 
 6/4 🚲
 - 初步了解vitest的snapshot功能 [📗](https://vitest.dev/guide/snapshot.html)
