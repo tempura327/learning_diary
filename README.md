@@ -1,8 +1,35 @@
 6/8(S)
 
 6/7(S)
+- 了解為什麼需要mock [📗](https://www.youtube.com/watch?v=-VOfK5-FScI)
 
-6/6
+6/6 🚲
+- 了解TS、vitest報錯"Cannot find module"的原因、解法 [📗](https://vitest.dev/guide/common-errors.html#cannot-find-module-relative-path)
+  ```json
+    // 告訴TS"@"代表相對於ts.config.json的哪個相對路徑
+    // 沒設定的話TS會報錯"Cannot find module '@/components/Counter' or its corresponding type declarations."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  ```
+
+  ```js
+  import { defineConfig } from 'vitest/config';
+  import { resolve } from 'path';
+
+  // https://vite.dev/config/
+  export default defineConfig({
+    // 已經透過vite.config.ts的resolve.alias自行告訴vite "@"代表的是哪個絕對路徑，所以不用安裝vite-tsconfig-paths
+    // 沒設定的話執行，也沒安裝vite-tsconfig-paths的話，vitest會報錯"Failed to resolve import "@/components/<file name>" from "test/<file name>.test.tsx"."
+    resolve: {
+      alias: {
+        // 務必要定義成絕對路徑
+        '@': resolve(__dirname, './src'),
+      },
+    },
+});
+```
 
 6/5 🚲
 - 初步了解vitest的mock功能[📗](https://vitest.dev/guide/mocking.html)
