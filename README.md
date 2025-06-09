@@ -1,3 +1,14 @@
+6/11
+
+6/10
+
+6/9
+- 讀Because of Winn-Dixie ~chapter 4 學英文
+ - I could tell that...
+ - You know what?...
+ - It's hard for me to think about...
+ - I love something with all my heart.
+
 6/8(S)
 
 6/7(S)
