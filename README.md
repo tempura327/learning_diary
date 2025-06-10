@@ -1,9 +1,19 @@
+6/15(S)
+
+6/14(S)
+
+6/13
+
+6/12
+
 6/11
 
-6/10
+6/10 🚲
+- 讀Because of Winn-Dixie ~chapter 5 學英文
+ - someone has a talent for something.
 
 6/9
-- 讀Because of Winn-Dixie ~chapter 4 學英文
+- 讀Because of Winn-Dixie ~chapter 3 學英文
  - I could tell that...
  - You know what?...
  - It's hard for me to think about...
