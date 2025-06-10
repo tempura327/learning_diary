@@ -49,8 +49,8 @@
         '@': resolve(__dirname, './src'),
       },
     },
-});
-```
+  });
+  ```
 
 6/5 🚲
 - 初步了解vitest的mock功能[📗](https://vitest.dev/guide/mocking.html)
