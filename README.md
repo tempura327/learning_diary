@@ -6,7 +6,9 @@
 
 6/12
 
-6/11
+6/11 🚲
+- 讀Because of Winn-Dixie ~chapter 7 學英文
+  - someone would most certainly…
 
 6/10 🚲
 - 讀Because of Winn-Dixie ~chapter 5 學英文
