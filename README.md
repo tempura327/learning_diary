@@ -5,6 +5,9 @@
 6/13
 
 6/12
+- 讀Because of Winn-Dixie ~chapter 8 學英文
+  - You bet.
+  - I don't think I can.
 
 6/11 🚲
 - 讀Because of Winn-Dixie ~chapter 7 學英文
