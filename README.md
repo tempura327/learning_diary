@@ -1,8 +1,16 @@
+6/18
+
+6/17
+
+6/16
+
 6/15(S)
+- 讀Because of Winn-Dixie ~chapter 11 學英文
 
 6/14(S)
 
 6/13
+- 做side project
 
 6/12
 - 讀Because of Winn-Dixie ~chapter 8 學英文
