@@ -7,8 +7,12 @@
 6/19
 
 6/18
+- 讀Because of Winn-Dixie ~chapter 14 學英文
+  - ghost (不好的回憶)
+  - for all you are worth
 
 6/17
+- 做side project
 
 6/16
 - 讀Because of Winn-Dixie ~chapter 12 學英文
