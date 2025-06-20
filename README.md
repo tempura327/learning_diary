@@ -1,12 +1,20 @@
+6/24
+
+6/23
+
 6/22(S)
 
 6/21(S)
 
 6/20
+- 讀Because of Winn-Dixie ~chapter 16 學英文
+ - nothing more than
+ - steal a look at
 
-6/19
+6/19 🚲
+- 做side project
 
-6/18
+6/18 🚲
 - 讀Because of Winn-Dixie ~chapter 14 學英文
   - ghost (不好的回憶)
   - for all you are worth
