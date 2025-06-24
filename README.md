@@ -11,6 +11,7 @@
 6/25
 
 6/24
+- 安裝Go，並用Go寫一個Hello world [📗](https://go.dev/doc/tutorial/getting-started)
 
 6/23
 - 了解CSS if() [📗](https://www.amitmerchant.com/the-if-function-in-css/)
