@@ -9,9 +9,24 @@
 6/26
 
 6/25
+- 試著import pkg.go.dev上的套件、local module並使用 [📗](https://go.dev/doc/tutorial/create-module) [📗](https://go.dev/doc/tutorial/call-module-code)
+  - 一個 .go 檔內只能有一個`package main`，因為每個 .go 檔案只能屬於一個套件
+  - 同一個資料夾下的 .go 檔，都必須是同一個 package
+  - 只有 `package main` 是整個程式的entry，因此只有`package main` 才能被 `go run` 或 `go build`
+- 讀Because of Winn-Dixie ~chapter 22 學英文
+  - crepe paper (皺紋紙)
+  - shimmery (金蔥狀的閃亮)
 
 6/24
 - 安裝Go，並用Go寫一個Hello world [📗](https://go.dev/doc/tutorial/getting-started)
+
+| Go       | Node.js             |
+| -------- | ------------------- |
+| `go.mod` | `package.json`      |
+| `go.sum` | `package-lock.json` |
+| `go mod init` | `npm init` |
+| `go mod tidy` | `npm i && npm prune` |
+
 
 6/23
 - 了解CSS if() [📗](https://www.amitmerchant.com/the-if-function-in-css/)
