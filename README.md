@@ -7,6 +7,47 @@
 6/27
 
 6/26
+- 了解Go的function如何定義
+- 了解Go的具名回傳、多重回傳 [📗](https://go.dev/tour/basics/7)
+  - 多重回傳要自己宣告變數
+    ```go
+    func swap(x, y string) (string, string) {
+        z := x + " " + y
+        w := "Good morning " + x
+	
+        return z, w
+    }
+
+    func main() {
+        a := swap("hello", "world")
+	
+        fmt.Println(a)
+    }
+    ```
+  
+  - 具名回傳只有在export變數的function具名，使用時仍然是用順序在取值
+    ```go
+    func split(sum int) (y,x int) {
+       // 具名回傳的話，Go 會自動宣告好x和y，所以只要用=賦值，不必用:=宣告
+       x = sum * 4 / 9
+       y = sum - x
+       return
+    }
+
+    func main() {
+       a, b := split(17)
+       fmt.Println(b, a) // 7 10
+       fmt.Println(a, b) // 10 7
+    }
+    ```
+  
+- 了解Go的變數宣告
+
+| Go 寫法       | JS 對照概念          | 說明                  |
+| ----------- | ---------------- | ------------------- |
+| `var x int` | `let x;`         | 宣告但不一定馬上賦值，型別要指定    |
+| `x := 123`  | `const x = 123;` | 自動根據值推斷型別並賦值（限於block內） |
+
 
 6/25
 - 試著import pkg.go.dev上的套件、local module並使用 [📗](https://go.dev/doc/tutorial/create-module) [📗](https://go.dev/doc/tutorial/call-module-code)
