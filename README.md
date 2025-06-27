@@ -5,6 +5,13 @@
 6/28(S)
 
 6/27
+- 了解CSS新功能 [📗](https://medium.com/@onix_react/new-css-features-you-should-know-958ed1d34464)
+  - 將component id 傳給@scope()可以限制樣式生效的scope
+  - `@scope()`跟CSS module一樣，可以`避免樣式衝突`，但是由於是瀏覽器原生支援，所以效能會更好
+  - @support()可以用來檢查瀏覽器是否支援某個CSS功能，如果支援的話再套用某個自定義樣式
+  - `@support()`可以解決使用者瀏覽器較舊，而不支援某個樣式的問題，因為可以透過這個方式`設置樣式的fallback`
+- 了解可以優化效能的CSS [📗](https://medium.com/@onix_react/new-css-features-you-should-know-958ed1d34464)
+  - `content-visibility`可以讓瀏覽器能夠跳過element的render，直到需要該element時才render，從而顯著`提升`大型或複雜佈局的載入和`渲染效能`
 
 6/26
 - 了解Go的function如何定義
