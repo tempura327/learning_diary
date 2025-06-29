@@ -1,6 +1,20 @@
+7/6(S)
+
+7/5(S)
+
+7/4
+
+7/3
+
+7/2
+
+7/1
+
 6/30
 
 6/29(S)
+- 了解Go的變數宣告 [📗](https://go.dev/tour/basics/10)
+  - 在function之外，每個statement 都要以keyword 開頭，所以short variable declaration不能用於 function 外
 
 6/28(S)
 
