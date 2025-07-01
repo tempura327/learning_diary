@@ -8,7 +8,9 @@
 
 7/2
 
-7/1
+7/1 🚲
+- 做side project
+  ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
 
 6/30
 
