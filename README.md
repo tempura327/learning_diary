@@ -7,6 +7,31 @@
 7/3
 
 7/2
+- 多變數群組宣告 (Grouped variable declaration)
+   - 除了一般的宣告、短宣告以外，也可以把多個變數宣告包在`()`裡
+ ```go
+ var (
+   ToBe   bool       = false
+   AMinuteSeconds int     = 60
+ )
+ ```
+
+ 相當於
+
+ ```go
+ var ToBe = false
+
+ // 一定要宣告在function block內
+ AMinuteSeconds := 60
+ ```
+
+- zero value [📗](https://go.dev/tour/basics/12)
+   - 如果使用var宣告，且沒給預設值，那預設值會是falsy value (e.g: 0, false, "")
+
+- 型別轉換 [📗](https://go.dev/tour/basics/13)
+   - Go 是 強型別語言，所以不像 JavaScript 可以隨便轉，但仍然有提供一些型別轉換的function
+
+   - 如果真的想要隨便轉，需要透過[strconv](https://pkg.go.dev/strconv)
 
 7/1 🚲
 - 做side project
