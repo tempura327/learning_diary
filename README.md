@@ -1,10 +1,29 @@
+7/13(S)
+
+7/12(S)
+
+7/11
+
+7/10
+
+7/9
+
+7/8
+
+7/7
+
 7/6(S)
+- 閱讀[面試新創公司時，應該要問的問題](https://www.explainthis.io/zh-hant/career/questions-to-ask-when-interviewing-at-a-startup)
+  - 重點在於公司是否已經達到產品市場契合度 (俗稱 PMF)，但不要直接問這個問題，而是要透過問問題來判斷
+  - 公司的資金、募資計畫是否能支撐公司撐下去
+- 閱讀[用 ChatGPT 幫自己修英文履歷 — 軟體工程師篇](https://www.explainthis.io/zh-hant/career/use-ChatGPT-to-help-you-polish-swe-resume)
 
 7/5(S)
 
 7/4
 
 7/3
+- 做side project
 
 7/2
 - 多變數群組宣告 (Grouped variable declaration)
