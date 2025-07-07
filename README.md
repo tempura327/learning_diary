@@ -11,6 +11,9 @@
 7/8
 
 7/7
+- 讀 [Advice From a Software Engineer With 8 Years of Experience](https://medium.com/better-programming/advices-from-a-software-engineer-with-8-years-of-experience-8df5111d4d55) ~ Leave the comfort zone
+撰寫工作週記，有助於公司內的年度評鑑、方便寫履歷時回顧
+多嘗試自己負責的專案以外的內容，或者新技術
 
 7/6(S)
 - 閱讀[面試新創公司時，應該要問的問題](https://www.explainthis.io/zh-hant/career/questions-to-ask-when-interviewing-at-a-startup)
