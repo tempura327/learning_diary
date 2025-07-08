@@ -9,8 +9,10 @@
 7/9
 
 7/8
+- 做side project
+- 閱讀 [Day1- Fabric.js 是什麼？他可以做些什麼](https://ithelp.ithome.com.tw/articles/10343461) ~ [Day3- 來概念解構 Fabric.js 吧 (1) - 核心概念](https://ithelp.ithome.com.tw/articles/10343610) 作為side project參考
 
-7/7
+7/7 🚲
 - 讀 [Advice From a Software Engineer With 8 Years of Experience](https://medium.com/better-programming/advices-from-a-software-engineer-with-8-years-of-experience-8df5111d4d55) ~ Leave the comfort zone
 撰寫工作週記，有助於公司內的年度評鑑、方便寫履歷時回顧
 多嘗試自己負責的專案以外的內容，或者新技術
