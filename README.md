@@ -2,9 +2,49 @@
 
 7/12(S)
 
-7/11
+7/11 🚲
+- 了解Makefile [📗](https://tutorialedge.net/golang/makefiles-for-go-developers/) [📗](https://hackmd.io/@sysprog/SySTMXPvl)
+  - make是 run 和 build code的工具
+    - Makefile是make設定檔，通常會放在專案的根目錄，但是一個專案內可以有多個Makefile
+  - Makefile裡面定義指令
+    - 如果專案的部份程式碼被修改，只會編譯被修改的程式
+    - 縮排必須用tab，行尾不可有空格
+    - 指令的名稱被稱作target，在終端機輸入 `make <target>` 即可執行指令
+    ```
+    // target是hello，內容則是echo "Hello"
+    hello:
+      echo "Hello"
+    ```
+ 
+    - Makefile中通常放該專案常用的指令 (e.g.: build, run, clean)，指令內容可以是任何shell command
+    ```
+    // 用於compile code，並把結果的binary檔放到bin資料夾
+    build:
+      go build -o bin/main main.go
+    ```
 
-7/10
+    - 定義變數
+    ```
+    User=Tempura
+  
+    hello:
+      echo "Hello $(User)"
+    ```
+    
+    - 組合指令
+    ```
+    hello:
+      echo "Hello"
+     world:
+      echo "world"
+  
+    helloWorld:
+      hello world
+    ```
+
+
+7/10 🚲
+- 做side project
 
 7/9
 
