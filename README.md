@@ -1,6 +1,24 @@
+7/20(S)
+
+7/19
+
+7/18
+
+7/17
+
+7/16
+
+7/15
+
+7/14
+
 7/13(S)
+- 常數宣告
+  - 常數只能用const宣告，不能用短宣告 [📗](https://go.dev/tour/basics/15)
+  - 如果宣告數字類的常數時沒有給型別，那Go會根據context變換它的型別，但是如果你讓Go把一個big int轉成int就會因為溢位出錯 [📗](https://go.dev/tour/basics/16)
 
 7/12(S)
+- 做side project
 
 7/11 🚲
 - 了解Makefile [📗](https://tutorialedge.net/golang/makefiles-for-go-developers/) [📗](https://hackmd.io/@sysprog/SySTMXPvl)
