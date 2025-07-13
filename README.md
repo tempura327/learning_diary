@@ -14,14 +14,14 @@
 
 7/13(S)
 - 常數宣告
-  - 常數只能用const宣告，不能用短宣告 [📗](https://go.dev/tour/basics/15)
-  - 如果宣告數字類的常數時沒有給型別，那Go會根據context變換它的型別，但是如果你讓Go把一個big int轉成int就會因為溢位出錯 [📗](https://go.dev/tour/basics/16)
+  - 常數只能用const宣告，不能用短宣告 [📙](https://go.dev/tour/basics/15)
+  - 如果宣告數字類的常數時沒有給型別，那Go會根據context變換它的型別，但是如果你讓Go把一個big int轉成int就會因為溢位出錯 [📙](https://go.dev/tour/basics/16)
 
 7/12(S)
 - 做side project
 
 7/11 🚲
-- 了解Makefile [📗](https://tutorialedge.net/golang/makefiles-for-go-developers/) [📗](https://hackmd.io/@sysprog/SySTMXPvl)
+- 了解Makefile [📙](https://tutorialedge.net/golang/makefiles-for-go-developers/) [📙](https://hackmd.io/@sysprog/SySTMXPvl)
   - make是 run 和 build code的工具
     - Makefile是make設定檔，通常會放在專案的根目錄，但是一個專案內可以有多個Makefile
   - Makefile裡面定義指令
@@ -107,10 +107,10 @@
  AMinuteSeconds := 60
  ```
 
-- zero value [📗](https://go.dev/tour/basics/12)
+- zero value [📙](https://go.dev/tour/basics/12)
    - 如果使用var宣告，且沒給預設值，那預設值會是falsy value (e.g: 0, false, "")
 
-- 型別轉換 [📗](https://go.dev/tour/basics/13)
+- 型別轉換 [📙](https://go.dev/tour/basics/13)
    - Go 是 強型別語言，所以不像 JavaScript 可以隨便轉，但仍然有提供一些型別轉換的function
 
    - 如果真的想要隨便轉，需要透過[strconv](https://pkg.go.dev/strconv)
@@ -122,7 +122,7 @@
 6/30
 
 6/29(S)
-- 了解Go的變數宣告 [📗](https://go.dev/tour/basics/10)
+- 了解Go的變數宣告 [📙](https://go.dev/tour/basics/10)
   - 在function之外，每個statement 都要以keyword 開頭，所以short variable declaration不能用於 function 外
 
 6/28(S)
@@ -138,7 +138,7 @@
 
 6/26
 - 了解Go的function如何定義
-- 了解Go的具名回傳、多重回傳 [📗](https://go.dev/tour/basics/7)
+- 了解Go的具名回傳、多重回傳 [📙](https://go.dev/tour/basics/7)
   - 多重回傳要自己宣告變數
     ```go
     func swap(x, y string) (string, string) {
@@ -180,7 +180,7 @@
 
 
 6/25
-- 試著import pkg.go.dev上的套件、local module並使用 [📗](https://go.dev/doc/tutorial/create-module) [📗](https://go.dev/doc/tutorial/call-module-code)
+- 試著import pkg.go.dev上的套件、local module並使用 [📙](https://go.dev/doc/tutorial/create-module) [📙](https://go.dev/doc/tutorial/call-module-code)
   - 一個 .go 檔內只能有一個`package main`，因為每個 .go 檔案只能屬於一個套件
   - 同一個資料夾下的 .go 檔，都必須是同一個 package
   - 只有 `package main` 是整個程式的entry，因此只有`package main` 才能被 `go run` 或 `go build`
@@ -189,7 +189,7 @@
   - shimmery (金蔥狀的閃亮)
 
 6/24
-- 安裝Go，並用Go寫一個Hello world [📗](https://go.dev/doc/tutorial/getting-started)
+- 安裝Go，並用Go寫一個Hello world [📙](https://go.dev/doc/tutorial/getting-started)
 
 | Go       | Node.js             |
 | -------- | ------------------- |
