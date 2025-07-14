@@ -11,6 +11,11 @@
 7/15
 
 7/14
+- 了解Go的迴圈 [📙](https://go.dev/tour/flowcontrol/4)
+  - Go的for 迴圈、while迴圈都使用for keyword
+  - for迴圈初始化變數用短宣告，後面是條件、post action，三者中間用 `;` 隔開，但不需要`()`包住
+  - while迴圈則只有條件
+  - 如果只有`for {}` 會變成無限迴圈
 
 7/13(S)
 - 常數宣告
