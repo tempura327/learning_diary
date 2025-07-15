@@ -9,6 +9,10 @@
 7/16
 
 7/15
+- 了解Go的if [📙](https://go.dev/tour/flowcontrol/7)
+  - if條件不需用`()`包起來，但執行的內容必須用`{}`包起來
+  - if的條件前可以短宣告，相當於先宣告變數再將該變數用於if的條件
+  - if的短宣告的變數可以在一組的其他else block取用
 
 7/14
 - 了解Go的迴圈 [📙](https://go.dev/tour/flowcontrol/4)
