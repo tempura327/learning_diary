@@ -1,6 +1,6 @@
 7/20(S)
 
-7/19
+7/19(S)
 
 7/18
 
@@ -13,6 +13,9 @@
   - if條件不需用`()`包起來，但執行的內容必須用`{}`包起來
   - if的條件前可以短宣告，相當於先宣告變數再將該變數用於if的條件
   - if的短宣告的變數可以在一組的其他else block取用
+- 閱讀 [Day4-來概念解構 Fabric.js 吧 (2)-物件導向特性與物件(Object)與擴展機制(extend)](https://ithelp.ithome.com.tw/articles/10343614) 作為side project參考
+  - fabric分為動態畫布、靜態畫布，只有前者可以跟使用者互動
+  - 可用`fabric.util.createClass()`、`fabric.[ClassName].prototype.extend()` 創建新的class、擴展class，因此fabric自由度很高
 
 7/14
 - 了解Go的迴圈 [📙](https://go.dev/tour/flowcontrol/4)
