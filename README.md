@@ -1,3 +1,17 @@
+7/27(S)
+
+7/26(S)
+
+7/25
+
+7/24
+
+7/23
+
+7/22
+
+7/21
+
 7/20(S)
 
 7/19(S)
@@ -7,6 +21,20 @@
 7/17
 
 7/16
+- 閱讀[Day5- 來概念解構 Fabric.js 吧 (3)-事件(events)與生命週期](https://ithelp.ithome.com.tw/articles/10343616)
+ - 提供一些事件可以綁定到fabric.Canvas instance上，也可以自訂事件
+
+- 閱讀[Day6- 小小介紹 Fabric.js 的歷史沿革](https://ithelp.ithome.com.tw/articles/10343926)
+ - 用虛擬畫布、批次渲染來優化效能
+ - 虛擬畫布指的是建立fabric.Canvas instance，但不傳入DOM元素
+   ```js
+   new fabric.Canvas(null, options)
+   ```
+   - `常用於`匯出圖片、在伺服器端產圖這類`不需要有可互動的`canvas的場景
+ - 批次渲染是指逐步繪製畫布上的內容，而不一次完成繪製
+   - 分成動態畫布、靜態的兩個畫布，然後疊一起讓它們看起來像一個畫布。靜態畫布上會放很少變動、不變動的東西
+   - 只重繪有變動，所以需要重繪的部分，如此就可以省掉重繪靜態畫布的開銷
+
 
 7/15
 - 了解Go的if [📙](https://go.dev/tour/flowcontrol/7)
