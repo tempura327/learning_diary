@@ -9,8 +9,26 @@
 7/23
 
 7/22
+- 了解Go的switch [📙](https://go.dev/tour/flowcontrol/11)
+ - switch條件不需用()包起來，但執行的內容必須用{}包起來
+ - switch的條件前可以短宣告，相當於先宣告變數再將該變數用於switch的條件
+ - 每個case的最後Go都會自動加入break，所以不用自己寫
+ - case不必是常數、整數，不必是常數指的是可以在case做計算
+   ```go
+   switch time.Saturday {
+     case today + 0:
+       fmt.Println("Today.")
+     case today + 1:
+       fmt.Println("Tomorrow.")
+     case today + 2:
+       fmt.Println("In two days.")
+     default:
+       fmt.Println("Too far away.")
+   }
+   ```
+ - 沒有條件的switch會被當作是條件為true的switch，可以用它來代替一個很長的if-else結構
 
-7/21
+7/21 🚲
 
 7/20(S)
 
