@@ -6,27 +6,56 @@
 
 7/24
 
-7/23
+7/23 🚲
+- 了解Go的defer [📙](https://go.dev/tour/flowcontrol/12)
+  - defer可以確保function一定會執行，即使函數中途return或發生panic，function仍一定會被呼叫，可避免memory leak
+  - 其中一個優點是把「清理工作」寫在「獲取資源」的旁邊，讓程式碼更容易理解和維護，也不容易遺漏清理步驟
+  - defer主要有記錄log、釋放資源、錯誤處理與恢復等用途，這些使用場景都跟`defer確保function一定會執行`的特點有關
+    - 在函數進入和退出時自動記錄日誌，方便追蹤程式執行流程
+    - 在函數結束時釋放資源（如關閉檔案、網路連線等），避免memory leak，因為用了
+    - 在函數發生錯誤時恢復程式執行，避免crash
+  - 會遵循stack的後進先出原則執行多個defer function
+  ```go
+    // 依counting, done, 109~100, 9~0的順序印出
+    func main() {
+      fmt.Println("counting")
+  
+      for i := 0; i < 10; i++ {
+        defer fmt.Println(i)
+      }
+  
+      for i := 100; i < 110; i++ {
+        defer fmt.Println(i)
+      }
+  
+      fmt.Println("done")
+    }
+  ```
+
+- 閱讀[為什麼要手動resp.Body.Close()](https://www.zhangjiee.com/blog/2018/go-http-get-close-body.html)
+  - 提高效率，http.Get 等請求的 TCP 連線是不會關閉的（再次向同一個網域請求時，重複使用連線），所以必須手動關閉，忘記Close()或程式中途退出，HTTP連線就會一直佔用系統資源，累積多了就可能導致系統無法建立新連線
+
+
 
 7/22
 - 了解Go的switch [📙](https://go.dev/tour/flowcontrol/11)
- - switch條件不需用()包起來，但執行的內容必須用{}包起來
- - switch的條件前可以短宣告，相當於先宣告變數再將該變數用於switch的條件
- - 每個case的最後Go都會自動加入break，所以不用自己寫
- - case不必是常數、整數，不必是常數指的是可以在case做計算
-   ```go
-   switch time.Saturday {
-     case today + 0:
-       fmt.Println("Today.")
-     case today + 1:
-       fmt.Println("Tomorrow.")
-     case today + 2:
-       fmt.Println("In two days.")
-     default:
-       fmt.Println("Too far away.")
-   }
-   ```
- - 沒有條件的switch會被當作是條件為true的switch，可以用它來代替一個很長的if-else結構
+  - switch條件不需用()包起來，但執行的內容必須用{}包起來
+  - switch的條件前可以短宣告，相當於先宣告變數再將該變數用於switch的條件
+  - 每個case的最後Go都會自動加入break，所以不用自己寫
+  - case不必是常數、整數，不必是常數指的是可以在case做計算
+    ```go
+    switch time.Saturday {
+      case today + 0:
+        fmt.Println("Today.")
+      case today + 1:
+        fmt.Println("Tomorrow.")
+      case today + 2:
+        fmt.Println("In two days.")
+      default:
+        fmt.Println("Too far away.")
+    }
+    ```
+  - 沒有條件的switch會被當作是條件為true的switch，可以用它來代替一個很長的if-else結構
 
 7/21 🚲
 
