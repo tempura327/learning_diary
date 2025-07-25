@@ -3,6 +3,33 @@
 7/26(S)
 
 7/25
+- 了解Go的pointer[📙](https://go.dev/tour/moretypes/1)
+   - pointer儲存的是變數在記憶體中的位址，不是變數的值本身
+   -透過pointer可以間接存取和修改另一個變數的值
+   - 傳遞大型資料結構時，傳pointer比複製整個資料更有效率，因為更省記憶體
+   - 多個函數可以透過pointer存取同一份資料
+   - 未初始化的pointer值為nil，不指向任何記憶體位址
+   ```go
+   func main() {
+      i, j := 42, 2701
+   
+     // 把i的記憶體位置存到變數p，變數p是一個pointer
+      p := &i       
+      // 取得p指向的記憶體位置所存的值(透過p讀取i的值)
+      // *表示pointer底層的值(pointer指向的記憶體位置存的值)
+      fmt.Println(*p)
+      // 透過p間接改變i的值
+      *p = 21
+      fmt.Println(i)
+   
+      // 把p存的記憶體位置改成j的位址
+      p = &j     
+      // 透過p間接改變j的值  
+      *p = *p / 37
+      fmt.Println(j)
+   }
+   ```
+
 
 7/24
 
