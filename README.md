@@ -1,3 +1,56 @@
+9/3
+
+9/2
+- 了解使用CSS達成按enter時將文字斷行
+   - 使用JS達成效果效能較差的原因
+	    - 每次創建新的 DOM element 都需要瀏覽器重新計算佈局（reflow）
+    	- 多個元素意味著更多的記憶體使用
+
+	    ```text
+         本署「114年天氣分析與預報研討會」舉辦時間訂於114年9月2(二)~4日(四)，
+         歡迎各位專家學者踴躍至本研討會專網報名。
+   
+          網址: https://conf.cwa.gov.tw/
+        ```
+
+		就算使用React之類的框架，效能還是會比用CSS差，因為每次 render 都要重新呼叫.split()
+
+        ```js
+        // React
+        <div className="flex flex-col">
+         {article.split('\n').map((text)=>(<span key={`text-index`}>{text}</span>))}
+        </div>
+        ```
+   - white-space屬性
+       - pre-wrap ⭐️
+           ```css
+           white-space: pre-wrap;
+           ```
+           保留空白字元，並且會自動換行
+         	<img width="1060" height="180" alt="pre-wrap_0" src="https://github.com/user-attachments/assets/165c3d53-61b8-4bf1-8a96-8ed8f9f94e0b" />
+
+          
+
+       - pre-line ⭐️
+           ```css
+           white-space: pre-line;
+           ```
+           合併空白字元，但會保留換行符號
+			<img width="1058" height="181" alt="pre-line_0" src="https://github.com/user-attachments/assets/f91ac950-2140-4e21-8694-1440a0eaa7e3" />
+
+       - pre
+           ```css
+           white-space: pre;
+           ```
+           保留空白字元與換行符號 (使用者輸入什麼就是什麼)
+			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
+
+
+
+9/1(M)
+
+7/28~8/31 休息
+
 7/27(S)
 
 7/26(S)
@@ -764,3 +817,4 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
