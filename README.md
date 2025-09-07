@@ -1,3 +1,91 @@
+9/12
+
+9/11
+
+9/10
+
+9/9
+
+9/8
+
+9/7(S)
+- 重新了解.map()、.filter()、.reduce()的運作方式
+  - 未使用await把async function的結果resolve的情況，async function的回傳值一定是Promise物件
+  -  map 只是將每個元素轉換成新值，所以callback是不是async function沒差
+    ```js
+    const res = await Promise.all(
+      cabinetsData.map(async ({ id, ...rest }) => {
+        const { data } = await queryCabinets({
+          variables: {
+            filter: {
+              organizations: [organizationId],
+              cabinetId: id,
+            },
+          },
+        });
+    
+        const isExist = (data?.CabinetsQuery.cabinets.edges || []).length > 0;
+    
+        return isExist ? { id, ...rest } : null;
+      }),
+    );
+    ```
+  - filter則會涉及到邏輯判斷
+    - Promise物件在布林判斷時永遠是 truthy，所以才會導致條件判斷失效
+    ```js
+    const res = await Promise.all(
+      cabinetsData.filter(async ({ id, ...rest }) => {
+        const { data } = await queryCabinets({
+          variables: {
+            filter: {
+              organizations: [organizationId],
+              cabinetId: id,
+            },
+          },
+        });
+
+        const isExist = (data?.CabinetsQuery.cabinets.edges || []).length > 0;
+
+        return isExist;
+      }),
+    );   
+    ```
+
+  - reduce則會涉及到累積值的取得
+    - reduce 期待每次迭代時，第一個參數要拿到「實際的值」來累加或者判斷後再累加，但是async function回傳的是Promise物件，所以會導致累加錯誤
+
+    ```js
+    const res = await Promise.all(
+      cabinetsData.reduce(async (acc, { id, ...rest }) => {
+        const { data } = await queryCabinets({
+          variables: {
+            filter: {
+              organizations: [organizationId],
+              cabinetId: id,
+            },
+          },
+        });
+
+        const isExist = (data?.CabinetsQuery.cabinets.edges || []).length > 0;
+
+        if (isExist) {
+          return [
+            ...acc,
+            { id, ...rest }
+          ]
+        }
+
+        return acc;
+      }, []),
+    );   
+    ```
+
+9/6(S)
+
+9/5
+
+9/4
+
 9/3
 
 9/2
@@ -817,4 +905,5 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
 
