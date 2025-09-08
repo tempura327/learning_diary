@@ -7,6 +7,28 @@
 9/9
 
 9/8
+- 了解Golang的make、new
+  - new()
+    - 回傳類型 - 回傳指標（pointer），指向零值初始化的記憶體
+    - 適用範圍 - 可用於任何類型，但對slice/map/channel只是分配記憶體空間
+    - 初始化程度 - 只進行零值初始化，不做底層資料結構的建立
+    - 使用限制 - 對於slice還可勉強使用（配合append），但map和channel的nil狀態無法正常工作
+    - 記憶體效果 - 單純分配記憶體並設為零值，需要額外步驟才能實際使用
+
+  - make()
+    - 回傳類型 - 回傳已初始化的值本身，可以立即使用
+    - 專用類型 - 只能用於slice、map、channel這三種引用類型
+    - 底層初始化 - 完整建立底層資料結構（記憶體分配、索引建立、預設值設定、運作機制）
+    - 預分配功能 - 可指定長度和容量來預先分配空間，避免頻繁記憶體操作
+      ```golang
+      // slice長度5、容量10
+      make([]int, 5, 10)
+
+      // map預分配100元素空間
+      make(map[string]int, 100)
+       // channel緩衝區50元素
+      make(chan int, 50)
+      ```
 
 9/7(S)
 - 重新了解.map()、.filter()、.reduce()的運作方式
@@ -905,5 +927,6 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
 
 
