@@ -7,6 +7,27 @@
 9/11
 
 9/10
+- 可觀測性(observability, o11y) [📗](https://www.explainthis.io/zh-hant/swe/what-is-observability-and-why-it-matters) [📗](https://www.explainthis.io/zh-hant/swe/how-should-sofhow-swe-do-monitoring)
+  - 可觀測性是指能去衡量一個系統內部狀態的能力。當一個系統是可觀測的，開發人員可以輕易地去觀測到系統內部究竟發生什麼事
+  - 監控則是指搜集不同的可觀測性資料，來判斷系統目前是否有異狀，並在異常時發出警報。透過監控可以提升可觀測性
+  - 可觀測性數據分為日誌(logs)、指標(metrics)、追蹤(traces)。預設的情況下三者是獨立的，但也可以自行結合使用
+  - metrics
+    - metrics會持續收集系統的量化數據並呈現趨勢變化
+    - 因為metrics提供了可量化、可比較的數值指標，它告訴你出了什麼問題 (e.g. 回應時間從 100ms 升到 500ms)
+  - traces
+    - traces 會記錄一個請求的完整生命週期 (e.g. request經過哪些服務、花了多少時間、有沒有錯誤、服務之間的依賴關係)
+    - 因為traces知道整個過程經歷了什麼，它會告訴你哪個環節出了問題 (e.g. 80% 時間卡在資料庫查詢)
+  - logs
+    - log記錄系統中具體發生的事件，不管是不是錯誤都會記錄
+    - 因為log知道具體發生了什麼，它會告訴你具體出錯的地方 (e.g. SQL 查詢語句、錯誤訊息)
+  - 警報(alerts)是基於可觀測性數據設定的自動通知機制
+- 初步了解AWS的CloudWatch
+  - metrics: CloudWatch Metrics
+  - traces: CloudWatch Application Signals (Traces) 或 X-Ray
+  - logs: CloudWatch Logs
+  - alerts: CloudWatch Alarms
+  - dashboard(將metrics畫成圖表): CloudWatch Dashboard
+
 
 9/9 🚲
 - 初步了解空間預分配
@@ -955,6 +976,7 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
 
 
 
