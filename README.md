@@ -1,3 +1,5 @@
+9/22
+
 9/21(S)
 
 9/20(S)
@@ -6,9 +8,17 @@
 
 9/18
 
-9/17
+9/17 🚲
+- [獵人頭談薪水: 你該告訴獵人頭(headhunter)你現在的薪水嗎?](https://www.ipibresume.com/blog/blog/do-i-need-to-leak-out-salary-to-headhunters/?trk=feed_main-feed-card_feed-article-content)
+    - 不需要，因為這不是好籌碼
+    - 不需要，獵頭、人資常常認為只該給求職者+10%的薪資
+    - 例外的情況是你真的相信獵頭知道數字後會幫你爭取更高的薪水
+- [轉職當工程師之後卡等了嗎？那你需要知道「職涯籌碼金字塔」](https://www.youtube.com/watch?v=nSwEuSMG_rY)
+    - 籌碼=面試技巧+技術+資歷×頭銜×戰勳×內涵×作品×人脈
+    	- 戰勳是乘數當中較能自己控制的
+        - 戰勳=驅動(動力)+行動(執行)+成就(好的結果)+行銷(宣傳結果)
 
-9/16
+9/16 🚲
 - 初步瞭解[Gin](https://github.com/gin-gonic/gin)是什麼
     - Golang的框架之一
     -  API設計直觀，容易上手，且效能比其他Go框架快40倍
@@ -1044,6 +1054,7 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
 
 
 
