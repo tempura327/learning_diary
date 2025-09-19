@@ -5,6 +5,88 @@
 9/20(S)
 
 9/19
+- 了解瀏覽器渲染網頁的流程 [🔖](https://github.com/tempura327/learning_diary/blob/master/2024/README.md#1121)
+ 1. 下載HTML
+ 2. 下載CSS
+ 3. 解析HTML，產生DOM tree、解析CSS，產生CSSOM tree
+ 4. 將DOM tree跟CSSOM tree結合，產生render tree
+ 5. layout (reflow)，計算每個node的幾何資訊 (位置、大小)
+ 6. paint (repaint)，將每個node畫到螢幕上
+- 了解瀏覽器怎麼計算網頁樣式 [📗](https://web.dev/articles/reduce-the-scope-and-complexity-of-style-calculations?hl=zh-tw) [📗](https://developer.chrome.com/docs/devtools/performance/selector-stats?hl=zh-tw)
+ - 透過JS新增及移除元素、變更屬性、類別或播放動畫來變更 DOM，會導致瀏覽器重新計算元素樣式，這被稱作「樣式計算 (style calculation)」
+ - 瀏覽器計算樣式的步驟
+   1. 瀏覽器會根據CSSOM建立一組相符的選取器(matching selectors)，藉此判斷哪些CSS rule可以套用到哪些DOM element
+     ```css
+     // 假設有這些css rule
+     span { color: red; }
+     .text { color: blue; }
+     p span { font-size: 14px; }
+     #cat-food-advertisement-title { color: green; }
+     ```
+
+     ```html
+     <p>
+       <span id="cat-food-advertisement-title" class="text">文字</span>
+     </p>
+     ```
+
+     在這個步驟會去看有哪一些css rule可以套用在這個 span 上
+     ```
+     matchedRules = [
+       "span { color: red; }",        // ✓ 符合
+       ".text { color: blue; }",      // ✓ 符合
+       "p span { font-size: 14px; }"  // ✓ 符合
+       "#cat-food-advertisement-title { color: green; }" // ✓ 符合
+     ]
+     ```
+
+   2. 對比可以套用的CSS rule之間的選擇器權重，決定套用的CSS rule
+     - 優先序為 !important > 內聯樣式 > ID > Class > Element
+   3. 套用預設值，如果本身沒有設定該屬性，就使用瀏覽器預設值
+   4. 處理樣式繼承，如果本身沒有設定該屬性且父元素有設定該屬性，則會再從父元素繼承，把預設的樣式值覆蓋掉
+   5. 計算相對值 (e.g. 2rem = 32px、50% = 500px)
+   6. 計算最終樣式值 (computed style values)，並存到記憶體
+ - 影響樣式計算效能的因素
+   - DOM element數量太多
+   - CSS rule數量太多
+   - CSS 選擇器複雜
+       ```css
+       /* 瀏覽器會從右到左匹配，這是CSSOM優化的其中一個機制，但在選擇器過長時效能反而更差，因為要檢查的項目變多了 */
+       .container .list .item {
+          color: #44AF69;
+       }
+       /* 匹配所有元素，效能最差 */
+       * {
+         color: #333333;
+       }
+       /* 選擇器過度複雜 */
+       /* .list 底下第一層中，除了第一個.item元素外的所有.item兄弟元素 */
+       .list > .item + .item {
+          margin-top: 16px;
+       }
+      /* 偽類(pseudo-classes)的選擇器效能差 */
+      /* 偽類選擇器是指:first-child、:not、:nth-child()、:hover、:active這類的選擇器，但是::before、::after並不是偽類選擇器，而是為偽元素(pseudo-elements)選擇器 */
+      /* 偽類選擇器無法使用CSSOM的hash table機制快速查找，甚至當中有部分還要做real time的計算，因此效能差 */
+       .item:not(:first-child) {
+          margin-top: 16px;
+       }
+       ```
+   - 大量使用style屬性控制樣式 (內聯樣式)會導致無法利用 CSS 快取、CSSOM 優化
+       ```html
+       <div class="product-list">
+         <div style="display: flex; padding: 20px; margin: 10px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: all 0.3s;">
+           <img style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px; margin-right: 15px;" src="product1.jpg">
+           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+             <h3 style="margin: 0; font-size: 18px; color: #333; font-weight: 600;">產品 1</h3>
+             <p style="margin: 5px 0; color: #666; font-size: 14px; line-height: 1.5;">產品描述...</p>
+             <span style="color: #ff6b6b; font-size: 20px; font-weight: bold;">$299</span>
+           </div>
+         </div>
+         <!-- 同樣的樣式的div繼續重複 -->
+       </div>
+       ```
+
+----------------------
 
 9/18
 
@@ -1054,6 +1136,7 @@
   - 如果父層有設置flex，若子元素A設置width，當父層的width不夠時，所有需要shrink的width都會套到子元素A，所以子元素A會被擠壓變小
     - 幫子元素A設置`min-width`，可解決透過優先級解決這個問題 [✏️](https://codesandbox.io/p/devbox/try-new-css-property-tfrf9g?file=%2Fsrc%2Fpages%2FFlexBasis.vue%3A57%2C9)
     - 幫子元素A設置`flex-shrink: 0 !important`，強迫元素A不縮小也可解決這個問題
+
 
 
 
