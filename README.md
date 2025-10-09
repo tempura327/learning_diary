@@ -1,3 +1,60 @@
+10/12(S)
+
+10/11(S)
+
+10/10
+
+10/9
+- 了解browsing context [📗](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context)
+   - browsing context是一個環境，每個視窗、瀏覽器tab、iframe都有自己的browsing context
+   - 每個browsing context都有自己的origin (protocol+domain+port)
+   - browsing context包含window(e.g. history, opener)、active document(當前頁面的DOM) [📗](https://developer.mozilla.org/en-US/docs/Glossary/WindowProxy)
+   - 有些browsing context可以跟同個origin的其他browsing context共享資訊 (e.g. localStorage, cookies)
+
+- 了解reverse tab nabbing攻擊 [📗](https://aszx87410.github.io/beyond-xss/ch3/html-attack/) [📗](https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener?hl=zh-tw)
+   - 使用noopener可以避免開啟的新頁面讀取window.opener，如此可禁止頁面N存取window.opener，進而把頁面O的的網址改成導向有危險的頁面
+   - 不過只設noopener仍然會提供referrer資訊給HTTP header，如果不想要header內有referrer資訊，可以使用noreferrer
+   - 當設了noreferrer會發生兩件事，1.不會提供referrer資訊給HTTP header，2.自動將noopener設為true [📗](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noreferrer) [📗](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener)
+     ```html
+     <a href="你要去的網頁N" target="_blank" rel="noreferrer">
+     文字
+     </a>
+     ```
+    
+     ```js
+     window.open(
+       '你要去的網頁N',
+       '_blank',
+       'noreferrer',
+     );
+     ```
+   
+10/8
+
+10/7
+
+10/6
+
+10/5(S)
+
+10/4(S)
+
+10/3
+
+10/2
+
+10/1
+
+9/30
+
+9/29
+
+9/28(S)
+
+9/27(S)
+
+9/26
+
 9/25
 
 9/24
@@ -633,3 +690,4 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
