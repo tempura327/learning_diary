@@ -1,8 +1,27 @@
+10/15
+
+10/14
+
+10/13
+
 10/12(S)
 
 10/11(S)
 
 10/10
+- 了解如何透過改HTML、CSS優化效能 [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw) [📗](https://yaron-galperin.medium.com/memory-matters-understanding-heap-snapshots-in-javascript-with-chrome-devtools-53abc33ef9df)
+   - 把DOM element 攤平 [📗](https://play.tailwindcss.com/frGPbi9PDL)
+     <img width="1907" height="342" alt="螢幕擷取畫面 2025-09-09 212640" src="https://github.com/user-attachments/assets/68872db1-96e5-465f-a466-d116785b4c66" />
+     <img width="1908" height="434" alt="螢幕擷取畫面 2025-09-09 221021" src="https://github.com/user-attachments/assets/59900e2e-81bd-4a65-9e09-d4396e222440" />
+     以上圖中的兩個例子，都是左側效能會比較好
+    - 看不到，或者變看不到的DOM element 不要掛到DOM上
+       - infinite scroll
+       - content-visibility + contain-intrinsic-size
+    - 使用atom css，或者BEM，避免效能問題雪上加霜
+- Tailwind 效能較好的原因
+    - 無層級選擇器，所以不需要遍歷 DOM 樹檢查父子關係，瀏覽器可以直接用 hash table 查找，因此時間複雜度可趨近 O(1)
+    - 樣式隔離：每個 class 只影響單一屬性，計算簡單
+    - PurgeCSS，prod只保留用到的 classes
 
 10/9
 - 了解browsing context [📗](https://developer.mozilla.org/en-US/docs/Glossary/Browsing_context)
@@ -690,4 +709,5 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
 
