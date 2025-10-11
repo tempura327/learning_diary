@@ -7,6 +7,18 @@
 10/12(S)
 
 10/11(S)
+- 學習一些新的好用的 CSS 屬性 [📗](https://medium.com/@onix_react/new-css-features-you-should-know-958ed1d34464)
+   - @scope [📗](https://liruifengv.com/posts/css-scope/)
+     - 限定 CSS 規則的作用範圍，解決了過往需要CSS module、CSS in JS才能解決的樣式外洩問題
+
+   - content-visibility [📗](https://web.dev/blog/css-content-visibility-baseline)
+     - element不在可視範圍內(viewport)，就不渲染
+     - 已證實 `content-visibility: auto` 在很長的頁面可縮短render時間，因此可以優化INP、FCP [📗](https://www.cnblogs.com/coco1s/p/16373817.html)
+     - 然而它有個小缺點，會讓scroll bar拉動時產生飄動感，不過只要用contain-intrinsic-size設定明確的height(100vh不算是明確的值) 就可解決這個問題
+    - aspect-ratio
+     - 控制圖片、影片顯示的比例，如此一來就不需要手動設定寬高、遮罩
+
+
 
 10/10
 - 了解如何透過改HTML、CSS優化效能 [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw) [📗](https://yaron-galperin.medium.com/memory-matters-understanding-heap-snapshots-in-javascript-with-chrome-devtools-53abc33ef9df)
@@ -709,5 +721,6 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
 
 
