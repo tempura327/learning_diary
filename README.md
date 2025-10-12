@@ -5,6 +5,36 @@
 10/13
 
 10/12(S)
+- 重新了解peer dependency [📗](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependencies) [📗](https://nodejs.org/en/blog/npm/peer-dependencies)
+   - peer dependency用於標示該plugin(package)需要某個版本的某個package，並且要求使用該plugin的repo安裝符合版本的指定package，以解決package重複安裝的問題
+     ```text
+         // 如果react-router-dom跟react-hook-form都需要react，但他們都沒把react放在自己的peerDependencies裡面，而是放在dependencies，就會重複安裝
+         ├── myProject
+         │   └── node_modules
+         │       ├── react
+         │       ├── react-router-dom
+         │       │   └── node_modules
+         │       │       └── react
+         │       └── react-hook-form
+         │       │   └── node_modules
+         │       │       └── react
+
+         // 如果有正確設定peer dependency，就可避免react-router-dom跟react-hook-form都需要react時，兩邊重複安裝react
+         ├── myProject
+         │   └── node_modules
+         │       ├── react
+         │       ├── react-router-dom
+         │       └── react-hook-form
+     ```
+   - 舉例來說react-router-dom的peer dependency有`"react: >=18"`，那如果要使用react-router-dom就必須在專案的dependency寫`"react": "^18.0.0"`，以便安裝react 18+
+     - 如果硬是不安裝react 18+，接下來發生的事會根據專案使用的套件管理工具而不同
+       ||npm|yarn|pnpm|
+       |---|---|---|---|
+       |是否自動安裝peer dependency|7+會自動安裝|不分版本只會跳出警告訊息，但不會安裝|自動安裝|
+       |版本衝突時|不安裝|---|安裝，但會警告|
+       |備注|||可自行設定[strictPeerDependencies](https://pnpm.io/next/settings#strictpeerdependencies)，在版本衝突時不安裝|
+   - 曾經有人在 yarn的 issue中提出[要求實作自動安裝 peer dependency的功能](https://github.com/yarnpkg/yarn/issues/1503#issuecomment-950095392)，有許多人都深感贊同，但[直到目前yarn 4都沒有這個功能](https://github.com/yarnpkg/berry/discussions/6666#discussioncomment-11972498)，頂多只能在`yarn add`加上使用 [--peer](https://yarnpkg.com/cli/add#details)來安裝peer dependency
+
 
 10/11(S)
 - 學習一些新的好用的 CSS 屬性 [📗](https://medium.com/@onix_react/new-css-features-you-should-know-958ed1d34464)
@@ -721,6 +751,7 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
 
 
 
