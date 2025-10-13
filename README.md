@@ -3,6 +3,12 @@
 10/14
 
 10/13
+- 了解setPointerCapture()
+  - e.currentTarget.setPointerCapture 用於捕獲pointer event (pointermove、pointerup等，是同時支援滑鼠、觸動板操作的事件)
+  - 當調用 setPointerCapture(e.pointerId) 後，即使滑鼠移出元素邊界，該元素仍會持續接收所有後續的pointer event，直到發生pointerup或呼叫 releasePointerCapture()才會移除綁定關係 [📗](https://zh.javascript.info/pointer-events#zhi-zhen-bu-huo)
+  - 優點是簡化事件處理邏輯，不需要在 document 或 window 層級監聽事件
+  - 常用於處理拖曳、繪圖等需要持續追蹤滑鼠位置的互動場景、處理多點觸控時的指標隔離 [📗](https://medium.com/geekculture/building-a-simple-colour-picker-in-react-from-scratch-8ef0d3f4e9cc)
+
 
 10/12(S)
 - 重新了解peer dependency [📗](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependencies) [📗](https://nodejs.org/en/blog/npm/peer-dependencies)
@@ -751,6 +757,7 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
 
 
 
