@@ -1,3 +1,95 @@
+10/28
+
+10/27
+
+10/26(S)
+- 想以下題目的解法[🖌](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAwghgGwMYDECuA7JUC8UAUcAXBmgLYBGEATlADRQUnlXUCUuAfFKZTQFD8A9EKjAAFgEsAzlBlQA9gGthopAozTgUJGmrUQuAgDNMSIvGTosHHNwDeqqM+oRgejAQB0PsHGpwZNLMfNQA2gC6tg5Ozs7qmtphxpLUWgAK-oEMPl6uGVlBEUZ+AUEA3LFxCVpiCsCIMAqY2nj5wJll0nkQACZoSBD4plgMKWkdhWyVVS5uHt6+WUQ8LDSR0VCOInG7Ndr5JVk9-YPDZgzA9Y3NGMDTgju7c+7UnvmVT3EAvlW-O79+PsdHoDEZzlgVpZUGZNo54hparp9JI+uDcv4AObBVahDZcLb8PaI7SSDAYGjonwUgAewBWvFY+LshOeUFcr08yIMEKQbHwGOo2Jy1IgdIeu2+M12O0Abq6AaojAJLxgAQjKBgaiSMiSYCSABuEEAEP+AaPlAEGaOkRCgQEC8CAUmMAgAyAK8DAKtKisA0eqASH-AEJmgBh-wDv6oAZCPZfQGECJcTJFOoXl1iDQEAA8sZwXDw8TNJbrbbMfgAORIRAIKCxhDxpO5hhY6QS54chZVk6h3k15y-XaRmheK4AZWAGowmJTBPhzxqmZtdrzBYQRZ7fbJmIrUCrLbidbeUF7-ZzDdcpyGIz5q7bcTTwc5cnJNEqrel54W3NRvUqUsEwLgvV64OIjJoDCYv7sMO4brp4cBQAA1IwL5viSy6fgAKgA7goRjciAhCfg8QIWlaE47ohKH4AAzPyAAsbDTFAOwAOxOGOeHZphvTIQoJF0BR+AAKyUeU1GiAAjAATPRuFZpOH4sURpH4JxPFUTsgC-8YABUqADIZUDCbBiRQGQaAIDqYAIIYeD4DSISsAwIAMmsQEsiOoFQDSUAAFRQCAME4dpun6ZIhkgKxaGghh3kGUZDw7Ax4k5iFvlGaxJHkbx-EaSJEVifh+AxX58XERx-LyXxOwAGwAAyPKIgAkpoAznqAMZpgDoSj6gBi8oAsHKAPfKgD+8oAFK4AFLdoA5oqAF96xgIHAwD2sNo0ALJwGAWm1BNwDADQngmf41ArJgSgYAoSEYMyMQItp+REFo26REYkR3sYCjUPgVqkkYJV8ZIUAADzLvoNoQAOEjPRBEFsCOh1IqC33AAAkktZBGGtYSSBEd7OJIxj4KAkAKMm3Jg5DEDQzg+NQLmp0LrmgNnnM3RgGg0jiPgWN3DjZBsGeJ7OGeyN06DDNQ5eWhwFgEAY1AACC+hwIYABkEsgvo2NQ19P3iFA3AlWTbL5F4VM0wKPgLUtbyc7L3O45RLPhoCLwLB8-CAsCFJaKLATGVAYThq7uxhLmcAVrmFC5hEdBnp7SBLp7vQ+xA-sMGEnvGD7i4B4T4j+xE4ap6nokZoxk568t+D28Ajvi6bTiAKGxgByCcRgBLnoADsqAF+KOpkILaDAHN2jGG4SDiJNChIEo4JkL3SjC+k4NEOk1AKFq0gQK9xMDpwqaWxuE9TzI1oBGc7txBSSFQKv09DPg+SWvqS-PDPwAIZqzfAPg+BsHYQO1hA0in0MuaN7fpM3s83x0MREqQDmaSjYIHXYg8+4j3BmnZmgIdgd2AF3Hufd84QD3gfde98T4IDPsBL4l9r5N2aHfB+T9ZjBjfrgj+kD+5fxIT-P4HEgGqycN8SiXZxDfWwa-VMXxIoZXyOFUQ7DypQEQcgoeaCMGT0PjwqheC7JVEITfEh99H6cG2KIXYOD9R5l0WiEs8ZGFfH-gJFhzMAQcIkNw4+vD8HaPNFnKKdjqyfBEWwIAA)
+
+```js
+type CalcFunc = (a:number , b:number) => number
+
+const curry = (func: CalcFunc) => {
+  // TODO
+};
+
+const add = (a:number, b:number) => {
+  return a + b;
+}
+
+const addTwo = curry(add);
+
+console.log(addTwo(3)(4)); // 7
+console.log(addTwo(3,4)(5)); // 12
+
+const multiply = (x:number, y: number) => {
+  return x * y;
+}
+
+const multiplyTwo = curry(multiply);
+console.log(multiplyTwo(3)(4));
+```
+
+```js
+const flattern = (arr: unknown[]) => {
+ // TODO
+}
+
+const nestArray = [
+  [
+    ['a','b'],
+    ['c', ['d','e'], [['f','g'], 'h']]
+  ]
+]
+
+console.log(flattern(nestArray)) // ["a", "b", "c", "d", "e", "f", "g", "h"] 
+```
+
+```js
+// 超過3秒印出hello world，反之印出 resolve value
+
+const fetchMock = (mockAPI:Promise<string>) => {
+ // TODO
+}
+
+// 超過3秒印出timeout
+
+fetchMock(new Promise((resolve) => {
+  setTimeout(()=>{
+    resolve('resolved value');
+  },4000)
+})).then((res) => {
+  console.log(res);
+})
+
+fetchMock(new Promise((resolve) => {
+  setTimeout(()=>{
+    resolve('resolved value');
+  },1000)
+})).then((res) => {
+  console.log(res);
+})
+```
+
+10/25(S)
+
+10/24
+
+10/23
+
+10/22
+
+10/21
+
+10/20
+
+10/19
+
+10/18
+
+10/17
+
+10/16
+
 10/15
 
 10/14
@@ -757,6 +849,7 @@
 7/1 🚲
 - 做side project
   ![螢幕擷取畫面 2025-07-01 215836](https://github.com/user-attachments/assets/518432f8-f1dc-4af4-8e96-09a2b60b5fa9)
+
 
 
 
