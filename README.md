@@ -1,4 +1,26 @@
+11/9(S)
+
+11/8(S)
+
+11/7
+
+11/6
+
+11/5
+
+11/4
+
+11/3
+
 11/2(S)
+- 了解CSS的box model [📗](https://www.explainthis.io/zh-hant/swe/css-box-model) [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+  - box model是元素的組成結構，由內容、內距、邊框與外距組成，分為content-box、border-box，前者為目前各大瀏覽器的預設值
+  - content-box只算內容寬高，border-box則包含內距與邊框在內
+  - 例子 [content-box與border-box](https://play.tailwindcss.com/tH582q5uC5)
+
+   <img width="1434" height="573" alt="compare content-box and border-box" src="https://github.com/user-attachments/assets/49c25c83-4a82-4d48-8693-5770c0502eb5" />
+
+   <img width="1026" height="513" alt="tailwind default - border box" src="https://github.com/user-attachments/assets/0d4171da-944f-46ce-85a3-fc9d8a05a1b9" />
 
 11/1(S)
 
@@ -10,8 +32,8 @@
 
 10/28
 - 了解CSS的display type [📗](https://developer.mozilla.org/zh-TW/docs/Web/CSS/box-sizing)
- - display type是描述element再畫面上怎麼排列，分為block box與inline box
- - block、inline是控制外部的排列(outer display type)，決定元素在 in flow 下如何排列(即元素本身參與的是何種 formatting context)
+  - display type是描述element再畫面上怎麼排列，分為block box與inline box
+  - block、inline是控制外部的排列(outer display type)，決定元素在 in flow 下如何排列(即元素本身參與的是何種 formatting context)
 
    ||block|inline|
    |----|----|----|
@@ -22,11 +44,19 @@
    |border|有效|有效，但垂直方向的border不會推開上下的元素，因此可能出現重疊|
    |預設寬度|跟其父層一樣|自身內容的寬度|
 
- - 例子 [block box](https://play.tailwindcss.com/520DrTXgmX)、[inline box](https://play.tailwindcss.com/7QBhlcz7tg)
-   在這兩個例子中都有放hr tag，仔細看的話會發現只有inline box的例子中「width不生效」、「分隔線底下的兩個元素跟分隔線有重疊」
+  - 例子 [block box](https://play.tailwindcss.com/520DrTXgmX)、[inline box](https://play.tailwindcss.com/7QBhlcz7tg)
+   <img width="1439" height="588" alt="compare block and inline" src="https://github.com/user-attachments/assets/e10c037e-298d-4398-9342-b77ffd8657d1" />
+  在這兩個例子中都有放hr tag，仔細看的話會發現只有inline box的例子中「width不生效」、「分隔線底下的兩個元素跟分隔線有重疊」
+
+   <img width="1440" height="590" alt="add m-2 and compare 2 inline examples" src="https://github.com/user-attachments/assets/0a54ac9a-5885-4fe5-8b9a-5cf906e556ae" />
+ 試試看幫inline例子中的hr下的兩個元素加上`m-2`，會發現垂直方向的margin沒生效，所以仍然和分隔線重疊
+
+  - 例子 [用css把block改為inline](https://play.tailwindcss.com/Gwa0oXRGX2)
+   <img width="1436" height="574" alt="compare span inline and css inline" src="https://github.com/user-attachments/assets/fe5ad3fd-0894-41aa-bca1-f763f72d81c5" />
+
 
  - flex與grid
-   - flex與grid是控制內部的排列(inner display type)，與其底下的子元素排列有關
+    - flex與grid是控制內部的排列(inner display type)，與其底下的子元素排列有關
 
 
 10/27
@@ -639,6 +669,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
