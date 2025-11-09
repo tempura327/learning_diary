@@ -1,4 +1,25 @@
+11/11
+
+11/10
+
 11/9(S)
+- 了解css layout modes [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/) [📗](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction#normal_layout_flow) [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Flow_layout)
+  - layout model可分為6種
+    - flow layout
+      - 預設值，又稱normal document flow、normal flow
+      - 唯一有block element、inline element概念的layout
+    - flexbox layout
+      - display: flex 會建立flex formatting context，套用這個屬性的element的children會參與FFC，所以會變成用flexbox layout
+      - 套用display: flex的inline element會被變成block element，但其children並不會變成用flexbox layout
+    - grid layout
+    - float
+    - positioned
+      - 在各種layout model中優先序最高
+      - 透過position、float可以讓元素跳出flow，不再參與normal flow，而是獨自排列
+      - 套用position: relative的元素是個特例，使用positioned layout，但仍然會參與flexbox layout、grid layout
+    - table
+
+  - 了解block element、inline element在flow layout的排列 [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow)
 
 11/8(S)
 
@@ -669,6 +690,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
