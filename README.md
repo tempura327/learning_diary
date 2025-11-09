@@ -298,7 +298,7 @@ fetchMock(new Promise((resolve) => {
 
 9/24
 
-## 9/23 🚲
+##### 9/23
 - 了解肥大的DOM 對效能的影響 [📗](https://www.debugbear.com/blog/excessive-dom-size?fbclid=IwY2xjawLjJGZleHRuA2FlbQIxMQABHq5gx9YywY3XY8Hk8fGFqxwXRyRXvH_hMuVZplvtybpE5FcuFubMI7vSms1y_aem_WBm8f-1Yxdh9tTAZJqRXeg) [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw)
   - 肥大的DOM意味著裡頭包含更多的DOM element，瀏覽器需要處理的東西會更多
   - 記憶體方面
@@ -693,6 +693,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
