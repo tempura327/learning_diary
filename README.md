@@ -221,7 +221,7 @@ fetchMock(new Promise((resolve) => {
 
    - content-visibility [📗](https://web.dev/blog/css-content-visibility-baseline)
      - element不在可視範圍內(viewport)，就不渲染
-     - 已證實 `content-visibility: auto` 在很長的頁面可縮短render時間，因此可以優化INP、FCP [📗](https://www.cnblogs.com/coco1s/p/16373817.html)
+     - 已證實 `content-visibility: auto` 在很長的頁面可縮短render時間，因此可以優化INP、FCP [📗](https://www.cnblogs.com/coco1s/p/16373817.html)  [🔖](https://github.com/tempura327/learning_diary/blob/master/README.md#923)
      - 然而它有個小缺點，會讓scroll bar拉動時產生飄動感，不過只要用contain-intrinsic-size設定明確的height(100vh不算是明確的值) 就可解決這個問題
     - aspect-ratio
      - 控制圖片、影片顯示的比例，如此一來就不需要手動設定寬高、遮罩
@@ -298,7 +298,7 @@ fetchMock(new Promise((resolve) => {
 
 9/24
 
-9/23 🚲
+## 9/23 🚲
 - 了解肥大的DOM 對效能的影響 [📗](https://www.debugbear.com/blog/excessive-dom-size?fbclid=IwY2xjawLjJGZleHRuA2FlbQIxMQABHq5gx9YywY3XY8Hk8fGFqxwXRyRXvH_hMuVZplvtybpE5FcuFubMI7vSms1y_aem_WBm8f-1Yxdh9tTAZJqRXeg) [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw)
   - 肥大的DOM意味著裡頭包含更多的DOM element，瀏覽器需要處理的東西會更多
   - 記憶體方面
@@ -323,7 +323,10 @@ fetchMock(new Promise((resolve) => {
   - FCP (First Contentful Paint)，網頁開始載入到第一個內容出現在畫面上的時間
   - INP (Interaction to Next Paint)，因使用者跟網頁互動產生的re-render所花的時間
     - scroll時出現卡頓，就是一種INP不佳的情況
-
+  - CLS (Cumulative Layout Shift)
+    - 衡量頁面在載入過程中「版面是否會跳動」 的指標
+    - 圖片沒設定寬高、廣告插入導致版面跳動，這些都是CLS不佳的情況
+	
 9/22 🚲
 
 9/21(S)
@@ -690,6 +693,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
