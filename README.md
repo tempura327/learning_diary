@@ -1,3 +1,9 @@
+11/21
+
+11/13~11/20
+
+11/12
+
 11/11
 
 11/10
@@ -323,8 +329,7 @@ fetchMock(new Promise((resolve) => {
   - FCP (First Contentful Paint)，網頁開始載入到第一個內容出現在畫面上的時間
   - INP (Interaction to Next Paint)，因使用者跟網頁互動產生的re-render所花的時間
     - scroll時出現卡頓，就是一種INP不佳的情況
-  - CLS (Cumulative Layout Shift)
-    - 衡量頁面在載入過程中「版面是否會跳動」 的指標
+  - CLS (Cumulative Layout Shift)，衡量頁面在載入過程中「版面是否會跳動」 的指標
     - 圖片沒設定寬高、廣告插入導致版面跳動，這些都是CLS不佳的情況
 	
 9/22 🚲
@@ -693,6 +698,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
