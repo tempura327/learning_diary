@@ -1,3 +1,19 @@
+11/26
+
+11/25
+- 了解block element、inline element在flow layout的排列 [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5)
+  - 預設block element由上到下垂直排列，inline element則水平由左到右排列，空間不足時則會wrap
+  - block element會參與block formatting context，inline element則參與inline formatting context
+  - 相鄰的block elements之間會有margin collapsing的現象。當發生時會以margin較大的那方為主 [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout#margin_collapsing)
+  - 文字之間如果行距太小會導致難以閱讀，而文字屬於inline element，所以inline element被設計成預設有一點些空格
+    - 若使用Tailwind則不會有這個現象，因為Tailwind用CSS把img變成block element [🖌️](https://play.tailwindcss.com/KbwJGDRWKZ?file=css)
+
+11/24
+
+11/23(S)
+
+11/22(S)
+
 11/21
 
 11/13~11/20
@@ -24,8 +40,6 @@
       - 透過position、float可以讓元素跳出flow，不再參與normal flow，而是獨自排列
       - 套用position: relative的元素是個特例，使用positioned layout，但仍然會參與flexbox layout、grid layout
     - table
-
-  - 了解block element、inline element在flow layout的排列 [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow)
 
 11/8(S)
 
@@ -698,6 +712,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
