@@ -1,4 +1,41 @@
+11/30(S)
+
+11/29(S)
+
+11/28
+
+11/27
+
 11/26
+- 練習Leetcode 56. Merge Intervals解法 [🖌️](https://www.typescriptlang.org/play/?#code/GYVwdgxgLglg9mABAWwKYCcDmqAUMxQYBuAhgDYDOAXImCMgEYYDaAumwJQ12MvuuIA3gChEYxBAQUoidKgqIAvImb5C6UpWYAGVqwDcw0eOBx0OMqhkwliAIz7ENgDxOCxchQB0lsJigAFo4wANQhHCLiURJSMsj4tmoeWjDsuobR4pJg0igkAB6J7hqequx2BkaZYtm5zAAOckQAsvgANIiNqC0FAspyFMwDPqh+gYgAtPaVxpkA9HOIgGe6gC4KgLOJgFGugDD-gAJGgKdygFFGXS34gNvGgAhG8WCz0TDAOFeIrsetSABkb3mFAHzKL-gRG7VWTyIbyEZjAKTaa2ZhXDovXqGIHVbKwOioDLVAC+KLEeMQC0QgGfldbbfZHJrNAoXZAFAl3B4FRDfTpU5kfFAJZx-dn5QHAqIDMHeXz+KFTCqw-5gDp0-IzQVZBDokCYgm4glEwBJNptdntAC9ugFLjQAVxoAmBMA3coE4b1EAUAI4OHteWsDhYsSaoVWEDoJADQzY5G1OCWHxwTAPDDYR3MOxtAAsrDaOjaFVdbsJi2YKcQiYEwmDobI4cjWFw2bjieT8baAFY9BwM0SKx166wC1IQ6gwxG0GWY3GAMxJ5gAJjaADYRwAOVO6ZN2Wup6cNptZ2OTmdzkeL5d6IA)
+
+ ```js
+ function merge(intervals: number[][]): number[][] {
+    const res = [intervals[0]];
+     for(let i = 1; i < intervals.length; i++){
+        const min = intervals[i][0];
+        const max = intervals[i][1];
+         const [prevMin, prevMax] = res[res.length - 1];
+         // 左側重疊，所以把prevMin換成min
+        if(min < prevMin && max >= prevMin){
+            res[res.length - 1] = [min, prevMax];
+             continue;
+        }
+       
+        // 右側重疊，所以把prevMax換成max
+        if(max > prevMax && min <= prevMax){
+            res[res.length - 1] = [prevMin, max];
+             continue;
+        }
+         // 沒重疊，所以直接推進去
+        res.push([min,max]);
+    }
+     return res;
+ };
+  console.log(merge([[1,4],[0,1]])); // [[0, 4]]
+ console.log(merge([[1,4],[4,5]])); // [[1, 5]]
+ console.log(merge([[1,3],[2,6],[8,10],[15,18]])); // [[1,6],[8,10],[15,18]]
+ ```
 
 11/25
 - 了解block element、inline element在flow layout的排列 [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5)
@@ -712,6 +749,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
