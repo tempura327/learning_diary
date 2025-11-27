@@ -5,6 +5,23 @@
 11/28
 
 11/27
+- 了解web vitals [📗](https://www.youtube.com/watch?v=pTswmgVWSH8)
+  - web vitals是Google 提出的網頁效能與使用者體驗核心指標，這些指標會影響 SEO 排名，以及使用者留存 
+  - 指標中有三個最重要的被稱作core web vitals，分別為LCP、INP、CLS
+
+    | 指標 | 問題原因 | 改善方式 |
+    |------|----------|-----------|
+    | **LCP** | - 過大的圖片等資源<br>- DOM 過度肥大<br>- 使用距離使用者較遠的 CDN | - 壓縮圖片、縮小 asset<br>- 精簡 DOM、避免未顯示元素掛入 DOM<br>- 使用地區接近的 CDN 節點 |
+    | **INP** | - DOM 過肥造成 reflow / repaint 費時<br>- 巨量 DOM 造成互動後渲染時間變久<br>- Virtual DOM 也無法避免瀏覽器層渲染成本 | - 攤平、精簡 HTML<br>- 減少不必要的 DOM<br>- 檢查並優化 function 的 self time |
+    | **CLS** | - 元素大小不固定（圖片、廣告等）導致 layout shift | - 為圖片/廣告設置 min-height<br>- 或使用 aspect-ratio 預留空間<br>- 使用 visual regression test 找出位移問題 |
+
+  - Google有一個叫做[CrUX](https://developer.chrome.com/docs/crux?hl=zh-tw)的使用者體驗報告，它會收集使用者使用Chrome瀏覽網頁時的資料，並以此來當作baseline，並判斷網頁的效能指標如何
+
+- 了解甚麼是DOMContentLoaded 、load、unload [📗](https://www.explainthis.io/zh-hant/swe/fe-DOMContentLoaded-load-beforeunload-unload-difference)
+  - DOMContentLoaded (DCL) 是當 DOM 建構完成後會觸發的事件。當 HTML 載入、解析完後就會觸發。可以幫助開發者偵測何時可執行 JavaScript
+  - load 是在 HTML 載入、解析完，CSS 、圖片等資源也都載入好後，才會被觸發
+    - load 必定是在 DOMContentLoaded 之後被觸發
+  - unload是在離開或關閉網頁後，才會被觸發。通常會是用來埋資料分析使用者確切是在何時離開了網頁 
 
 11/26
 - 練習Leetcode 56. Merge Intervals解法 [🖌️](https://www.typescriptlang.org/play/?#code/GYVwdgxgLglg9mABAWwKYCcDmqAUMxQYBuAhgDYDOAXImCMgEYYDaAumwJQ12MvuuIA3gChEYxBAQUoidKgqIAvImb5C6UpWYAGVqwDcw0eOBx0OMqhkwliAIz7ENgDxOCxchQB0lsJigAFo4wANQhHCLiURJSMsj4tmoeWjDsuobR4pJg0igkAB6J7hqequx2BkaZYtm5zAAOckQAsvgANIiNqC0FAspyFMwDPqh+gYgAtPaVxpkA9HOIgGe6gC4KgLOJgFGugDD-gAJGgKdygFFGXS34gNvGgAhG8WCz0TDAOFeIrsetSABkb3mFAHzKL-gRG7VWTyIbyEZjAKTaa2ZhXDovXqGIHVbKwOioDLVAC+KLEeMQC0QgGfldbbfZHJrNAoXZAFAl3B4FRDfTpU5kfFAJZx-dn5QHAqIDMHeXz+KFTCqw-5gDp0-IzQVZBDokCYgm4glEwBJNptdntAC9ugFLjQAVxoAmBMA3coE4b1EAUAI4OHteWsDhYsSaoVWEDoJADQzY5G1OCWHxwTAPDDYR3MOxtAAsrDaOjaFVdbsJi2YKcQiYEwmDobI4cjWFw2bjieT8baAFY9BwM0SKx166wC1IQ6gwxG0GWY3GAMxJ5gAJjaADYRwAOVO6ZN2Wup6cNptZ2OTmdzkeL5d6IA)
@@ -749,6 +766,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
