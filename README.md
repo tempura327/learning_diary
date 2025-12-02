@@ -1,3 +1,18 @@
+12/3
+
+12/2
+- 初步了解依賴注入（Dependency Injection, DI）的概念 [📙](https://medium.com/wenchin-rolls-around/%E6%B7%BA%E5%85%A5%E6%B7%BA%E5%87%BA-dependency-injection-ea672ba033ca)
+  - DI是一種設計模式，也是降低耦合度的手段，其目的是讓class只專注自己的邏輯，不管依賴的實作細節
+  - 優點
+    - 集中管理依賴，統一由DI container注入，避免四處散落的全域變數
+    - 降低耦合。傳入class的依賴只要照介面走，class就不必管其實作細節 [🖌️](https://www.typescriptlang.org/play/?#code/PTAEAsBdIBwZwFwgLYFMAmBLArsgdAMYD2ywA7qgHYHiaUC0ATkQDYtz0CGz2l6wAUgCiANgEAhAOwSAgsICsAgByKZi0ROni5QxUq0z66VDCrHqAT3p0AVqgKRMRBqk4jJAJgBGnAAwBmfwJOACgQukhURgAzTgJUUABJIRZ7SEZMYJYABRZsAHNQAG8Q0FBiSko0gAoASgRQADciTHQAbhCAXzCCFk44OFAAZSICAGtUSGLS0BgMxs5I0EZXdGcWC1m8-Ibk1IcMrNyCjpmKuHTsByJGapht3ZS0w84c7drpsrLMaNBqgEJ7gUPiUvl9IOBmGRQFVoUJGMxbgByIGFQBdDoAvL0APApI2odMHdMEzMoQzBwPCo0AAXi2Jxm3RmcDM2SIFFuIOJoFJ5NRhGcVQcdXxoG6DJAoEAZ9qAHXlANNygCN0kK9fqDAASnEwjAAIowLFFjoVMMh7qg0JRIIM9s9Mq99Z9yvyavUmi10HayudWKg8CwiPlqki1RrtbrGLaKgLIuh-rjhaKes4LhB1VqdXrttSYahoYGUyH9ULFQmpnBRhMpjTYcNS5NquBk8G08DTiXxpM8Ey+Cy2QWQuL6P2B4Oh8PwmaorF4kkngdrW8Cm77ZVHQ1mq0OgylQNhvZsCscw3Q+nDcbTeap-t0rPbaCwbNsF4WJllqt1ptUY8Ly85-lhWCYPfHwIZ9ODWSgNiTOAAHEeE7B5QC8IhPU4ShTlvUBxUAXYjAD+MwBQAMAQitAHh9QAYf8ACldAC+9QBpy0ABW1AAubQBTRUAQMjAGqI7DABC3QAl40AWgzOXdItGCuSAbjuODLRnI5tgAGgg6CiF4dB9QaBCkMoDk0JJWgeXTGlUV-W9uTwOsoJg+StOk4z9V0soGTQ8Nl2dVoFzBH4-n0wyZLk-VVLUsEPVSb1fX9IYdz3etU0PAoGghBJKUM0BOFAfJjNpfI8BjMJvLBfTeVswU8R4r5CVvQqGULShEyZAhd1QfcwttCss23SqQqDWrtlrUK80krl+NQPLzmLatIE1ewbkWDAM0rEZW0gaoKqqmrOqbMIWzLYbiEYMb0HbZlWSiIUgA)
+      - 此即依賴抽象，不依賴具體
+    - 容易測試。可以傳入mock物件，不用碰真的DB、API
+    - 容易替換。換資料庫/服務只改 Container註冊時傳入的DB client，不用四處改其他class內用到 DB client的部分
+    - DI container 自動組裝參數，不用手動 new 一堆物件、取出env並傳遞
+
+12/1
+
 11/30(S)
 
 11/29(S)
@@ -766,6 +781,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
