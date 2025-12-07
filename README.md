@@ -1,4 +1,16 @@
+12/10
+
+12/9
+
+12/8
+
 12/7(S)
+- 初步了解Signal [📗](https://medium.com/@LeeLuciano/%E6%88%91%E5%B0%8D-signals-%E7%9A%84%E7%A0%94%E7%A9%B6%E8%88%87%E8%A7%80%E5%AF%9F-%E5%BE%9E%E8%A3%9C%E4%B8%81%E5%88%B0%E8%A7%A3%E6%94%BE-e96e4329a77a) [📗](https://ithelp.ithome.com.tw/articles/10373437)
+  - Signals 是一種顆粒度度很細的響應式狀態管理
+  - 它追蹤變數與使用它的函式，或變數跟DOM node之間的依賴關係。當變數改變時，只會通知實際有使用該變數的區塊進行更新。這大幅地減少不必要的reconciliation，因此可提升效能 [🔖]()
+  - 不需要比較整個virtual DOM tree來得到diff
+  - 不需要執行整個function component
+  - 不需要使用useCallback、useMemo之類來優化
 
 12/6(S)
 
@@ -801,6 +813,7 @@ fetchMock(new Promise((resolve) => {
 			<img width="1102" height="180" alt="pre_0" src="https://github.com/user-attachments/assets/6e3b4d7b-8198-453a-84bc-6e194a963157" />
 
 9/1(M) 🚲
+
 
 
 
