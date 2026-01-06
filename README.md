@@ -1,3 +1,7 @@
+1/11(S)
+
+1/10(S)
+
 1/9
 
 1/8
@@ -5,6 +9,17 @@
 1/7
 
 1/6
+- 了解stacking context [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) [📗](https://ithelp.ithome.com.tw/articles/10217945)
+  - 元素預設會以 document flow 來排列，但當元素套用 position非static的屬性，會建立新的 stacking context，並跳脫document flow
+    - 因為脫離document flow，所以stacking context內的元素、屬性變動並不會觸發reflow
+  - Stacking Context 是隔離的容器，子元素的 z-index 只在父容器的 stacking context 內有效
+    - 同一個stacking context的元素才可立於同樣的基準點來比較z-index [🖌️](https://play.tailwindcss.com/3wHeONfZa7) [🖌️](https://codepen.io/GaryChu/pen/wvwQWjE)
+  - 常見的建立stacking context的CSS
+    - position: fixed、postion: sticky
+    - position: relative + z-index、position: absolute + z-index
+    - opacity: 小於1
+    - translate: transform
+    - flex + z-index、grid + z-index
 
 1/5
 - 簡單了解Playwright Test Agents [📗](https://playwright.dev/docs/test-agents)
@@ -39,5 +54,6 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
