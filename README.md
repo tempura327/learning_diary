@@ -33,7 +33,11 @@
 1/2
 
 - 了解Golang的receiver [📙](https://go.dev/ref/spec#Receiver) 
-  - 分為value receiver、pointer receiver [📙](https://go.dev/tour/methods/4)
+  - receiver是綁定function到特定type成為其method的一個參數，分為value receiver、pointer receiver [📙](https://go.dev/tour/methods/4)
+  - Go的function和method的差別在於是否有receiver。method有reciever，function則沒有
+  - receiver的型別稱為base type。不可以是interface或pointer，且必須定義在與method同個package中
+  - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
