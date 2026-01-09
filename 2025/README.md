@@ -22,7 +22,7 @@
   - 色域(gamut)是顯示器能夠產生的顏色範圍
     - 目前大多的螢幕是sRGB，Mac有部分型號是P3
   - oklch系統是新的色彩系統，由L(亮度) C(色度，越高則黑白含量越少，該色越飽滿) H(色相，顏色所在的角度)
-  - 解決了以往hsl在亮度上的問題 (人類體感的亮度+-N%跟實際上的亮度+-N%不一樣，且不同顏色+-N%時體感上的增減也會不同)，讓顏色調整更符合人眼感知 [🔖](https://codesandbox.io/p/sandbox/try-oklch-4lw9xl)
+  - 解決了以往hsl在亮度上的問題 (人類體感的亮度+-N%跟實際上的亮度+-N%不一樣，且不同顏色+-N%時體感上的增減也會不同)，讓顏色調整更符合人眼感知 [🖌](https://codesandbox.io/p/sandbox/try-oklch-4lw9xl)
   - oklch比起sRGBrgb有更廣的色域 [📗](https://tailwindcss.com/blog/tailwindcss-v4#modernized-p3-color-palette) [📗](https://dev.to/matfrana/the-mystery-of-tailwind-colors-v4-hjh)，顏色的表現力會更好
      - 但是如果螢幕是sRGB的一樣只能表達出人眼看到的35%
   - 透過l加上calc()可簡單做到亮度反轉，進而做出dark mode
@@ -58,7 +58,7 @@
 12/7(S)
 - 初步了解Signal [📗](https://medium.com/@LeeLuciano/%E6%88%91%E5%B0%8D-signals-%E7%9A%84%E7%A0%94%E7%A9%B6%E8%88%87%E8%A7%80%E5%AF%9F-%E5%BE%9E%E8%A3%9C%E4%B8%81%E5%88%B0%E8%A7%A3%E6%94%BE-e96e4329a77a) [📗](https://ithelp.ithome.com.tw/articles/10373437)
   - Signals 是一種顆粒度度很細的響應式狀態管理
-  - 它追蹤變數與使用它的函式，或變數跟DOM node之間的依賴關係。當變數改變時，只會通知實際有使用該變數的區塊進行更新。這大幅地減少不必要的reconciliation，因此可提升效能 [🔖]()
+  - 它追蹤變數與使用它的函式，或變數跟DOM node之間的依賴關係。當變數改變時，只會通知實際有使用該變數的區塊進行更新。這大幅地減少不必要的reconciliation，因此可提升效能  [🔖](https://github.com/tempura327/learning-diary/blob/master/2025/README.md#410)
   - 不需要比較整個virtual DOM tree來得到diff
   - 不需要執行整個function component
   - 不需要使用useCallback、useMemo之類來優化
@@ -147,13 +147,14 @@
     }
      return res;
  };
+
   console.log(merge([[1,4],[0,1]])); // [[0, 4]]
- console.log(merge([[1,4],[4,5]])); // [[1, 5]]
- console.log(merge([[1,3],[2,6],[8,10],[15,18]])); // [[1,6],[8,10],[15,18]]
+  console.log(merge([[1,4],[4,5]])); // [[1, 5]]
+  console.log(merge([[1,3],[2,6],[8,10],[15,18]])); // [[1,6],[8,10],[15,18]]
  ```
 
-11/25
-- 了解block element、inline element在flow layout的排列 [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5)
+#### 11/25
+- 了解block element、inline element在flow layout的排列 [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/#inline-magic-space-5) [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#119)
   - 預設block element由上到下垂直排列，inline element則水平由左到右排列，空間不足時則會wrap
   - block element會參與block formatting context，inline element則參與inline formatting context
   - 相鄰的block elements之間會有margin collapsing的現象。當發生時會以margin較大的那方為主 [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout#margin_collapsing)
@@ -176,7 +177,7 @@
 
 11/10
 
-11/9(S)
+#### 11/9(S)
 - 了解css layout modes [📗](https://www.joshwcomeau.com/css/understanding-layout-algorithms/) [📗](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction#normal_layout_flow) [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Flow_layout)
   - layout model可分為6種
     - flow layout
@@ -393,7 +394,7 @@ fetchMock(new Promise((resolve) => {
 
    - content-visibility [📗](https://web.dev/blog/css-content-visibility-baseline)
      - element不在可視範圍內(viewport)，就不渲染
-     - 已證實 `content-visibility: auto` 在很長的頁面可縮短render時間，因此可以優化INP、FCP [📗](https://www.cnblogs.com/coco1s/p/16373817.html)  [🔖](https://github.com/tempura327/learning_diary/blob/master/README.md#923)
+     - 已證實 `content-visibility: auto` 在很長的頁面可縮短render時間，因此可以優化INP、FCP [📗](https://www.cnblogs.com/coco1s/p/16373817.html)  [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#923)
      - 然而它有個小缺點，會讓scroll bar拉動時產生飄動感，不過只要用contain-intrinsic-size設定明確的height(100vh不算是明確的值) 就可解決這個問題
     - aspect-ratio
      - 控制圖片、影片顯示的比例，如此一來就不需要手動設定寬高、遮罩
@@ -1853,12 +1854,12 @@ resolve: {
 4/11
 - 初步了解pnpm，以及其運作方式 [📗](https://www.youtube.com/watch?v=DKulVqlQYa8)
 
-4/10
+#### 4/10
 - 閱讀[[Day 11] React 畫面更新的核心機制（下）：Reconciliation](https://ithelp.ithome.com.tw/articles/10298053)
   - 當呼叫 setState 後，React 會先以 Object.is() 來檢查新傳入的 state 是否與舊的不同，如果相同的畫面不用更新，反之則產生新的Virtual DOM Tree，用於比較、更新畫面
     - 基本型別的值，Object.is()判斷值是否相同的，是的話則為true
     - 物件型別的值，Object.is()判斷reference是否相同的，是的話則為true
-  - 「將新產生的 Virtual DOM Tree 並與舊的進行比較，再更新DOM Tree」的流程，在 React 中被稱為 Reconciliation
+  - 「產生新的virtual DOM，將新產生的 Virtual DOM Tree 並與舊的進行比較，再更新DOM Tree」的流程，在 React 中被稱為 Reconciliation
   - state 所屬的父組件進行 re-render，會引起其子組件re-render，並傳入新的 props
 
 4/9

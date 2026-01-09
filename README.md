@@ -3,13 +3,24 @@
 1/10(S)
 
 1/9
+- 了解absolute、relative 移動的基準 [🖌](https://play.tailwindcss.com/vsR4F2speO) 
+
+  https://github.com/user-attachments/assets/65e79d81-25e8-4972-ad7d-1ce77f509614
+
+  內層的element會以外層element為基準一起移動
+
+  https://github.com/user-attachments/assets/7c422e7b-87b3-4e12-957c-b9af4481a87d
+
+  https://github.com/user-attachments/assets/de2309d7-0fda-4c33-a401-20b7149d0433
+
+  如果是外層relative，內層absolute，或者反過來，都是內層的element會以外層element為基準一起移動
 
 1/8
 
 1/7
 
-1/6
-- 了解stacking context [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) [📗](https://ithelp.ithome.com.tw/articles/10217945)
+#### 1/6
+- 了解stacking context [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) [📗](https://ithelp.ithome.com.tw/articles/10217945) [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#1125)
   - 元素預設會以 document flow 來排列，但當元素套用 position非static的屬性，會建立新的 stacking context，並跳脫document flow
     - 因為脫離document flow，所以stacking context內的元素、屬性變動並不會觸發reflow
   - Stacking Context 是隔離的容器，子元素的 z-index 只在父容器的 stacking context 內有效
