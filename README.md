@@ -1,6 +1,30 @@
+1/21
+
 1/20
 
 1/19(S)
+- 閱讀[資料庫索引 (database index) 是什麼? 如何選擇加在哪個欄位上?](https://www.notion.so/explainthisio/database-index-2cc2d1d1de188008a045c4b70e665c5c)
+
+  - 建置index是為了讓搜尋的效率更好
+    - 沒有特別設定index的狀況下，資料庫會掃過每一行，然後把符合條件的資料找出來，相對沒有效率。tree資料結構就是為了解決這個問題
+
+  - B-tree
+    - 它的每個節點比binary tree帶有比較多的鍵，雖然節點越多越佔空間，但是控制在一定數量下，不會帶來太多額外成本
+    - 它減少了讀取磁碟的 I/O 所需時間，所以比起二元搜尋樹，是個讓搜尋能更快完成的資料結構。
+
+  - B+tree
+    - B-tree的改良版，用於解決B-tree根據範圍搜尋的弱點
+    - 在最底下的子節點外的節點都有重複出現
+    - 分為內部節點 (internal nodes) 與葉節點 (leaf nodes)，內部節點只會作為指標 (pointer)，指向最終的葉節點，具體的值只會在葉節點
+    - 因為內部節點通常容易快取，實際發生大量 I/O 的地方是葉節點，當這樣設計就能有效減少讀取磁碟，讓整體的速度更快
+
+  - 為什麼不直接幫每個欄位都建index？
+    - tree是一種用空間換時間的方式，且每次寫入資料也必須更新tree，如果建太多index會導致寫入變很慢
+
+  - uuid當primary key是好主意嗎？
+    - primary key本身就是一種index
+    - uuid v6以下的版本因為uuid的值是隨機的hash
+    - 如果拿hash當index的話，可能會導致寫入時更新tree更花時間
 
 1/18(S)
 
@@ -97,6 +121,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
