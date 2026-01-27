@@ -1,3 +1,25 @@
+1/29
+
+1/28
+
+1/27
+
+1/26
+- 了解function overload [📗](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+  - 有時候我們會需要把function定義成可以被以多個不同數量、型別的參數呼叫，或者回傳不同型別的值，此時就會需要用到function overload
+    - 用function keyword宣告的function，使用一般的overload function即可
+    - arrow function不支援overload signature，所以必須使用call signature才可達到同樣的效果 [](https://blog.logrocket.com/implementing-function-overloading-typescript/)
+  - 至少要有2個overload signature，且實作一定要兼容所有overload signature
+  - 如果2個overload signature的參數數量都一樣，且回傳值型別一樣，那應該使用union type改寫成non-overloaded function [](https://aaronbos.dev/posts/function-overload-typescript)
+
+1/25(S)
+
+1/24(S)
+
+1/23
+
+1/22
+
 1/21
 
 1/20
@@ -121,6 +143,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
