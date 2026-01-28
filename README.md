@@ -1,6 +1,16 @@
 1/29
 
 1/28
+- 了解為什麼DB會踩不到index [📙](https://medium.com/johnliu-%E7%9A%84%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E6%80%9D%E7%B6%AD/database-%E5%85%AB%E5%80%8B-index-%E7%B4%A2%E5%BC%95-%E7%84%A1%E6%B3%95%E7%94%9F%E6%95%88%E7%9A%84-sql-%E5%AF%AB%E6%B3%95-cdc7d2e72f51)
+  - B tree是有階層結構的，必須一層一層往下走
+    - 多個條件時，某個條件的欄位沒有設index
+    - 複合式 index 使用順序錯誤
+  - B tree裡的每個節點都是一個具體的key(正面表述)
+    - 傳入負面表述的條件 (e.g. NOT, !=)
+    - LIKE語句中%的位置在開頭 (e.g. '%abc', '%abc%')
+  - B tree裡的每個節點存的是欄位原始值
+    - 使用函數語句包裝作為條件的欄位 (e.g. UPPER(name))
+    - 對欄位做運算 (e.g. 1+1)
 
 1/27
 
@@ -8,6 +18,7 @@
 - 了解function overload [📗](https://www.typescriptlang.org/docs/handbook/2/functions.html)
   - 有時候我們會需要把function定義成可以被以多個不同數量、型別的參數呼叫，或者回傳不同型別的值，此時就會需要用到function overload
     - 用function keyword宣告的function，使用一般的overload function即可
+      - <img width="639" height="812" alt="overload signature" src="https://github.com/user-attachments/assets/e4cd09d0-dcec-413c-8e6a-590473da0816" />
     - arrow function不支援overload signature，所以必須使用call signature才可達到同樣的效果 [](https://blog.logrocket.com/implementing-function-overloading-typescript/)
   - 至少要有2個overload signature，且實作一定要兼容所有overload signature
   - 如果2個overload signature的參數數量都一樣，且回傳值型別一樣，那應該使用union type改寫成non-overloaded function [](https://aaronbos.dev/posts/function-overload-typescript)
@@ -143,6 +154,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
