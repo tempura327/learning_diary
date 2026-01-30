@@ -1,3 +1,15 @@
+1/31(S)
+
+1/30
+- 了解sticky [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position#sticky) [🖌️](https://play.tailwindcss.com/EE7BahkKVO)
+  - sticky元素會建立stacking context [🔖](https://github.com/tempura327/learning_diary?tab=readme-ov-file#16)
+  - 排的依據是外層最近的可滑動的block element [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#1125)
+  - sticky不會因為外層元素使用position: absolute + z-index被影響產生偏移，但是會被transform: translateY() 影響 [🖌️](https://play.tailwindcss.com/ekW4nu29gX)
+  - 導致sticky失效的原因
+    - 外層元素有 overflow
+    - 外層元素的高度沒有大於要sticky的元素
+    - 沒有幫sticky元素設置top或bottom
+
 1/29
 
 1/28
@@ -154,6 +166,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
