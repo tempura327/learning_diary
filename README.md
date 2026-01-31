@@ -1,10 +1,15 @@
 1/31(S)
+- 了解為何position: absolue會導致崩塌
+  - **建立stacking context跟跳脫document flow無關** [🔖](https://github.com/tempura327/learning_diary/tree/master?tab=readme-ov-file#16)
+  - 先不提加上z-index來建立stacking context [🖌️](https://play.tailwindcss.com/lVy997dVWQ)
+    - 只要[position: absolute](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position#absolute) 就會跳脫document flow，這就是導致崩塌的原因 
+    - <img width="1908" height="752" alt="螢幕擷取畫面 2026-01-31 170042" src="https://github.com/user-attachments/assets/3c4f91b1-3e25-4ad6-8f3a-dd1257e1aa86" />
 
 1/30
 - 了解sticky [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position#sticky) [🖌️](https://play.tailwindcss.com/EE7BahkKVO)
   - sticky元素會建立stacking context [🔖](https://github.com/tempura327/learning_diary?tab=readme-ov-file#16)
-  - 排的依據是外層最近的可滑動的block element [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#1125)
-  - sticky不會因為外層元素使用position: absolute + z-index被影響產生偏移，但是會被transform: translateY() 影響 [🖌️](https://play.tailwindcss.com/ekW4nu29gX)
+  - 排的依據是外層最近的可滑動的**block** element [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#1125)
+  - sticky不會因為外層元素使用position: absolute/relative + z-index被影響產生偏移，但是會被transform: translateY() 影響 [🖌️](https://play.tailwindcss.com/ekW4nu29gX)
   - 導致sticky失效的原因
     - 外層元素有 overflow
     - 外層元素的高度沒有大於要sticky的元素
@@ -55,7 +60,7 @@
 
   - B-tree
     - 它的每個節點比binary tree帶有比較多的鍵，雖然節點越多越佔空間，但是控制在一定數量下，不會帶來太多額外成本
-    - 它減少了讀取磁碟的 I/O 所需時間，所以比起二元搜尋樹，是個讓搜尋能更快完成的資料結構。
+    - 它減少了讀取磁碟的 I/O 所需時間，所以比起二元搜尋樹，是個讓搜尋能更快完成的資料結構
 
   - B+tree
     - B-tree的改良版，用於解決B-tree根據範圍搜尋的弱點
@@ -122,18 +127,17 @@
 
 #### 1/6
 - 了解stacking context [📗](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) [📗](https://ithelp.ithome.com.tw/articles/10217945) [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#1125)
-  - 元素預設會以 document flow 來排列，但當元素套用 position非static的屬性，會建立新的 stacking context，並跳脫document flow
-    - 因為脫離document flow，所以stacking context內的元素、屬性變動並不會觸發reflow
+  - 元素預設會以 document flow 來排列，但當元素套用 position非static的屬性，會建立新的 stacking context，~~並跳脫document flow~~但**不一定會跳脫document flow**
+    - 若脫離document flow，stacking context內的元素、屬性變動並不會觸發reflow
   - Stacking Context 是隔離的容器，子元素的 z-index 只在父容器的 stacking context 內有效
     - 同一個stacking context的元素才可立於同樣的基準點來比較z-index [🖌️](https://play.tailwindcss.com/3wHeONfZa7) [🖌️](https://codepen.io/GaryChu/pen/wvwQWjE)
   - 常見的建立stacking context的CSS
-    - position: fixed、postion: sticky
-    - position: relative + z-index、position: absolute + z-index
-    - opacity: 小於1
-    - translate: transform
-    - flex + z-index、grid + z-index
+    ||position: fixed|postion: sticky|position: relative + z-index|position: absolute + z-index|opacity: 小於1|translate|flex + z-index|grid + z-index|
+    |---|---|---|---|---|---|---|---|---|
+    |建立stacking context|○|○|○|○|○|○|○|
+    |跳脫document flow|○|×|×|○|×|×||
 
-1/5
+1/
 - 簡單了解Playwright Test Agents [📗](https://playwright.dev/docs/test-agents)
   - 整套由planner agent、genetator agent、healer agent組成
   - 步驟
@@ -166,6 +170,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
