@@ -1,3 +1,33 @@
+2/15(S)
+
+2/14(S)
+
+2/13
+
+2/12
+
+2/11
+
+2/10
+- 了解transform: translate [📗](https://www.w3.org/TR/css-transforms-1/) [📗](https://ithelp.ithome.com.tw/articles/10362313)
+  - translate 是用來達到位移效果的。它**只是視覺上的位移**，不改變元素在document flow中的真實位置 
+  - 因為translate只移動視覺位置，所以實際上在document flow內的真實位置並沒改變，所以真實位置沒改變就不會觸發reflow，只會在compositing階段做視覺上的位移
+
+- 了解Gecko rendering [📗](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Fundamentals)
+  - Gecko是一個瀏覽器渲染引擎，它優化了對HTML、CSS、canvas的渲染。Gekco的優化減少了因為scroll之類事件產生的repaint
+  - 簡單的場境會使用系統圖形合成器(system compositor)的專用硬體渲染，一些複雜的場景則會使用GPU渲染，以提升效能
+    - 使用了animation、transform: translate 的話，視複雜度可能會由GPU渲染
+
+2/9
+
+2/8(S)
+
+2/7(S)
+
+2/6
+
+2/5
+
 2/4
 
 2/3
@@ -142,8 +172,8 @@
   - 常見的建立stacking context的CSS
     ||position: fixed|postion: sticky|position: relative + z-index|position: absolute + z-index|opacity: 小於1|translate|flex + z-index|grid + z-index|
     |---|---|---|---|---|---|---|---|---|
-    |建立stacking context|○|○|○|○|○|○|○|
-    |跳脫document flow|○|×|×|○|×|×||
+    |建立stacking context|○|○|○|○|○|○|○|○|
+    |跳脫document flow|○|×|×|○|×|×|×|×|
 
 1/
 - 簡單了解Playwright Test Agents [📗](https://playwright.dev/docs/test-agents)
@@ -178,3 +208,4 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
