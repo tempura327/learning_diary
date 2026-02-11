@@ -7,6 +7,54 @@
 2/12
 
 2/11
+- 了解為什麼要幫GitHub Actions做快取 [📗](https://oldmo860617.medium.com/%E6%B7%BA%E8%AB%87-github-actions-workflows-%E7%9A%84-cache-%E6%A9%9F%E5%88%B6-f63db6f7929a)
+  - 導入快取機制，可以達到沒有必要時就不用重複安裝依賴套件、重複執行專案的 build ，以此盡量減少 CI 的執行時間
+    - 以前端而言，常用來快取 node_modules 或 build 結果
+    - 可以使用官方提供的 [actions/cache@v6](https://github.com/actions/cache)
+      - 搭配[actions/setup-node@v6](https://github.com/actions/setup-node#caching-global-packages-data) 一起用可以達成best practice
+       - 如果執行`setup-node step`時cache hit，會顯示 `Cache restored from key: node-cache-{runner os}-{package manager}-{hash}`
+      - setup-node負責cache global package data，cache負責cache node_modules
+
+ - 快取行為及限制
+   - GitHub Actions 可以 access 與 restore 當前分支、base分支的快取 [📗](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache)
+   - 一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
+   - 步驟
+     1. 去找符合key的快取
+     2. 找不到的話去找符合 key 的一部分的快取
+     
+     3. 再找不到的話再使用 restore-keys 去找快取
+     4. (需自行設置條件)都找不到的話就執行 install 或 build
+     ```
+       - name: Cache node modules
+         id: cache-npm
+         uses: actions/cache@v4
+         env:
+           cache-name: cache-node-modules
+         with:
+           # npm cache files are stored in `~/.npm` on Linux/macOS
+           path: ~/.npm
+           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+           restore-keys: |
+             ${{ runner.os }}-build-${{ env.cache-name }}-
+             ${{ runner.os }}-build-
+             ${{ runner.os }}-
+
+       # 設置條件才會只在 cache miss 的情況下執行
+       # 如果有用setup-node，且有設定cache，那就可直接把global package data放到node_modules，不然就要從npm registry下載
+       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+         name: List the state of node modules
+         continue-on-error: true
+         run: npm list
+     ```
+
+- [actions/cache@v6](https://github.com/actions/cache)
+   - 用了的話，除了執行`restore cache step`之外，最後還會自動執行一個`post cache step`
+   - 傳入
+     - path，要存入快取的內容所在的路徑
+     - key，用於唯一標識快取的key
+     - restore-keys，cache-miss時使用的fallback key
+   - 如果cache hit，會顯示`Cache restored from key: {key}`
+   - 如果cache miss，會顯示`Cache not found for input keys: {key}, {restore-keys}`，且在`post cache step`會顯示`Cache saved with key: {key}`
 
 2/10
 - 了解transform: translate [📗](https://www.w3.org/TR/css-transforms-1/) [📗](https://ithelp.ithome.com.tw/articles/10362313)
@@ -208,4 +256,5 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
