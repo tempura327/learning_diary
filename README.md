@@ -5,26 +5,43 @@
 2/13
 
 2/12
+- 了解後端專案的分層[📙](https://medium.com/@harshgharat663/understanding-handlers-services-repositories-middlewares-request-context-in-backend-2977539931d9)
+  - 基於需求不同後端專案的分層設計都會有點不同
+    - 所以有時候handler會改用controller，或者分層會多出mediator、middleware等層
+    - 所以有時候會有雙層handler(HTTP handler + business handler)
+  - request的lifecycle
+    1. 前端發request，DNS解析得到ip後，打到server
+    2. router對比路徑
+    3. router分工給 HTTP handler
+    4. HTTP handler叫Business handler處理request，business handler叫service處理完回給它，它再返回response給HTTP handler，HTTP handler再返回response給前端
+  - handler的職責
+    - request object內有parameter、body、headers之類的資料，HTTP handler會從request object裡取出parameters、body
+    - HTTP handler把body裡的內容從字串轉成物件，並檢查前端該傳入的值是不是都有、都合法，或者把前端傳入的值做轉換
+    - HTTP handler呼叫business handler，business handler叫service
+  - Service的職責
+    - Service裡裝的是純邏輯，它不會跟HTTP、資料庫有任何接觸
+    - Service只加工組裡來自handler的資料、flow的安排、呼叫Repo
+    - Repo的職責
+  - 操作資料庫，並返回結果給Service
+
 
 2/11
 - 了解為什麼要幫GitHub Actions做快取 [📗](https://oldmo860617.medium.com/%E6%B7%BA%E8%AB%87-github-actions-workflows-%E7%9A%84-cache-%E6%A9%9F%E5%88%B6-f63db6f7929a)
   - 導入快取機制，可以達到沒有必要時就不用重複安裝依賴套件、重複執行專案的 build ，以此盡量減少 CI 的執行時間
     - 以前端而言，常用來快取 node_modules 或 build 結果
     - 可以使用官方提供的 [actions/cache@v6](https://github.com/actions/cache)
-      - 搭配[actions/setup-node@v6](https://github.com/actions/setup-node#caching-global-packages-data) 一起用可以達成best practice
-       - 如果執行`setup-node step`時cache hit，會顯示 `Cache restored from key: node-cache-{runner os}-{package manager}-{hash}`
-      - setup-node負責cache global package data，cache負責cache node_modules
+
 
  - 快取行為及限制
-   - GitHub Actions 可以 access 與 restore 當前分支、base分支的快取 [📗](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache)
-   - 一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
-   - 步驟
-     1. 去找符合key的快取
-     2. 找不到的話去找符合 key 的一部分的快取
+  - GitHub Actions 可以 access 與 restore 當前分支、base分支的快取 [📗](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache)
+    - 一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
+    - 步驟
+      1. 去找符合key的快取
+      2. 找不到的話去找符合 key 的一部分的快取
      
-     3. 再找不到的話再使用 restore-keys 去找快取
-     4. (需自行設置條件)都找不到的話就執行 install 或 build
-     ```
+      3. 再找不到的話再使用 restore-keys 去找快取
+      4. (需自行設置條件)都找不到的話就執行 install 或 build
+      ```
        - name: Cache node modules
          id: cache-npm
          uses: actions/cache@v4
@@ -45,16 +62,19 @@
          name: List the state of node modules
          continue-on-error: true
          run: npm list
-     ```
+      ```
 
 - [actions/cache@v6](https://github.com/actions/cache)
-   - 用了的話，除了執行`restore cache step`之外，最後還會自動執行一個`post cache step`
-   - 傳入
-     - path，要存入快取的內容所在的路徑
-     - key，用於唯一標識快取的key
-     - restore-keys，cache-miss時使用的fallback key
-   - 如果cache hit，會顯示`Cache restored from key: {key}`
-   - 如果cache miss，會顯示`Cache not found for input keys: {key}, {restore-keys}`，且在`post cache step`會顯示`Cache saved with key: {key}`
+    - 用了的話，除了執行`restore cache step`之外，最後還會自動執行一個`post cache step`
+    - 傳入
+      - path，要存入快取的內容所在的路徑
+      - key，用於唯一標識快取的key
+      - restore-keys，cache-miss時使用的fallback key
+    - 如果cache hit，會顯示`Cache restored from key: {key}`
+    - 如果cache miss，會顯示`Cache not found for input keys: {key}, {restore-keys}`，且在`post cache step`會顯示`Cache saved with key: {key}`
+    - 搭配[actions/setup-node@v6](https://github.com/actions/setup-node#caching-global-packages-data) 一起用可以達成best practice
+      - setup-node負責cache global package data，cache負責cache node_modules
+      - 如果執行`setup-node step`時cache hit，會顯示 `Cache restored from key: node-cache-{runner os}-{package manager}-{hash}`
 
 2/10
 - 了解transform: translate [📗](https://www.w3.org/TR/css-transforms-1/) [📗](https://ithelp.ithome.com.tw/articles/10362313)
@@ -85,7 +105,7 @@
 2/1(S)
 
 1/31(S)
-- 了解為何position: absolue會導致崩塌
+- 了解為何position: absolute會導致崩塌
   - **建立stacking context跟跳脫document flow無關** [🔖](https://github.com/tempura327/learning_diary/tree/master?tab=readme-ov-file#16)
   - 先不提加上z-index來建立stacking context [🖌️](https://play.tailwindcss.com/lVy997dVWQ)
     - 只要[position: absolute](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position#absolute) 就會跳脫document flow，這就是導致崩塌的原因 
@@ -223,9 +243,9 @@
     |建立stacking context|○|○|○|○|○|○|○|○|
     |跳脫document flow|○|×|×|○|×|×|×|×|
 
-1/
+1/5
 - 簡單了解Playwright Test Agents [📗](https://playwright.dev/docs/test-agents)
-  - 整套由planner agent、genetator agent、healer agent組成
+  - 整套由planner agent、generator agent、healer agent組成
   - 步驟
     - 執行`npx playwright init-agents --loop=vscode`
     - 如果有每個測試前都要做的動作，可以寫到seed test。這份檔案也會被AI當作撰寫測試的範本
