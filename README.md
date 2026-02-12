@@ -32,10 +32,10 @@
     - 可以使用官方提供的 [actions/cache@v6](https://github.com/actions/cache)
 
 
- - 快取行為及限制
+- 快取行為及限制
   - GitHub Actions 可以 access 與 restore 當前分支、base分支的快取 [📗](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache)
   - (免費版)一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
-  - 步驟
+  - 找快取的步驟
     1. 去找符合key的快取
     2. 找不到的話去找符合 key 的一部分的快取
     
