@@ -34,35 +34,35 @@
 
  - 快取行為及限制
   - GitHub Actions 可以 access 與 restore 當前分支、base分支的快取 [📗](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#restrictions-for-accessing-a-cache)
-    - 一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
-    - 步驟
-      1. 去找符合key的快取
-      2. 找不到的話去找符合 key 的一部分的快取
-     
-      3. 再找不到的話再使用 restore-keys 去找快取
-      4. (需自行設置條件)都找不到的話就執行 install 或 build
-      ```
-       - name: Cache node modules
-         id: cache-npm
-         uses: actions/cache@v4
-         env:
-           cache-name: cache-node-modules
-         with:
-           # npm cache files are stored in `~/.npm` on Linux/macOS
-           path: ~/.npm
-           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-           restore-keys: |
-             ${{ runner.os }}-build-${{ env.cache-name }}-
-             ${{ runner.os }}-build-
-             ${{ runner.os }}-
-
-       # 設置條件才會只在 cache miss 的情況下執行
-       # 如果有用setup-node，且有設定cache，那就可直接把global package data放到node_modules，不然就要從npm registry下載
-       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-         name: List the state of node modules
-         continue-on-error: true
-         run: npm list
-      ```
+  - (免費版)一個Repo中快取檔案的上限是10GB，超過容量、超過7天未被使用的快取會被自動刪除
+  - 步驟
+    1. 去找符合key的快取
+    2. 找不到的話去找符合 key 的一部分的快取
+    
+    3. 再找不到的話再使用 restore-keys 去找快取
+    4. (需自行設置條件)都找不到的話就執行 install 或 build
+        ```
+         - name: Cache node modules
+           id: cache-npm
+           uses: actions/cache@v4
+           env:
+             cache-name: cache-node-modules
+           with:
+             # npm cache files are stored in `~/.npm` on Linux/macOS
+             path: ~/.npm
+             key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+             restore-keys: |
+               ${{ runner.os }}-build-${{ env.cache-name }}-
+               ${{ runner.os }}-build-
+               ${{ runner.os }}-
+               
+         # 設置條件才會只在 cache miss 的情況下執行
+         # 如果有用setup-node，且有設定cache，那就可直接把global package data放到node_modules，不然就要從npm registry下載
+         - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+           name: List the state of node modules
+           continue-on-error: true
+           run: npm list
+        ```
 
 - [actions/cache@v6](https://github.com/actions/cache)
     - 用了的話，除了執行`restore cache step`之外，最後還會自動執行一個`post cache step`
