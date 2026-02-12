@@ -14,6 +14,8 @@
 
 #### 12/27
 - 讀完理解React的setState到底是同步還是非同步(下) [📗](https://ithelp.ithome.com.tw/articles/10257994)
+  - React 18(含)以後所有的setState都會是非同步的
+  - React 17(含)以前，一般的呼叫方式是非同步的；非正規的方式則是同步(e.g. event listener綁handler)
 - 讀完Redux Essentials 5
 
 12/26
@@ -126,7 +128,7 @@
 北埔旅遊
 
 12/5
-- 讀完Redux Essentiasl 3
+- 讀完Redux Essentials 3
 - 讀Redux Essentials 4 ~Adding a Users Slice
   - 傳遞prepare function給slice底下的reducer，以此自定義action creator
 
@@ -141,7 +143,7 @@
 
 12/2
 - 讀Redux Essentials 2 ~Defining Pre-Typed React-Redux Hooks
-  - 了解如何用slice，以及它如何集中管理action、reducer，並產出產出actoion creator
+  - 了解如何用slice，以及它如何集中管理action、reducer，並產出產出action creator
   - `reducer一定是pure function，且它不做非同步的事`
     - slice的reducers中的code看起來是mutable，可以這麼做是因為createSlice使用的Immer會自己幫你copy state，意味著reducer收到的state並不是原本的那份，所以不會造成side effect
   - thunk是一個function，接收dispatch、getState，可以處理非同步
@@ -150,7 +152,7 @@
 
 12/1(S)
 
-----------
+
 11/30(S)
 
 11/29
