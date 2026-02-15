@@ -1530,7 +1530,7 @@ fetchMock(new Promise((resolve) => {
 5/9
 - 閱讀[[Day 22] 保持資料流 — 不要欺騙 hooks 的 dependencies（上）](https://ithelp.ithome.com.tw/articles/10305701)
 
-5/8
+#### 5/8
 - 閱讀[[Day 21] useEffect 其實不是 function component 的生命週期 API](https://ithelp.ithome.com.tw/articles/10305220)
   - useEffect 的用途是「將原始資料同步到畫面以外的副作用」，而不是lifecycle hook
   - 在設計 effect 內的邏輯時，不應該考慮「這個 effect 會在哪幾次 render 時被執行」，而是即使每一次 render 時都執行這個 effect，其邏輯依然能正常運作。因為重點不是哪些 render 會執行這個 effect，而是這個 effect 最後的執行結果能夠「完整的同步」資料的變化就好
@@ -1862,7 +1862,7 @@ resolve: {
   - 「產生新的virtual DOM，將新產生的 Virtual DOM Tree 並與舊的進行比較，再更新DOM Tree」的流程，在 React 中被稱為 Reconciliation
   - state 所屬的父組件進行 re-render，會引起其子組件re-render，並傳入新的 props
 
-4/9
+#### 4/9
 - 閱讀[[Day 10] React 畫面更新的核心機制（上）：一律重繪渲染策略](https://ithelp.ithome.com.tw/articles/10298007)
   - 在 React 中在講「渲染」，通常都是指 Virtual DOM elements（React elements）的產生
   - React 以 Virtual DOM 來進行一律重繪，React會比較新舊 Virtual DOM，然後只更新有變化的部分對應的DOM

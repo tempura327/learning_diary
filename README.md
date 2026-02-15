@@ -1,4 +1,20 @@
+2/18
+
+2/17
+
+2/16
+
 2/15(S)
+- 了解useEffect執行的時機 [📗](https://ithelp.ithome.com.tw/articles/10321575) [🔖](https://github.com/tempura327/learning-diary/blob/master/2025/README.md#58)
+  - useEffect 會在每次 commit phase 後被執行(DOM繪製好以後) [📗](https://react.dev/reference/react/useEffect#parameters)
+    - > your Effect will re-run after every commit of the component 
+    - > If your Effect wasn’t caused by an interaction (like a click), React will generally let the browser paint the updated screen first before running your Effect.
+  - React使用Object.is()來判斷useEffect、useLayoutEffect的dependecy是否有改變，有改變的話就執行callback
+  
+- 了解useLayoutEffect [📗](https://react.dev/reference/react/useLayoutEffect)
+  - 在DOM繪製好以前就被執行
+  - 使用useLayoutEffect做set state，會阻塞瀏覽器進行replaint，所以對效能有衝擊。官方不建議使用 
+  - 使用useLayoutEffect做set state，會使得其餘所有的useEffect、useLayoutEffect馬上被執行
 
 2/14(S)
 
@@ -172,7 +188,7 @@
     - B-tree的改良版，用於解決B-tree根據範圍搜尋的弱點
     - 在最底下的子節點外的節點都有重複出現
     - 分為內部節點 (internal nodes) 與葉節點 (leaf nodes)，內部節點只會作為指標 (pointer)，指向最終的葉節點，具體的值只會在葉節點
-    - 因為內部節點通常容易快取，實際發生大量 I/O 的地方是葉節點，當這樣設計就能有效減少讀取磁碟，讓整體的速度更快
+    - 因為內部節點通常容易快取，實際發生大量 I/O 的地方是葉節點，當這樣設計就能有效減少讀取磁碟，讓整體的速度更快
 
   - 為什麼不直接幫每個欄位都建index？
     - tree是一種用空間換時間的方式，且每次寫入資料也必須更新tree，如果建太多index會導致寫入變很慢
