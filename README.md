@@ -4,7 +4,7 @@
 
 2/16
 - 閱讀[前端建構工具 (build tool) 是什麼? 為什麼要用?](https://www.notion.so/explainthisio/build-tool-2942d1d1de1880b29d59ffe4d598e686#2942d1d1de1880daa24cf82c95793428)
-  - 建構工具是裝了多種用於優化程式碼的工具的工具箱(e.g. vite)，而打包工具、編譯工具都只是其中的一種工具(e.g. ESbuild, Rolldown, Turbopack為打包工具，Babel為編譯工具)
+  - 建構工具是裝了多種用於優化程式碼的工具的工具箱(e.g. vite)，而打包工具、編譯工具都只是其中的一種工具
     - 通常建構工具都能開箱即用，且曾寸進良好的開發體驗
     - 建構工具的config內設定plugin可啟用其他功能，例如 [vite-plugin-svgr](https://www.npmjs.com/package/vite-plugin-svgr) 是一種把svg轉換成React component的plugin
   - 打包工具 (e.g. ESbuild, Rolldown, Turbopack)
