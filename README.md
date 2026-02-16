@@ -3,6 +3,19 @@
 2/17
 
 2/16
+- 閱讀[前端建構工具 (build tool) 是什麼? 為什麼要用?](https://www.notion.so/explainthisio/build-tool-2942d1d1de1880b29d59ffe4d598e686#2942d1d1de1880daa24cf82c95793428)
+  - 建構工具是裝了多種用於優化程式碼的工具的工具箱(e.g. vite)，而打包工具、編譯工具都只是其中的一種工具(e.g. ESbuild, Rolldown, Turbopack為打包工具，Babel為編譯工具)
+    - 通常建構工具都能開箱即用，且曾寸進良好的開發體驗
+    - 建構工具的config內設定plugin可啟用其他功能，例如 [vite-plugin-svgr](https://www.npmjs.com/package/vite-plugin-svgr) 是一種把svg轉換成React component的plugin
+  - 打包工具 (e.g. ESbuild, Rolldown, Turbopack)
+    - tree shaking，把沒用到的程式碼篩掉
+    - code spliting，讓使用者每次進入頁面只載入需要的檔案
+    - minify，把程式碼壓縮，以減少需要下載的檔案容量
+  - 編譯工具 (e.g. Babel, SWC)
+    - 轉譯（transpilation)，把.jsx, .vue, .svelte、.scsss等檔案轉換為瀏覽器可運行的.js, .css
+  - Vite在開發環境做的是預打包(pre-bundle)、產品環境的才是真的打包
+    - 預打包是指把CommonJS、UMD等的別種格式的JS轉成ESModule
+    - 因為開發環境是預打包，所以HRM才會很快
 
 2/15(S)
 - 了解useEffect執行的時機 [📗](https://ithelp.ithome.com.tw/articles/10321575) [🔖](https://github.com/tempura327/learning-diary/blob/master/2025/README.md#58)
