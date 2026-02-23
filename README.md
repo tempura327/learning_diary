@@ -1,3 +1,16 @@
+2/24
+
+2/23
+- 閱讀[前端打包工具 (bundler) 是什麼? 為什麼要用?](https://www.notion.so/explainthisio/bundler-2b02d1d1de1880b986f9fef469470d44)
+
+2/22
+
+2/21
+
+2/20
+
+2/19
+
 2/18
 
 2/17
@@ -305,5 +318,6 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
