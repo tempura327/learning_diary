@@ -1,3 +1,4 @@
+
 2/24
 
 2/23
@@ -6,23 +7,13 @@
     - 直到Node.js興起才有了CommonJS規範，後來又出了AMD、UMD等規範，直到2015年JS官方才正式將ESModule定為標準
     - ESModule推出以前，只能用script tag引入JS檔案，但這導致「全域變數污染」、「載入順序(依賴關係)」的問題
     - 就算真的人工妥善地管理變數、依賴關係，仍然有「單頁面需要發多個request才能把所需資源都拿回來」、「重複拿資源的問題」的問題
-  - 以[純HTML、JS、CSS構成且未經打包的網站](https://github.com/tempura327/Apetment/blob/master/index.html)為例
-    - 從source code、下方影片可以看出前2個問題
+  - 以[純HTML、JS、CSS構成且未經打包的網站](https://tempura327.github.io/Apetment)為例
+    - 從[source code](https://github.com/tempura327/Apetment/blob/master/index.html)、下方影片可以看出前2個問題
     - 影片可以看出後2個問題
 
-      https://github.com/user-attachments/assets/b805bc69-693c-4ad3-84e4-a1a6f9952eae
+      https://github.com/user-attachments/assets/a7bfb712-da1b-4b57-b17a-306d20d09fcb
 
-2/22
-
-2/21
-
-2/20
-
-2/19
-
-2/18
-
-2/17
+2/17~2/22 過年休息
 
 2/16
 - 閱讀[前端建構工具 (build tool) 是什麼? 為什麼要用?](https://www.notion.so/explainthisio/build-tool-2942d1d1de1880b29d59ffe4d598e686#2942d1d1de1880daa24cf82c95793428)
@@ -327,6 +318,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
