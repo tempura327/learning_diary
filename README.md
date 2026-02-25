@@ -1,3 +1,11 @@
+2/25
+- 初步了解React Server Components [📗](https://ithelp.ithome.com.tw/articles/10316478)
+  - RSC跟SSR無關，而是跟React Server有關
+  - React Server 指的是渲染 RSC 的環境
+    - 任務是跟後端API互動(就像Remix的loader function)，並渲染 RSC
+    - 可以跑在build time，也可以跑在server
+  - React Client 指的是接受與使用 React Server output 的環境
+    - server 和瀏覽器上都可以運行。假如跑在瀏覽器上，主要任務會是操控 DOM；跑在 server 上則是產生初始的 HTML
 
 2/24
 
@@ -318,6 +326,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
