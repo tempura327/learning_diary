@@ -1,8 +1,23 @@
+2/28
+
+2/27
+- 閱讀[Day 11 - Next.js 13 App Router ：什麼時候適合使用 Server Components 或 Client Components？](https://ithelp.ithome.com.tw/articles/10316916)
+  - RSC 的優點
+    - 只在 RSC 中用到的程式碼、依賴， 在 server side 渲染完組件後，不會被傳回 client side，因此可以降低 client side 需下載的 JS 大小，加快頁面 initial loading (可提升FCP、LCP)
+    - (如果是靜態渲染) Next 預設會在 build time 渲染頁面，並快取渲染結果，假如收到相同 request，就可以重複使用渲染好的靜態檔案，以減少重複渲染次數
+    - API key, access token等敏感資訊可以藏在server，避免暴露到client side
+  - RSC 的缺點
+    - 無法使用browser API、React的hook、context，所以是靜態的，無法跟使用者互動
+    - 因為無法用React context，所以(直到目前的Next.js 16) 無法使用 CSS-in-JS
+    - RSC傳給React Client的props必須是可序列化的，所以不可以傳function, class給React Client
+
+2/26
+
 2/25
 - 初步了解React Server Components [📗](https://ithelp.ithome.com.tw/articles/10316478)
   - RSC跟SSR無關，而是跟React Server有關
   - React Server 指的是渲染 RSC 的環境
-    - 任務是跟後端API互動(就像Remix的loader function)，並渲染 RSC
+    - 任務是跟後端API互動(就像Remix的loader function)，並生成 RSC，再將RSC以props的形式傳給React Client
     - 可以跑在build time，也可以跑在server
   - React Client 指的是接受與使用 React Server output 的環境
     - server 和瀏覽器上都可以運行。假如跑在瀏覽器上，主要任務會是操控 DOM；跑在 server 上則是產生初始的 HTML
@@ -326,6 +341,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
