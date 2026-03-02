@@ -1,3 +1,7 @@
+3/4
+
+3/3
+
 3/2
 - 閱讀[如何設計前端登入機制?](https://www.explainthis.io/zh-hant/e-plus/blog/frontend-login-design)
   - 驗證分為session-based、token-based
@@ -11,16 +15,16 @@
   - token-based無狀態，為JWT token
   - 實務上會用混合模式，組合為access token + refresh token
     - 步驟
-      1. 登入成功後，後端回傳 access toke 和 refresh token (常放在 HttpOnly Cookie)
+      1. 登入成功後，後端回傳 access toke (放localStorage 或 cookie) 和 refresh token (常放在 HttpOnly Cookie)
       2. 打API時，前端手動在 Header 加上 Authorization: Bearer <access_token>
       3. 後端拿到`Bearer <access_token>`後會先decode，再去對比header, payload, signature
       4. access token過期了，前端打取得refresh token的API，瀏覽器會自動帶上存在 HttpOnly Cookie 裡的 refresh token傳給後端
       5. 後端去DB找有無對應的refresh token有的話，回新的access token給前端
     - 有負載平衡系統的架構下，因為不同server都有同一把private key，因此都能對比signature的部分來判斷是不是自家發出的token
     - 此法可兼顧速度(decode access token，並對比是否合法很快)、安全(refresh token 存在 HttpOnly Cookie，不可被JS操作，因此不會受到XSS攻擊)
+  - 如果使用RSC的話，就算採 token-based 或混合式，access token 也只能放在 cookie (但不一定要 HttpOnly Cookie)
     
 3/1
-
 
 2/28
 
@@ -365,6 +369,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
