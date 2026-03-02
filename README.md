@@ -11,7 +11,7 @@
       2. 打API時，瀏覽器會自動帶上存在 Cookie 裡的 session id 傳給後端
       3. 後端去DB找有無對應session id 的 session，有的話回 response 給前端
     - 缺點為有被 CSRF (跨站請求偽造) 的風險
-      - 雖然可以透過後端在 header 設置 SameSite處理這個問題，但部分老舊瀏覽器不支援 SameSite，所以仍有隱憂
+      - 雖然可以透過後端在 header 設置 `SameSite` 處理這個問題，但部分老舊瀏覽器不支援 `SameSite`，所以仍有隱憂
   - token-based無狀態，為JWT token
   - 實務上會用混合模式，組合為access token + refresh token
     - 步驟
@@ -22,7 +22,10 @@
       5. 後端去DB找有無對應的refresh token有的話，回新的access token給前端
     - 有負載平衡系統的架構下，因為不同server都有同一把private key，因此都能對比signature的部分來判斷是不是自家發出的token
     - 此法可兼顧速度(decode access token，並對比是否合法很快)、安全(refresh token 存在 HttpOnly Cookie，不可被JS操作，因此不會受到XSS攻擊)
-  - 如果使用RSC的話，就算採 token-based 或混合式，access token 也只能放在 cookie (但不一定要 HttpOnly Cookie)
+  - 如果使用RSC的話，access token 也只能放在 cookie (但不一定要 HttpOnly Cookie)
+  - 如果前後端網址在不同的 domain
+    - 那 HttpOnly Cookie 是無法被在前後端間傳接的，因此 refresh token 勢必無法只能放 localStorage 或 一般 cookie。如此就有被 XSS 的風險
+    - 如果可以調整到「subdomain 不同，但同domain」，則只要設置 `Domain` 就可解決 [📙](https://www.threads.com/@chc_web_dev/post/C64DoDLhgyq)
     
 3/1
 
@@ -369,6 +372,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
