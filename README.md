@@ -1,4 +1,5 @@
 3/4
+- 看[cloudflare worker是什麼？零基礎教程](https://www.youtube.com/watch?v=2BfZO_LT6jA)
 
 3/3
 
@@ -372,6 +373,7 @@
   - Struct底下不能直接定義func，若需要的話通常會搭配receiver，或者直接定義成interface [📙](https://matthung0807.blogspot.com/2021/06/go-what-is-receiver.html)
 
 1/1
+
 
 
 
