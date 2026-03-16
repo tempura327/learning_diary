@@ -1,3 +1,79 @@
+3/18
+
+3/17
+
+3/16
+- 了解const enum [📗](https://www.typescriptlang.org/docs/handbook/enums.html)
+  - const enum被編譯後會變成值，而不是維持物件。普通enum編譯後仍然有物件存在
+    ```js
+    // 編譯前
+    const enum Direction {
+      Up,
+      Down,
+    }
+    
+    const d = Direction.Up;
+    // -----------------------------
+    // 編譯後enum直接被移除，d直接使用值，而不是從Direction查找
+    const d = 0;
+    ```
+
+    ```js
+    // 編譯前
+    enum Direction {
+      Up,
+      Down,
+    }
+
+    // -----------------------------
+    // 編譯後enum變成物件
+
+    var Direction;
+    (function (Direction) {
+      Direction[Direction["Up"] = 0] = "Up";
+      Direction[Direction["Down"] = 1] = "Down";
+    })(Direction || (Direction = {}));
+
+    const d = Direction.Up; // 仍然是物件存取
+    ```
+  - const enum優點是在runtime不用查找，所以效能較好。反之缺點是無法使用反查的功能
+  - const enum的值一定要常數或者可以在compile time計算的值
+    ```js
+    // 以下的方式都不合法
+    const x = 1;
+    const foo = () => 0
+
+    const enum Direction {
+      Up = x,
+      Down = foo(),
+    }
+    ```
+- 要發布給別人用的 library，不應該 export const enum，因為使用者的編譯工具（Vite、Babel、esbuild）通常是逐檔編譯，無法跨檔案讀取，這會導致編譯失敗
+  - 逐檔編譯是指編譯每個檔案時只看這個檔案本身，不去讀取其他檔案的內容。逐檔編譯速度快（可以平行處理、只重編有變動的檔案），但代價是無法使用需要「看別的檔案才能知道值」的功能，const enum 就是典型案例。
+  - 相對於逐檔編譯，tsc 會先把所有檔案一起讀進來，建立完整的型別圖，才開始輸出，所以能做跨檔案的分析和替換。
+
+3/15(S)
+
+3/14(S)
+
+3/13
+
+3/12
+
+3/11
+
+3/10
+
+3/9
+
+3/8(S)
+
+3/7(S)
+
+3/6
+
+3/5
+
 3/4
 - 看[cloudflare worker是什麼？零基礎教程](https://www.youtube.com/watch?v=2BfZO_LT6jA)
 
