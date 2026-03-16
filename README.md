@@ -59,6 +59,7 @@
 3/13
 
 3/12
+- 閱讀[兩個世代的軟體開發碰撞: 大師 Martin Fowler vs. 大神 Peter Steinberger 的 AI Coding 觀點對比](https://blog.aihao.tw/2026/02/28/fowler-vs-steinberger/)
 
 3/11
 
