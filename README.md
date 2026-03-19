@@ -1,3 +1,35 @@
+3/19
+- 閱讀 [The unknown Type in TypeScript](https://mariusschulz.com/blog/the-unknown-type-in-typescript)
+  - any 允許型別可以是任何型別。unknown 常配合各種 type narrowing 的方式一起使用，這讓它既保留彈性，同時又比 any 更type safe
+  - 若為 union type 時，unknown 會吸收所有非 any 的型別
+    - 因為所有型別都可以賦值給型別為unknown的變數，也就是說 `type X = unknown | string` 中的 `string` 也在 `unknown` 範圍裡，所以TS compiler 就把 X 的型別簡化為 unknown
+    - 只要 union type 中出現 any，整個 union type 就變成 any
+- 了解never[📗](https://www.typescriptlang.org/play/?ssl=41&ssc=4&pln=41&pc=103#code/PTAEFUDsGtIewO6QFDJBG8mgJYGdQ5IBTQgM1ABcALOPUygTwAdiCaBDSwyAY1JzdeAGxy9oeADShGcAK5owvDpFBkckACagAjnMGkOoYXG5wKc+gTJwATrkoA6UAEluHXpQKjoh0HhwAI1FIAHNFKjgqakNIRioWYmcAdRjbWPiOYRMEaztQDgBbQJxQ-SZQAFpQOUxEFHR0vRx0gjxWXhx1XjxHVHQAQVBQuDhtYgAPIuZhUgR5YW1AgVUEWw5mZg1QgtAAKQBlAHkAOVBmDlt6W2dD04jNLiNlVV44QpXQQpV4zS6yYjpSDcGy2QoEFTaGikXjpLh2CLmaKkABWeCI50uATCalqnhwGPmkAA5NxYIhkf5qBtSEjoQ8nlVKawrhjlNlttEuLi+JQCao8LQ5Is+sg3pA8Nw0UQAApYwGgAC8oAAFNLIAdKLZtgAufxa7YASiVAD59scTo4LldiGr0RqDWFDQBuVDiyVfRgDXhvWrcZXquU22wqgAGAG9QAAiSBFYhRvVRgAidlMMQ4UdAAF9Qy7UIUvT75MDHLGPq6C97fSXiN8cMJXREXBRZHJQLQAG4KjGB+W2aSt0AvfzEBjU7iCdscdgxCLpShyWyqJiscgFOLSdHI1SaOBsT1V4tOVyUYkEZh0ALBYgRShRdQTaL4UAIQTUYbEEjanpMwJyCenhCwhbheeBXrMkRqDgEy3tQz6vjQNR1EgorulK9pBtcUDktgyp2kQmramEeqSkRoSGnqtQ4aoipmnclrWvQ+EOmReZikQHoFkc0K2IefpKqAvbBthWCQGGkYxnGCbRgcRRyMQwiZjmbFcTxfElmWxCNugAAqMSEIEKLEJ4nrcWk6lCCo8DcMsNT0Nofr1pSK6kNSeARMsn6gJoxnCJcxBQlEOmJAcsI4Mwx56c+w62ZYAWQZ+eCLje6CcNwAwyi4Q4cXIHxXE+MAFIE8jcNCLQJFsOJyMwlRkLYRCUDqqAuRA1wCZGmkkY6OxZq6aGeuA1wWQJQlYchYkRtGmnSVGsmFPJinZrmBQEINgIVowa28UWfqlnG2lgCJ9S4BCwxwqVozCNId5IT5VyUJCDhfHYpBwlCMT0E16DUJQlDMHgOogN82qWHgvDUMKABejhvIUwDBHAoTANClRUaJlQuZUGgY4kYPahFEQ-X9AMgAgZOOC5ePhZQflhI4dhI7uPTANSWjFXA0DAOkszTsQlTWWwyO42FEWVAAzJUAAMjg-YUwgAMQkAgqPjRjcA1S5-RgCcxBdrYWugAAQsZHBxaAwWsKF+PcElmx2F42U+WoOTrlkjABFIlK02UHChClYAkAF7BRLZHDXpB6TMK0n7cAgMSvGMpAmKEYhZMI8QvNZhMbKwkDOAAYvkkzTLM11wdYeJ8myVmmKA86LpATXsRK3AkHrABKxALkuBB4catGgOGyCgKA6DNk9ND1bkPCUuo93GBoN4j5PFJK6AACitj1SGUYDMICAcO70RT57bcKvXPdRnmvUG+Pg6dt2y76S5A7yCOAgTqdKr92aZ-6+gccxDvg+CoAgk5BQLG0H-KcmxPzOD0mwGEKh9T1mEKAZYEQLhgXipcYs2gfC0h4qADsWR5IAzdBxbgBYABqpDSDKj-p3buEpv4HVAAACQ4B2TkRgyCV35KAaBF9XjINivQPhaC45eR8lkbYEQELvmhEhKOAUxAPRKKICodJ9J7C4RwK21M66OQ+OuTQEQMpZXdLlQEM5uSFFKD9QRtcxGckpk3fqJDRCPEoMQLaAkVRxVsHqLaP9B7D1wBQAJ1xjRDxHiPYRdlAR7RMQAQkVMqKMJwOAnCjK6EeWZUAj0GEWWwfwcQ3SUS1PA7sfGFDLtFROmJELDj-uE76OdPzSEAeDL4XBwb7iUQklqSJGFdwbr0QpdcxlLkEbrQETDxmsOQDfCICCKqkB8uoSAgh+RtAej4rk7hEn2DcpBWyWD7K4AaGAP8pU0iGHSKAT88hQjvjYMoVcniuxgNULokhBiIovnuYERgERBwvFJMMOQlwVA+LHFwUU6BBo8J5PiQkcEenCIINAtOiACCDhuhwTQZj0BEr+FXWMaC3hOw0OcPy-ACDdPfBA4UUDnGkFAuBJIqzy4nUSRItQ+QVH0GBJyZYv0FSAm3l8NgeBfZsEkIiewIg6CclaPIWwDKF6+CgrMAg+QTDqwmeY4hgJ4gXmYMKS4iTBX2D-tIZ8N1ErJUOQUCIeAEI9OfJMaklg+RdmcOvRwoRHBl25HM2w5quDvgaXrAKiKwDsMBMQM864nmQFyqYtNPrTaShwF2fwnrqDXUjQUYlcjSWzIQIQCKAiKn6U-JmlU3xGC2R0sKcKAB+Q0qBG2FFAPnHICpYmgHbnQYgiqR7t1oLuHyWh6qQEnaAahBJZiUCXUmDg+BGCKoKc3D0ZAh22AADJcA0FkkxeFD2IEBHqQdN7bChJHR6wQPSVTXoQICGJ4SR7KHoAOo9jgx2fR-XEhJUZgNGFsHIEoKd4BytyaBv9pB72fpuNOsYid51ECanEsD0zVAQZnVhzQC61BSrkHB4guVEN4eQwBh9jgV1wDXbhvDUzmHRmY35KZQDPyBA8HBFQGY8lxPo6hpJm7t1sbw+B42HJzzJsgNsvAiHQObNNsIRqoHf2UNAAAfRzX6-NxAADCMRxB6mgcqD960dMcYbgZozeauzmeMtAUTBSVnoAAJpv1fNkD8RzYZbFmPYKV+Q5WMFceOGQGqq0RFs-YFqmd2XZUgHrHx2gNA3T-gm0AOs9ZXIwLsg2QxoHPnRB8GgnImV8tNneb4fJ2TpymYUOAXZtB1XeBEIwLVaj8lFC1QrgIXB4E7u1zrAlSKcgAD6zKK-NjNxQ7NNhbG-Q10ACh3IYIkW1BWI1jYmx1gKr82z0HhZQCIk5KvdVAEt3Kywbjm15c+ZYygzbgKFIsBbgJs6wNUNyaDoqTHvdzaQcFNd3BgVKMuKIgh8tRWsMQLgLrnxxW0EYEwE5VDF0KDMYgOpxTkv5FkHGrB3JAA)
+  - never 代表永遠不會發生的分支
+  - 當函式在某些情況下必定是異常、會throw error（而不是return value），把它標記成 never 是有用的。這讓TS型別系統能夠在靜態分析時理解：這個函式之後的程式碼是不可達的（unreachable），並正確縮窄後續的型別。
+    ```js
+    // 沒有回傳任何東西，所以回傳值型別是never
+    const neverReturns = () => {
+     // If it throws on the first line
+     throw new Error("Always throws, never  returns");
+    };
+
+    // 因為neverReturns的回傳值是never，這暗示永遠不會執行到if之後的分支，如果真的執行到了就是有異常
+    // 所以validateUser回傳值的型別會是boolean，
+    const validateUser = (user: User) => {
+     if (user) {
+      return user.name !== "NaN";
+    }
+
+    // 如果把這行刪掉的話，TS會報錯 "Not all code paths return a value."，
+    // 所以一定要return never 或 false，
+    // 兩者差在前者暗示發生異常，後者只是普通的flow
+    return neverReturns();
+    };
+    ```
+   
+  - union type 中出現 never 的話會被自動移除掉
+
 3/18
 
 3/17
