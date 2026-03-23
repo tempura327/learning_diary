@@ -1,3 +1,29 @@
+3/25
+
+3/24
+
+3/23
+- 了解如何設定AWS cli
+    <img width="1278" height="285" alt="files in  aws" src="https://github.com/user-attachments/assets/708aa972-744a-4a49-a47a-428174f9b933" />
+    
+    <img width="932" height="530" alt="AWS access portal 1" src="https://github.com/user-attachments/assets/1e336e37-7720-4815-b874-d7b13a95b61d" />
+
+    <img width="817" height="722" alt="AWS access portal 2" src="https://github.com/user-attachments/assets/6d6dc42d-55f6-4e01-95d0-496b60d44b9d" />
+
+  - 綠蓋住的區塊是用`aws configure sso`產生，sso_start_url、sso_region的值可以在 AWS access portal > 角色的 access key > AWS IAM Identity Center credentials (Recommended)查看
+
+  - 黃色蓋住區塊則可在 AWS access portal > 角色的 access key > Option 2: Add a profile to your AWS credentials file 查看
+
+  - 因為我不想每次使用aws cli指令都要傳`--profile profile名稱`，且大多數時候都只用某個role，所以我把session跟profile的名稱都取為default。這樣這樣 [AWS CLI](https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/getting-started-install.html) 就會自動使用這個 profile，不需要手動指定。完成後就下`aws sso login`，就可以下aws指令了
+- VS Code extension [AWS Toolkit](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode&ssr=false#qna)
+  - cmd+shift+P > AWS: Connect to AWS > profile:default，就可以使用 .aws/credentials 內default的憑證建立AWS連線。完成後就可以用AWS Toolkit做一些AWS的操作
+
+3/22(S)
+
+3/21(S)
+
+3/20
+
 3/19
 - 閱讀 [The unknown Type in TypeScript](https://mariusschulz.com/blog/the-unknown-type-in-typescript)
   - any 允許型別可以是任何型別。unknown 常配合各種 type narrowing 的方式一起使用，這讓它既保留彈性，同時又比 any 更type safe
