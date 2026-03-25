@@ -1,4 +1,34 @@
+3/26
+
 3/25
+- 了解TS的 branded type [📗](https://www.learningtypescript.com/articles/branded-types)
+  - branded type 是指透過附加一個`__brand`標記屬性，讓同樣底層型別的值在型別系統中變成不同型別，防止意外混用
+    ```js
+    type Width = number & { __brand: 'width' };
+    type Height = number & { __brand: 'height' };
+
+    type Square = {
+      width: Width;
+      height: Height;
+    }
+
+    const a:Square = {
+      width: 30 as Width,
+      height: 15 as Height,
+    }
+
+    const b:Square = {
+      width: 10 as Width,
+      height: 8 as Height,
+    }
+
+    const getSumOfWidth = (width1: Width, width2: Width) => width1 + width2;
+
+    // 限制了兩個參數型別都必須是Width，所以傳入b.height會報錯
+    getSumOfWidth(a.width, b.height);
+    ```
+
+  - 使用branded type會增加程式碼的複雜性。故簡單的場景還是用 [throw Error](https://www.typescriptlang.org/play/?#code/GYVwdgxgLglg9mABAExgNxsgpgCgIYBciYIAtgEZYBOANIuUSRdQJSIDeAsAFCKIzBEOcogC84xAAY2XXn0RQAFlTgB3YlnUBRKiqo4ARAGE8YMHCgp0mLPQCeiAF7U4AOgMsA3Dz4BfHz6IVFhQIFRIeIgA9PTe3P68PAA2IcRiiACMAEwAzHEplqTpALTZcYg8qBjYOGB0pCxAA)，代替 [branded type](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAcg9gOwFoQE5ygXiggrgWwCM0oAyKAbygH1rDUBDBAEwC4oAiMOAZwEtgfAG4QOUAL4BuALAAoOQHoFUQJgJgejMGPHmkGIoAM1wIAxroSLlgADlAWdqBAyMAUroZNnAO6mBXZMDq2oGLtQFIqgGH-AWDlANkdAYHNARg1AemS5J1M+PU1tVGAABV4BYQgACiEGABtcCHY8IjQASnYEnR4oHPzoPmr4ZDQMCjkoKD59KGy8gqxMbAAGUsp2jqhgAAt0AHccCHmAUVR0VEyAA1qC9gASCm2IcSgeKbhcXOYcOGAoYighgDoN0plZDvE5T-lZGLMoZjCPjMLIMIoEYioAA0d3YTRQ6FGbXeUFQEGAuFQCCgDCgykIb2+UDkuXROCwUAAjAAmADMb1Jt3wFJpb2JsiUUEAUUYqQAyES5AJHGgBC3QCOUYChMCIOEorJKklUvxBCJMvhXu05OLJZkEDDVZIgA) 會更好
 
 3/24
 
