@@ -1,3 +1,63 @@
+3/29(S)
+
+3/28(S)
+
+3/27
+- 了解TS的structural typing(duck typing) [📗](https://www.typescriptlang.org/play/?ssl=7&ssc=23&pln=7&pc=30#code/PTAEBUE8AcFMGUDGAnAltALqVBnUBDUeDZAV0Q1OXwBsIZYjIcNYBbAOlAEFQWyKVWqAwMAUCD7NWbUG1j4AdngwALfFgDuq2ItCIA9m2j40igOYiGOADT04SNJlAHFNSBLAZ8Aa1h5URQwDAkRDUiCRHTl2ACNYZDxXKMZROA4xTwhVXGwAvUMg6hYREMUjQOE0xhxpdltQbQTGSANSLPCaABN9ZAVWEU0Q6rxY0ixOnvKsfBwcVHM9NXZS0AVEVSyDZeQueFhGWAAPfGMaWAAucrZKmgBaNMDzTMkAMQNkNZOz2DtlnFSQ2wQQSADN8Ih-AQ+vojNBzqx3FkSEocKCEtRYudgQQ+CRyJRqHRqlIWOwLplAqxkODIaAAEK0OgAbzEoFAXVQp1g1IuoEUpDY8WQAG4xABfMRUsEQxjwaA6GGs9mc7m8-mC4ViyViBGgWJMvmMmh0AC8oGZHK58nVAEYAAygcVivU4BXNPnyxWMc2W1U2hJ8gBMjudmTd3tA5oNJrFMbNfHdfTFWQAkqDGox8F0eoFcSTtKgNniBISmZBYUF8IE8EyXKDkdF5EKEkkM8a6Eoel7mn8dHpUDMaDgQoglPrYFkAVhghPcfGXJ8I80MlKQTTZRBSPELWyrWrAxqW6K9+cLGo+QLj9rMnrKPE+eBtz6LfuA8g+bag3Yz+YL6AAGYnRTe8X3jOM63NUCU0kelYDHUgAXnOsugMKFplAdQADcs1AX81D7XRsAmJQMPiLJZnmRZYB6WdlhEZ9QCw0wuSxWAuAACQMTRYBw5A7DrAwM3o5thRwLZ2zrUxGBrVAulSZ8BMUHoR2I-Rxx3SiFkUGjV0kKAHBQdAsFyQxjBYiw1ghVQYmPHF6JJfBzGrZQMCydYbO2RVVj41BQQrZZUE+WAAEdSFoQdID0sBeFBCIKFQZJcnHAxYgAK3gky9AAKXwZjHGMghlLU0y4WkrosjzQh5huGhTFAcEcByVwuAAdUHTydNARDYDiuhjhREQ0EQHxoTaZTG0YExqDYHAKV1Hlen6WAOyjUAAAp-R5Q8r2FABKKMAD4Nr9a1ts+cU9pdRaUGWnsYXNTazvVXaEjsHrU0UDZ-D5WIDAMc4lAO01juVUA+kJPRToPD9uoBT7vrwAB+N9ztAAAqUB7Q4ACAE5QD5LbqWAiUU1ujQECTF9ydYDsxRplbIKWin7tgGCwAMhAjOcTRUBNAgTW4jbXuQA7Z1C8K6HWkW7D+gGFEUPbKqWaJpphhoxiwDDpc1N79X+wHFdAO5jp148layTmCp5vm6E5HAx2QWjojlw37OiUEgpKLTFnkIIsniBCkMHAByPA+IrMy2GSUEPlAXL8u5iYDHk1YcB8dBQBMOYniyNXZsafsUkgEOYQwnSaN0l4wHeYLvnhVJolMagS7wWPkAAUWssP1JNA0Rsw2Yoj6KbTFOWwsmYmhSF+YF5KOIrncYPrO2QFvjewDMraTq0ukUEO3MkHBSGgaAPiwe3Hc5Sz8-Ohplj0VpSEaNpukHnDSmVxBp9T3iEgrAwmBEpLBCGwXwjdl7xQwMAvAYCMDFhPvNAA2gzDs61bR7TsKgpk60gx7QALocHbl3DY611rxjsAAfUCPPKh8YcDA1BnuQoI5zgcBoAYcw5CmRXQlLwrIAA5EIrhGAVy6CodQGBoqgAAEo8ioEsaw0JUh9Apj0GgqA-AuHSplBoXYioVk5KCdEfQvr+AojCMy00aKNA6ikPg3JtEZQoGsMKEVRDg1IOcWsf0cKrj1AzORXRVqPSJjtXWosjonVRtSLBAMPh8gAER9C6Ikp0-DsH83NIEmidMxA5OCUzTJNB2agFapGeintEgzBzr7XQWgPg+DwOtZYFY-pqHfowMJosA7jHsQCQoPRUL+H3lgFpLsUJoRwKMzpuJDAcNFhkIAA) [📗](https://kacper0witas.medium.com/understand-duck-structural-typing-in-typescript-and-its-downsides-5665e60bf09c)
+  - structural typing指的是只認type內的成員(只認形狀)，而不認type的名稱
+    - 函數導向的語言通常是structural typing，物件導向的語言則會是nominal typing
+  - 其優點是只要形狀相符就能使用，零耦合
+
+    ```js
+    // codes in a library
+    type LibraryUser = { name: string; email: string };
+    export const sendEmail = (user: LibraryUser) => {
+      // some codes
+    }
+
+    // ------------------------
+    import {sendEmail} from 'a-library';
+
+    type AppUser = { name: string; email: string; age: number };
+
+    const myUser: AppUser = {
+      name: 'Jane Doe',
+      email: 'foo@gmail.com',
+      age:28
+    }
+
+    sendEmail(myUser);
+    ```
+
+  - 其缺點是**只認形狀，所以可能出現意圖錯誤操作**
+
+    ```js
+    type Width = number;
+    type Height = number;
+
+    type Square = {
+      width: Width;
+      height: Height;
+    }
+
+    const a:Square = {
+      width: 30,
+      height: 15,
+    }
+
+    const b:Square = {
+      width: 10,
+      height: 8,
+    }
+
+    const getSumOfWidth = (width1: Width, width2: Width) => width1 + width2;
+
+    // 可以執行，但是意圖錯誤
+    getSumOfWidth(a.width, b.height);
+    ```
+
+    - 透過[branded type處理](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAQgTgQwHYBMA8AVANLAfFAXigygDIoBvKAfWoCNFUAuWKAXwCgPRIoB1AJYpgACyiFYjdEgCuAWzoQ4OAOQB3IaJW4A3N3DQAEhAEBzEcAnxk0+YuVQVIk+eDa9HAPSeogLATAFK6Ap7qAB3qAMP8IAM5QgFfKgBTqgJgJgIcRHADGAPZIEZYMNhKYUBAAHsAQqFHWqGgySADWSGlqSDhZcAJIpri4ABQc4gBuCAA2MhAs1XUNSBwAlCwkBPgDw9CRxB480ADKAI4yCHDQRBS9UBrCIiyC53rizmYWLMb3wHqcqRlZUAhMO3sHEsdxGdRCwcpUrqJugBmAAM0ywJzurlBUjQT1c3QAjABWaYcN7pTLZH67faHSgnYEXKBg9AQkRYuEI24uB401HoizdAAceIJH0spggwE28gA8gAzekSLpUzGXTQiHBUgBMCvO00I+DlUAA1KdFSqPN4oIB75UAp3KAd-VADIRoUAYvKAejNAPCGgDR1QD0yYASqI4QpF4qliq6CAAdFScHQg0iLNMPEA)，這樣可以達成 type safety，又可以維持程式碼意圖明確
+
 3/26
 
 3/25
