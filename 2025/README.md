@@ -399,18 +399,25 @@ fetchMock(new Promise((resolve) => {
     - aspect-ratio
      - 控制圖片、影片顯示的比例，如此一來就不需要手動設定寬高、遮罩
 
-
-
-10/10
-- 了解如何透過改HTML、CSS優化效能 [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw) [📗](https://yaron-galperin.medium.com/memory-matters-understanding-heap-snapshots-in-javascript-with-chrome-devtools-53abc33ef9df)
-   - 把DOM element 攤平 [📗](https://play.tailwindcss.com/frGPbi9PDL)
+#### 10/10
+- 了解如何透過改HTML、CSS優化效能 [📗](https://developer.chrome.com/docs/lighthouse/performance/dom-size?utm_source=lighthouse&utm_medium=devtools&hl=zh-tw) [📗](https://yaron-galperin.medium.com/memory-matters-understanding-heap-snapshots-in-javascript-with-chrome-devtools-53abc33ef9df) 
+  - 做分頁，不要把所有內容塞在一份HTML、CSS裡 [🔖](https://github.com/tempura327/learning_diary/tree/master/2025#923)
+    - DOM、CSSOM 太肥大的話，瀏覽器會需要花更多時間做reflow、repaint
+  - 善用打包工具做minify
+    - 縮小檔案的大小，以減少瀏覽器下載時間
+  - 把DOM element 攤平 [📗](https://play.tailwindcss.com/frGPbi9PDL)
      <img width="1907" height="342" alt="螢幕擷取畫面 2025-09-09 212640" src="https://github.com/user-attachments/assets/68872db1-96e5-465f-a466-d116785b4c66" />
      <img width="1908" height="434" alt="螢幕擷取畫面 2025-09-09 221021" src="https://github.com/user-attachments/assets/59900e2e-81bd-4a65-9e09-d4396e222440" />
      以上圖中的兩個例子，都是左側效能會比較好
     - 看不到，或者變看不到的DOM element 不要掛到DOM上
-       - infinite scroll
-       - content-visibility + contain-intrinsic-size
-    - 使用atom css，或者BEM，避免效能問題雪上加霜
+      - infinite scroll
+      - content-visibility + contain-intrinsic-size
+  - HTML 用串流的方式傳 [📓](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd?source=copy_link#87ab7a3c39ae40e28741b856f769e589)
+    - 因為 HTML 可以被逐步解析 (incrementally parsed)，所以不用一次傳整份，而是切成不同的小部分，然後以串流的方式傳到客戶端
+  - 使用atom css，或者BEM，避免效能問題雪上加霜
+  - CSS 放在文件最上方最上方
+    - 瀏覽器在解析 HTML 時，遇到會阻擋渲染的 CSS，就會跳去先處理 CSS，然後再回去處理 HTML
+    - 如果 CSS 不設計為阻塞渲染，在 CSSOM 建構完後，又有新的樣式變更，會讓畫面樣式跳來跳去，導致使用體驗很差。JavaScript 也是基於這個原因，而設計為阻塞渲染
 - Tailwind 效能較好的原因
     - 無層級選擇器，所以不需要遍歷 DOM 樹檢查父子關係，瀏覽器可以直接用 hash table 查找，因此時間複雜度可趨近 O(1)
     - 樣式隔離：每個 class 只影響單一屬性，計算簡單
@@ -506,13 +513,13 @@ fetchMock(new Promise((resolve) => {
 9/20(S)
 
 9/19 🚲
-- 了解瀏覽器渲染網頁的流程 [🔖](https://github.com/tempura327/learning_diary/blob/master/2024/README.md#1121)
+- 了解瀏覽器渲染網頁的流程 [📓](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd)
    1. 下載HTML
    2. 下載CSS
    3. 解析HTML，產生DOM tree、解析CSS，產生CSSOM tree
    4. 將DOM tree跟CSSOM tree結合，產生render tree
-   5. layout (reflow)，計算每個node的幾何資訊 (位置、大小)
-   6. paint (repaint)，將每個node畫到螢幕上
+   5. layout (reflow)，計算每個node的幾何資訊 (位置、大小) [🔖](https://github.com/tempura327/learning_diary/blob/master/2024/README.md#1121)
+   6. paint (repaint)，將每個node畫到螢幕上
 - 了解瀏覽器怎麼計算網頁樣式 [📗](https://web.dev/articles/reduce-the-scope-and-complexity-of-style-calculations?hl=zh-tw) [📗](https://developer.chrome.com/docs/devtools/performance/selector-stats?hl=zh-tw)
    - 透過JS新增及移除元素、變更屬性、類別或播放動畫來變更 DOM，會導致瀏覽器重新計算元素樣式，這被稱作「樣式計算 (style calculation)」
    - 瀏覽器計算樣式的步驟
