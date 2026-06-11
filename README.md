@@ -1,3 +1,25 @@
+6/11
+- 了解[uv](https://docs.astral.sh/uv/getting-started/installation/#next-steps)，並試用
+  - uv 是 Python 專案管理與套件安裝工具（pip + virtualenv + poetry 的結合，就像前端的 vite）
+  - 可以一次管理多版本的 Python (就像前端的 nvm)
+  - 其核心哲學是「不污染全域環境」，所以 uv 管理的 Python 環境並不能直接透過 python 指令執行，必須透過 uv 來執行
+
+6/10
+
+6/9
+
+6/8
+
+6/7
+
+6/6
+
+6/5
+
+6/4
+
+6/3
+
 6/2
 - 閱讀[前端渲染模式的選擇](https://app.notion.com/p/explainthisio/1122d1d1de188060a422debaa81af5e4)
   - 傳統SSR

@@ -194,7 +194,7 @@
 - 了解甚麼是UMD
 
 ##### 11/21
-- 了解甚麼是reflow、repaint [📓](https://app.notion.com/p/explainthisio/Reflow-Repaint-f1c663ad54324a6a933f75ab0b68a9b0) [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg) [📗](https://ithelp.ithome.com.tw/articles/10217427)
+- 了解甚麼是reflow、repaint [📗](https://app.notion.com/p/explainthisio/Reflow-Repaint-f1c663ad54324a6a933f75ab0b68a9b0) [📗](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg) [📗](https://ithelp.ithome.com.tw/articles/10217427)
     - reflow是重新計算畫面上的element的位置
         - 由root element開始往下計算元素的位置，越深的話計算會越久
         - reflow完必定會再次replaint

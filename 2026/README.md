@@ -411,7 +411,7 @@
 - 了解transform: translate [📗](https://www.w3.org/TR/css-transforms-1/) [📗](https://ithelp.ithome.com.tw/articles/10362313)
   - translate 是用來達到位移效果的。它**只是視覺上的位移**，不改變元素在document flow中的真實位置 
   - 因為translate只移動視覺位置，所以實際上在document flow內的真實位置並沒改變，所以真實位置沒改變就不會觸發reflow，只會在compositing階段做視覺上的位移
-  - transform會開圖層。圖層(compositor layer)開太多的話，會很消耗記憶體 [📓](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd?source=copy_link#ae698e912ec1498bb978e70024652e2d)
+  - transform會開圖層。圖層(compositor layer)開太多的話，會很消耗記憶體 [📗](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd?source=copy_link#ae698e912ec1498bb978e70024652e2d)
 
 - 了解Gecko rendering [📗](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Fundamentals)
   - Gecko是一個瀏覽器渲染引擎，它優化了對HTML、CSS、canvas的渲染。Gecko的優化減少了因為scroll之類事件產生的repaint

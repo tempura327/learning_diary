@@ -412,7 +412,7 @@ fetchMock(new Promise((resolve) => {
     - 看不到，或者變看不到的DOM element 不要掛到DOM上
       - infinite scroll
       - content-visibility + contain-intrinsic-size
-  - HTML 用串流的方式傳 [📓](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd?source=copy_link#87ab7a3c39ae40e28741b856f769e589)
+  - HTML 用串流的方式傳 [📗](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd?source=copy_link#87ab7a3c39ae40e28741b856f769e589)
     - 因為 HTML 可以被逐步解析 (incrementally parsed)，所以不用一次傳整份，而是切成不同的小部分，然後以串流的方式傳到客戶端
   - 使用atom css，或者BEM，避免效能問題雪上加霜
   - CSS 放在文件最上方最上方
@@ -513,7 +513,7 @@ fetchMock(new Promise((resolve) => {
 9/20(S)
 
 9/19 🚲
-- 了解瀏覽器渲染網頁的流程 [📓](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd)
+- 了解瀏覽器渲染網頁的流程 [📗](https://app.notion.com/p/explainthisio/critical-rendering-path-0edfc6c614334ec7b15284770d6092bd)
    1. 下載HTML
    2. 下載CSS
    3. 解析HTML，產生DOM tree、解析CSS，產生CSSOM tree
