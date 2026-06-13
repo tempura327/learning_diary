@@ -352,8 +352,8 @@
   - Service的職責
     - Service裡裝的是純邏輯，它不會跟HTTP、資料庫有任何接觸
     - Service只加工組裡來自handler的資料、flow的安排、呼叫Repo
-    - Repo的職責
-  - 操作資料庫，並返回結果給Service
+  - Repo的職責
+    - 操作資料庫，並返回結果給Service
 
 
 2/11
