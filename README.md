@@ -2,13 +2,12 @@
 
 6/18
 - 了解 Pyhthon 專案資料夾結構 [📙](https://docs.astral.sh/uv/guides/projects/#creating-a-new-project) [📙](https://zsl0621.cc/python/src-layout-vs-flat-layout)
-  - 分為 flat layout 跟 src layout。後者為新專案的大宗，是為了
+  - 分為 [flat layout 跟 src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)。後者為新專案的大宗，是為了
     - 避免開發者電腦有裝套件A，但是虛擬環境裏頭沒有裝，導致本地跑測試通過，上雲端跑卻失敗狀況。因為程式碼被關在 src/ 裡面，所以會強迫先檢查 pyproject.toml，並安裝套件
     - 避免套件的程式碼內 import 的 .py 檔跟開發者自己新增的.py檔名稱剛好相同時，import 錯誤造成的 crash
   - 使用 uv 指令初始化專案
     - <img width="441" height="412" alt="螢幕擷取畫面 2026-06-18 111305" src="https://github.com/user-attachments/assets/8288b90b-2110-4d7e-bca9-4e9bf5a65922" />
     - `uv init --lib`、`uv init --package`都會使用src layout，但前者比較適合做套件給別人用的場景，後者則是一般開 API 的場景
-  - uv 有內建 ruff，執行`uv format`就可整理.py檔案，不用自行安裝ruff。如果想要修改 ruff 設定可以新增 ruff.toml
 
 6/17
 
@@ -27,6 +26,7 @@
   - uv 是 Python 專案管理與套件安裝工具（pip + virtualenv + poetry 的結合，就像前端的 vite）
   - 可以一次管理多版本的 Python (就像前端的 nvm)
   - 其核心哲學是「不污染全域環境」，所以 uv 管理的 Python 環境並不能直接透過 python 指令執行，必須透過 uv 來執行
+  - uv 有內建 ruff，執行`uv format`就可整理.py檔案，不用自行安裝ruff。如果想要修改 ruff 設定可以新增 ruff.toml
 
 6/10
 
