@@ -1,3 +1,11 @@
+6/23
+
+6/22
+
+6/21
+
+6/20
+
 6/19
 
 6/18
@@ -26,7 +34,8 @@
   - uv 是 Python 專案管理與套件安裝工具（pip + virtualenv + poetry 的結合，就像前端的 vite）
   - 可以一次管理多版本的 Python (就像前端的 nvm)
   - 其核心哲學是「不污染全域環境」，所以 uv 管理的 Python 環境並不能直接透過 python 指令執行，必須透過 uv 來執行
-  - uv 有內建 ruff，執行`uv format`就可整理.py檔案，不用自行安裝ruff。如果想要修改 ruff 設定可以新增 ruff.toml
+  - uv 已整合 ruff，執行`uv format`就可整理.py檔案，不用自行安裝ruff。如果想要修改 ruff 設定可以新增 ruff.toml
+  - uv 已整合 ty，執行`uv check`就可以對.py檔案做型別檢查，不用自行安裝ty
 
 6/10
 
