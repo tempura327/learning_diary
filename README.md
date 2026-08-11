@@ -1,3 +1,41 @@
+8/11
+- 閱讀[2026 Senior SDE 面試筆記 Part 1](https://angelswengineer.medium.com/2026-senior-sde-interview-notes-google-microsoft-amazon-mercari-paypay-appier-woven-and-more-47eadabe3dc1)
+  - `How does your day-to-day work look like, and what’s your favorite part about working here?` 重複問幾個人，可以問出真正的團隊氛圍
+- 閱讀[2026 Senior SDE 面試筆記 Part 2](https://angelswengineer.medium.com/2026-senior-sde-%E9%9D%A2%E8%A9%A6%E7%AD%86%E8%A8%98part2-google-microsoft-amazon-mercari-paypay-appier-woven-and-more-033c36e45ad4)
+  - 根據履歷提到的內容先準備5個 why 的 follow-up questions
+  - 練習一邊，想一邊清楚表達想法。看中溝通的公司會在意這點，因為這跟日後的溝通有關聯
+  - T1 公司的 senior 級是要做到能夠導入SOP，甚至是多團隊通用的SOP，讓其他團隊一起使用
+
+8/10
+
+8/9
+
+8/8
+
+8/7
+
+8/6
+
+8/5
+
+8/4
+
+8/3
+
+8/2
+
+8/1
+
+7/1~7/31
+
+6/30
+
+6/29
+
+6/28
+
+6/27
+
 6/26
 
 6/25
