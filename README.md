@@ -1,3 +1,43 @@
+8/26
+- 閱讀[什麼是 AI 的評估機制 (evals)?](https://www.explainthis.io/zh-hant/ai/ai-evals)
+  - unit test、E2E test 只能檢查 AI 有沒有亂搞，在coding style、架構這類需要視情況判斷的情境，沒辦法保證其產出是否會如預期，因此才需要評估機制(evals)
+  - evals 可以想成是專門給AI用的測試。裡面會定義標準來評估其輸出品質
+    - Claude 的 [skill creator](https://claude.com/plugins/skill-creator) 幫建立 SKILL.md 後，會產出的 evals.json 就是 evals 的一種方式
+- 看 [Claude Skills 2.0: How to use Skill Creator to build new Skills](https://www.youtube.com/watch?v=rihf3-mpNG4)
+  - Claude 的 skill creator 有4個模式，分別為 Create, Eval, Improve, Benchmark
+  - create mode 撰寫 SKILL.md，並產生 [evals.json](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md?plain=1#L141)，當中紀錄了要測試的 skill 名稱、測試時跑的案例(prompt、期望的結果)
+  - eval mode 把 prompt 丟給 agent，並檢查失敗的案例、產出 viewer 給人看
+  - improve mode 分析為何失敗，並修改 SKILL.md
+  - benchmark mode 會比較新舊的 SKILL.md 確認結果是否變好，沒有的話就回去 improve mode
+
+8/25
+
+8/24
+
+8/23
+
+8/22
+
+8/21
+
+8/20
+
+8/19
+
+8/18
+
+8/17
+
+8/16
+
+8/15
+
+8/14
+
+8/13
+
+8/12
+
 8/11
 - 閱讀[2026 Senior SDE 面試筆記 Part 1](https://angelswengineer.medium.com/2026-senior-sde-interview-notes-google-microsoft-amazon-mercari-paypay-appier-woven-and-more-47eadabe3dc1)
   - `How does your day-to-day work look like, and what’s your favorite part about working here?` 重複問幾個人，可以問出真正的團隊氛圍
