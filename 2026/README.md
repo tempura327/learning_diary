@@ -1,3 +1,225 @@
+8/28
+- 了解第三方登入 [📙](https://app.notion.com/p/explainthisio/tokens-2242d1d1de18803db9dbdd31fdfcbf46) [📙](https://app.notion.com/p/explainthisio/localStorage-cookie-87e5e717060b49ebbd9c646b068266d0#40d9cbc96d054870a0721794383ff548)
+  - ID token 如其名，會帶著使用者身份 (identity) 相關的資訊，讓伺服器知道該使用者是誰
+    - 第三方登入(OAuth)、SSO登入都是透過此方式實作的
+  - 因為 ID token 本質上也是一種 bearer token，但根據不同的實作方式，ID token 可以選擇資訊透明的 JWT token，也可以選用 opaque token 來實作。[🔖](https://github.com/tempura327/learning_diary/tree/master/2026#32)
+  - 步驟
+    1. 使用者點擊用 Google 帳號登入網站，前端將使用者導向 Google 登入頁面，使用者按同意授權
+    2. Google 將使用者送回前端指定的頁面，並在網址的 query string 附上 auth code
+    3. 前端把 auth code 傳給後端
+    4. 後端拿 auth code 跟 Google 換 id token
+    5. 後端拿 id token 跟 Google 取得使用者姓名、信箱等資訊
+    6. 後端用取得的資訊來註冊新帳號，然後把該 Google 帳號與新創建的帳號關聯在一起
+    7. 後端建立自己網站的 token 回傳給前端
+
+8/27
+
+8/26
+- 閱讀[什麼是 AI 的評估機制 (evals)?](https://www.explainthis.io/zh-hant/ai/ai-evals)
+  - unit test、E2E test 只能檢查 AI 有沒有亂搞，在coding style、架構這類需要視情況判斷的情境，沒辦法保證其產出是否會如預期，因此才需要評估機制(evals)
+  - evals 可以想成是專門給AI用的測試。裡面會定義標準來評估其輸出品質
+    - Claude 的 [skill creator](https://claude.com/plugins/skill-creator) 幫建立 SKILL.md 後，會產出的 evals.json 就是 evals 的一種方式
+- 看 [Claude Skills 2.0: How to use Skill Creator to build new Skills](https://www.youtube.com/watch?v=rihf3-mpNG4)
+  - Claude 的 skill creator 有4個模式，分別為 Create, Eval, Improve, Benchmark
+  - create mode 撰寫 SKILL.md，並產生 [evals.json](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md?plain=1#L141)，當中紀錄了要測試的 skill 名稱、測試時跑的案例(prompt、期望的結果)
+  - eval mode 把 prompt 丟給 agent，並檢查失敗的案例、產出 viewer 給人看
+  - improve mode 分析為何失敗，並修改 SKILL.md
+  - benchmark mode 會比較新舊的 SKILL.md 確認結果是否變好，沒有的話就回去 improve mode
+
+8/25
+
+8/24
+
+8/23
+
+8/22
+
+8/21
+
+8/20
+
+8/19
+
+8/18
+
+8/17
+
+8/16
+
+8/15
+
+8/14
+
+8/13
+
+8/12
+
+8/11
+- 閱讀[2026 Senior SDE 面試筆記 Part 1](https://angelswengineer.medium.com/2026-senior-sde-interview-notes-google-microsoft-amazon-mercari-paypay-appier-woven-and-more-47eadabe3dc1)
+  - `How does your day-to-day work look like, and what’s your favorite part about working here?` 重複問幾個人，可以問出真正的團隊氛圍
+- 閱讀[2026 Senior SDE 面試筆記 Part 2](https://angelswengineer.medium.com/2026-senior-sde-%E9%9D%A2%E8%A9%A6%E7%AD%86%E8%A8%98part2-google-microsoft-amazon-mercari-paypay-appier-woven-and-more-033c36e45ad4)
+  - 根據履歷提到的內容先準備5個 why 的 follow-up questions
+  - 練習一邊，想一邊清楚表達想法。看中溝通的公司會在意這點，因為這跟日後的溝通有關聯
+  - T1 公司的 senior 級是要做到能夠導入SOP，甚至是多團隊通用的SOP，讓其他團隊一起使用
+
+8/10
+
+8/9
+
+8/8
+
+8/7
+
+8/6
+
+8/5
+
+8/4
+
+8/3
+
+8/2
+
+8/1
+
+7/1~7/31
+
+6/30
+
+6/29
+
+6/28
+
+6/27
+
+6/26
+
+6/25
+
+6/24
+- 閱讀[AI 導入後，工程團隊真正要管理的是交付鏈路與驗證責任](https://hackmd.io/@FortesHuang/HJnWgQGJMx?trk=feed_main-feed-card_feed-article-content)
+  - `需求 → 規格 → 設計 → 實作 → 串接 → 測試 → 修正 → 上線 → 客戶驗收 → 維護`
+    - AI 讓其中一段變快，不代表整條 pipeline 變快
+    - 如果下游的驗證能力沒有同步提升，驗證工作就會成堆。如果沒有妥善驗證，就會埋下一堆AI slop
+  - AI 最容易產生的是局部合理的解法，但大型產品真正依賴的是整體一致性
+  - AI 對寫測試確實有幫助，但測試並不是越多越好。重點是
+    - 覆蓋核心流程、失敗流程
+    - 覆蓋權限與狀態切換
+    - 測試穩定
+  - 導入 AI 的重點不是產出變快、變多，而是要能證明它真的讓交付鏈路變得更穩、更快、更可控
+  - 提升驗證的容量
+    - 前期一定要把規格、邊界、驗收準則訂明確
+    - code review 的重點在於看架構的設計、該設計是否跟目前系統的設計一致、風險邊界(這次改動最大會影響到哪裡)
+    - 高風險路徑交給交給專門的測試人員
+
+6/23
+
+6/22
+
+6/21
+
+6/20
+
+6/19
+
+6/18
+- 了解 Pyhthon 專案資料夾結構 [📙](https://docs.astral.sh/uv/guides/projects/#creating-a-new-project) [📙](https://zsl0621.cc/python/src-layout-vs-flat-layout)
+  - 分為 [flat layout 跟 src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)。後者為新專案的大宗，是為了
+    - 避免開發者電腦有裝套件A，但是虛擬環境裏頭沒有裝，導致本地跑測試通過，上雲端跑卻失敗狀況。因為程式碼被關在 src/ 裡面，所以會強迫先檢查 pyproject.toml，並安裝套件
+    - 避免套件的程式碼內 import 的 .py 檔跟開發者自己新增的.py檔名稱剛好相同時，import 錯誤造成的 crash
+  - 使用 uv 指令初始化專案
+    - <img width="441" height="412" alt="螢幕擷取畫面 2026-06-18 111305" src="https://github.com/user-attachments/assets/8288b90b-2110-4d7e-bca9-4e9bf5a65922" />
+    - `uv init --lib`、`uv init --package`都會使用src layout，但前者比較適合做套件給別人用的場景，後者則是一般開 API 的場景
+
+6/17
+
+6/16
+
+6/15
+
+6/14
+
+6/13
+
+6/12
+
+6/11
+- 了解[uv](https://docs.astral.sh/uv/getting-started/installation/#next-steps)，並試用
+  - uv 是 Python 專案管理與套件安裝工具（pip + virtualenv + poetry 的結合，就像前端的 vite）
+  - 可以一次管理多版本的 Python (就像前端的 nvm)
+  - 其核心哲學是「不污染全域環境」，所以 uv 管理的 Python 環境並不能直接透過 python 指令執行，必須透過 uv 來執行
+  - uv 已整合 ruff，執行`uv format`就可整理.py檔案，不用自行安裝ruff。如果想要修改 ruff 設定可以新增 ruff.toml
+  - uv 已整合 ty，執行`uv check`就可以對.py檔案做型別檢查，不用自行安裝ty
+
+6/10
+
+6/9
+
+6/8
+
+6/7
+
+6/6
+
+6/5
+
+6/4
+
+6/3
+
+6/2
+- 閱讀[前端渲染模式的選擇](https://app.notion.com/p/explainthisio/1122d1d1de188060a422debaa81af5e4)
+  - 傳統SSR
+    - 由伺服器渲染好整個頁面，再送給客戶端
+    - 優點
+      - 如果客戶端裝置爛、網路差，也不用擔心 JS 太大包，要下載與解析很久才能完成渲染
+      - 伺服器送給客戶端的 HTML 裡面已經有內容，所以不用擔心 SEO
+    - 缺點
+      - 換頁的體驗差。(因此後來產生了CSR)
+
+  - CSR
+    - 由客戶端使用 JS 做渲染
+    - 優點
+      - 不需用由伺服器選染好，再送新的一頁到客戶端。因此不會因為換頁造成的不佳使用者體驗
+      - 前後分離，比起前後不分的程式碼好維護
+    - 缺點
+      - 因為要執行JS，所以剛進網站的等待時間比較久
+      - 即便Google的爬蟲能夠爬CSR網站，但有可能因為JS執行太久，而把爬取網站的額度用光，進而導致SEO較差 (回去用傳統SSR不是好方法，所以後來又產生了hydration)
+
+  - hydration SSR
+    - 第一個 frame 由 SSR 渲染，之後的 frame 交由 JS 處理。(如果不特意去啟用CSR、ISR模式) Next、Nuxt都使用這項技術
+    - 優點
+      - 相較 CSR，使用者能更快看到第一個畫面
+      - 保有CSR換頁時的優良使用者體驗
+    - 缺點
+      - hydration執行完以前會有一段期間看得到畫面，但沒辦法有互動
+      - 比起 CSR，部署會更複雜
+
+  - streaming SSR
+    - 由伺服器渲染 HTML，並客戶端。只要一小塊渲染好就傳給客戶端，如此重複多次
+    - 優點
+      - 使用者能比CSR、hydration更快看到第一個畫面，因此使用體驗會更好
+
+  - 改良版 hydration SSR
+    - 分為漸進式、島嶼架構，還有前兩者混合的選擇式注水
+    - 漸進式注水，可以設定哪個部分先注水，在頁面剛加載時只注水重要的部分，其他部分等後續再注水。如果先注水的花比較久，後面注水的就會先被卡住
+    - 島嶼架構把頁面拆成不同元件，只有需要互動的部分才注水。**某一塊的注水不影響另外一塊**，所以假如有某一塊元件要花比較久的時間處理，其他塊還是可以先完成注水 
+
+  - SSG
+    - build time事先把 HTML 都渲染好。根據使用者訪問的路由直接傳渲染好的 HTML 給客戶端
+    - 優點
+      - 不用等伺服器端渲染的時間，所以比 SSR 快。搭配 CDN 快取的話，又能更快
+    - 缺點
+      - 所有內容都在 build time 時渲染好，所以只要內容有更動就要重新 build，因此很耗資源。只適合內容很少更動、所有使用者都看到一樣內容的靜態網站
+
+  - ISR
+    - 產生 HTML 並快取起來，之後的請求會直接回傳這份靜態結果。可以設定 revalidate 時間。當超過這個時間後的第一個請求，伺服器會先回傳舊頁面，同時在伺服器背景重新生成新的 HTML，更新快取內容。下一次請求就會拿到新版頁面
+    - 優點
+      - 繼承 SSG 的所有優點
+      - 不全部頁面重 build，只重 build 有更新的部分，所以比 SSG 省資源
+
+6/1
+
 4/1~5/31 休息
 
 3/31
@@ -237,17 +459,23 @@
 
 3/3
 
-3/2
-- 閱讀[如何設計前端登入機制?](https://www.explainthis.io/zh-hant/e-plus/blog/frontend-login-design)
+#### 3/2
+- 閱讀[如何設計前端登入機制?](https://www.explainthis.io/zh-hant/e-plus/blog/frontend-login-design)、[軟體設計中的有狀態 (stateful) 與無狀態 (stateless) 的取捨](https://app.notion.com/p/explainthisio/stateful-stateless-35f2d1d1de188070a532d08131047276)
   - 驗證分為session-based、token-based
   - session-based有狀態，狀態由後端管理。組合為session + cookie
     - 步驟
       1. 登入成功後，後端建立session，並回傳session id給前端。session id 會放在 HttpOnly Cookie
       2. 打API時，瀏覽器會自動帶上存在 Cookie 裡的 session id 傳給後端
       3. 後端去DB找有無對應session id 的 session，有的話回 response 給前端
-    - 缺點為有被 CSRF (跨站請求偽造) 的風險
-      - 雖然可以透過後端在 header 設置 `SameSite` 處理這個問題，但部分老舊瀏覽器不支援 `SameSite`，所以仍有隱憂
-  - token-based無狀態，為JWT token
+    - 缺點
+      - 有被 CSRF (跨站請求偽造) 的風險。雖然可以透過後端在 header 設置 `SameSite` 處理這個問題，但部分老舊瀏覽器不支援 `SameSite`，所以仍有隱憂
+      - 因為需要伺服器存住狀態，所以當系統需要加伺服器時會難以擴充
+  
+  - token-based無狀態
+    - JWT token、PASETO都屬於此類 [📙](https://ithelp.ithome.com.tw/articles/10340281)
+    - 缺點
+      - token 如果被盜走，因伺服器端沒保存任何關於 token 的狀態，所以很難立即撤銷
+
   - 實務上會用混合模式，組合為access token + refresh token
     - 步驟
       1. 登入成功後，後端回傳 access toke (放localStorage 或 cookie) 和 refresh token (常放在 HttpOnly Cookie)
@@ -260,7 +488,7 @@
   - 如果使用RSC的話，access token 也只能放在 cookie (但不一定要 HttpOnly Cookie)
   - 如果前後端網址在不同的 domain
     - 那 HttpOnly Cookie 是無法被在前後端間傳接的，因此 refresh token 勢必無法只能放 localStorage 或 一般 cookie。如此就有被 XSS 的風險
-    - 如果可以調整到「subdomain 不同，但同domain」，則只要設置 `Domain` 就可解決 [📙](https://www.threads.com/@chc_web_dev/post/C64DoDLhgyq)
+    - 如果可以調整到「subdomain 不同，但同domain」，則只要幫 cookie 設置 `Domain` 就可解決 [📙](https://www.threads.com/@chc_web_dev/post/C64DoDLhgyq)
     
 3/1
 
