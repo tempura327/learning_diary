@@ -1713,7 +1713,7 @@ fetchMock(new Promise((resolve) => {
 4/24
 
 4/23
-- 練習Leetcode 3. Longest Substring Without Repeating Characters
+- 練習Leetcode 3. Longest Substring Without Repeating Characters [🔖](https://github.com/tempura327/learning_diary/tree/master/2026#831)
   ```js
     function lengthOfLongestSubstring(s: string): number {
         let n = 0;
