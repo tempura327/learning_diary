@@ -1,3 +1,15 @@
+9/26
+- 閱讀[為什麼在 AI 代理時代，越來越多設計系統選擇 StyleX](https://app.notion.com/p/explainthisio/AI-StyleX-3de2d1d1de188070a987e3f00193c72a)
+  - 對 AI 來說閱讀 StyleX 跟 Tailwind 的 code 所需時間幾乎無異
+  - StyleX 有 type-safe 的功能，可避免 AI 產生幻覺
+    - 如果使用 Tailwind 的話，雖然原生沒有驗證 class 的功能，但還是可以利用 [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss) 做檢查，以避免幻覺
+    - 以上兩點搭配起來 StyleX 會更適合極大量導入 AI 的團隊。反之則還是 Tailwind 的開發體驗對人類會比較好
+9/25
+
+9/24
+
+9/23
+
 9/22
 - 閱讀[淺談 Atomic CSS 的發展背景與 Tailwind CSS](https://blog.huli.tw/2022/05/23/atomic-css-and-tailwind-css/)
   - atomic CSS 要解決的是「一旦 CSS 規則跟 context 有關，在大型專案中維護就會變得困難」的問題
@@ -87,7 +99,7 @@
         ```
 
 
-    - type-safe API，可限制組件的 props 只接受控制某些樣式的屬性 (e.g. 只接受color、background-color)
+    - type-safe API，可限制組件的 props 只接受控制某些樣式的屬性 (e.g. 只接受color、background-color)，或者限制 spacing 必須為某些數字
 
 9/21
 
