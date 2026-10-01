@@ -1,3 +1,30 @@
+10/2
+
+10/1
+- 閱讀[1-1 為什麼你的 AI 代理總是越做越笨? 如何解決這問題?](https://app.notion.com/p/explainthisio/1-1-AI-32e2d1d1de1881a09964c280f2232174)
+  - **上下文窗口(context window)** 是 AI 能同時處理與記憶的最大資料量，相當其**短期工作記憶**
+    - 佔用太多 context window 的 token，會導致上下文腐敗(context rot)，這就是輸出品質下降的原因
+    - AI 已知的通用知識，不需要再重複解釋。重複解釋會浪費 token
+    - 不同的任務，不應該混在同一個 context window，應該要`/new`開新的
+    - 使用`/status`主動檢查 context window 佔用比例，達到70~80%時，可用`/compact`壓縮 context，讓 AI 總結談話內容，然後再開新的 context window 繼續
+  - AGENTS.md 和 CLAUDE.md 是給 AI 看的 README.md
+    - 每個專案最多只會各有一個
+    - 雖然它們很有用，但不建議把所有規範都放進去。只有那些每次 AI 代理運作時都必然會用到，且永遠不可違反的規則，才適合放在裡面。通常裡面會寫 repo 的架構、convention、
+    - 在其加入指示，以要求 AI 精簡輸出。要求 AI 在 plan mode 時盡可能精簡輸出，甚至在不影響理解的前提下捨棄部分語法規範。這樣可以有效降低每次互動在 context window 中佔用的 token
+  - [SKILL.md](https://agentskills.io/home) 是給 AI 看的詳細步驟、參考的資料說明書
+    - 一個極完整的 skill 由 SKILL.md、script、reference、assets 組成
+    - SKILL.md 由 metadata (name、description)、instruction 組成，instruction 用於告訴agent每個步驟做啥、做到哪裡記得停下來檢查甚麼、寫code時候的best practice、參考資料
+    - 一開始只會載入 metadata，之後 AI 會根據 description 判斷是否載入 skill 的其他部分，因此可以節省占用 context window 的 token
+  - 「如果刪掉所有 skill，這條規則(對這個專案)還應該存在嗎？」 如果是，那條規則應該放在 AGENT.md，而不是SKILL.md。因此說「真理放AGENT.md，依照狀況不同的放SKILL.md」
+
+9/30
+
+9/29
+
+9/28
+
+9/27
+
 9/26
 - 閱讀[為什麼在 AI 代理時代，越來越多設計系統選擇 StyleX](https://app.notion.com/p/explainthisio/AI-StyleX-3de2d1d1de188070a987e3f00193c72a)
   - 對 AI 來說閱讀 StyleX 跟 Tailwind 的 code 所需時間幾乎無異
