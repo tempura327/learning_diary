@@ -1,4 +1,20 @@
+10/6
+
+10/5
+
+10/4
+- 閱讀[1-3 檔案系統 (filesyetem) 對 AI 代理為什麼重要?](https://app.notion.com/p/explainthisio/1-3-filesyetem-AI-32e2d1d1de1880b5b2e0e5b3c827ef53)
+  - 代理搜尋(agentic search)，是將整個程式碼庫視為一個檔案系統。agent 會直接使用 ls、find、grep、cat 等 bash 指令，在整個程式碼庫中搜尋最相關的內容，再將搜尋到的結果放入模型的輸入窗口中
+  - 讓程式碼庫對 AI 更友善的三個核心實踐 
+    - [The Vertical Codebase](https://tkdodo.eu/blog/the-vertical-codebase) 提出以模組來做檔案排放哪個資料夾的依據，而不是依照 components、hooks、stores 來排放。這個概念就是 co-location [🔖](https://github.com/tempura327/learning_diary/2026/README.md#922)
+    - 命名足夠清晰且語義明確(e.g. userData 會比 data 來得明確)
+    - 保持命名一致，並整理通用語言(e.g. 當提到機車，一律使用 scooter，而不是 scooter和 motorcycle 都使用)
+
+10/3
+
 10/2
+- 閱讀[1-2 透過代理技能 (Agent Skills) 讓 AI 的產出更可控 ](https://app.notion.com/p/explainthisio/1-2-Agent-Skills-AI-32e2d1d1de18803c8c06de1117191908)
+  - 如果過去沒有整理代理技能的經驗，可以參考 skills.sh 這個網站，它是一個開源的代理技能生態系，上面有各種主題的代理技能可以參考。或者也可以參考 [anthropic/skills](https://github.com/anthropics/skills)
 
 10/1
 - 閱讀[1-1 為什麼你的 AI 代理總是越做越笨? 如何解決這問題?](https://app.notion.com/p/explainthisio/1-1-AI-32e2d1d1de1881a09964c280f2232174)
