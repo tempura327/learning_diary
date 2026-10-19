@@ -2570,15 +2570,38 @@ A is the better investment choice because of their higher free cash flow, which 
     # 新版
     docker container run <image name>
     ```
+
 2/9(S)
 - 初步了解Docker [📗](https://www.youtube.com/watch?v=ZKdlglAxr7g)
-  - Docker是一種實現容器化的工具
-    - 容器化是指把應用程式跟它的依賴打包到一個獨立的環境。這個獨立的環境就是容器(container)
-      - container初始狀態是映像檔(image)，透過指令執行image就會變成container
-    - K8S是另一個目前主流的容器化工具
-  - container具有一致性，可攜性、隔離性
-    - 基於隔離性，容器內內只能放一種應用程式
- 
+  - Docker是一種實現容器化的工具，用於解決本地、遠端環境不一致的問題。K8S是另一個目前主流的容器化工具
+    - 當提到 docker 時，有幾個核心概念 容器(container)、容器化(containerized)、映像檔(image)、資料卷(volume)
+  - 容器化是指把應用程式跟它的依賴打包到一個獨立的環境，這個獨立的環境就是 container。container 是獨立、可拋棄的，刪掉就什麼都沒了
+    - 以 Node.js + PostgreSQL的後端專案為例。API service 就是應用程式，Node.js、package.json內紀錄的套件、.env、資料庫、storage 就是依賴
+    - 雖然上述都是應用程式的依賴，但是 API service跟資料庫的生命週期差太多，前者常更動，後者則否，因此通常會為資料庫開一個獨立的 container
+      ```bash
+      # 查docker現在run的container
+      docker ps
+
+      # 查docker所有的container
+      docker ps -a
+      ```
+  - 透過指令執行image就會變成container。image就像是安裝程式，而container則是安裝在電腦上的應用程式
+  - [volume](https://docs.docker.com/engine/storage/volumes/) 指的是用來實現資料持久化與跨容器共享的機制
+    - 因為 container 只要被 stop，裡面的東西就全沒了，所以通常資料庫會在 container 裡執行，而資料則放在 volume
+    - volume 並不等於備份
+    ```bash
+    # 建立volume
+    # docker volume create <volume name>
+    docker volume create mydata
+
+    # 查看volume詳細資訊
+    # docker volume inspect <volume name>
+    docker volume inspect mydata
+    
+    # 掛載volume，讓資料可存到容器外面，或是讓容器存取其外部的資料
+    # docker run -it -v <volume name>:<容器內掛載路徑> <做為執行環境的image> <container啟動後要執行的程式(可省略)>
+	docker run -it -v mydata:/data ubuntu bash
+    ```
 
 2/8(S)
 
