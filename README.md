@@ -1,6 +1,15 @@
+10/31
+
 10/30
 
 10/29
+- 閱讀[1-5 為團隊建立複利工程 (compound engineering) 的基礎](https://app.notion.com/p/explainthisio/1-5-compound-engineering-32e2d1d1de188039b2d3ffc99f46ef03)
+  - 由於 AI 沒有長記憶，所以 session 關掉後，提醒過的事他就忘了。而複利工程(Compound Engineering)就是為了處理這個問題
+  - 複利工程做的是「是當 AI 執行指令並出現問題時，不只是請它當下修正，同時要把修正過程中積累的經驗、犯過的錯誤，寫入某個規則或指南」
+- 了解複利工程具體作法
+  - 在專案放[Capture Skill](https://gist.github.com/jediahkatz/e528631580cc42dd5b8092aa7f162851)後，等 AI 修正完再多跟它多說一句「把這次的內容整理成 skill(capture this as a skil)」
+    - capture skill 可協助保存專業判斷，但團隊必須保有人類的專業把關機制。若不控管就讓不理解技術選擇的成本、效益的人去做 skill，可能產出不合專案使用的 skill，甚至到後期 skill 之間互相衝突，導致 AI 的產出品質越來越差
+  - 先安裝 [Claude Code APP](https://github.com/apps/claude) [到 GitHub](https://support.claude.com/en/articles/10167454-use-the-github-integration)。並在[workflow 內使用 anthropics/claude-code-action](https://github.com/anthropics/claude-code/blob/58d6da1e34d6cd1c6379dcbf568bd66f5f9b6102/.github/workflows/claude.yml#L6)。做 code review 時，若發現某個要點應該被整理進既有的文件或代理技能，就直接 @Claude Code 在 code review 當下完成新增
 
 10/28
 - 閱讀[1-4 如何打造讓 AI 代理更有效運作的程式碼庫?](https://app.notion.com/p/explainthisio/1-4-AI-32e2d1d1de1880138a8ad2162fd30b45)
