@@ -1,4 +1,7 @@
-10/31
+11/1(S)
+- 閱讀[1-6 建立健康的 AI 驅動團隊文化](http://app.notion.com/p/explainthisio/1-6-AI-32e2d1d1de188018b371f95097b66ae0)
+
+10/31(S)
 
 10/30
 
@@ -21,9 +24,9 @@
 
 10/26
 
-10/25
+10/25(S)
 
-10/24
+10/24(S)
 
 10/23
 
@@ -35,9 +38,9 @@
 
 10/19
 
-10/18
+10/18(S)
 
-10/17
+10/17(S)
 
 10/16
 
@@ -49,9 +52,9 @@
 
 10/12
 
-10/11
+10/11(S)
 
-10/10
+10/10(S)
 
 10/9
 
@@ -63,7 +66,7 @@
 
 10/5
 
-10/4
+10/4(S)
 - 閱讀[1-3 檔案系統 (filesyetem) 對 AI 代理為什麼重要?](https://app.notion.com/p/explainthisio/1-3-filesyetem-AI-32e2d1d1de1880b5b2e0e5b3c827ef53)
   - 代理搜尋(agentic search)，是將整個程式碼庫視為一個檔案系統。agent 會直接使用 ls、find、grep、cat 等 bash 指令，在整個程式碼庫中搜尋最相關的內容，再將搜尋到的結果放入模型的輸入窗口中
   - 讓程式碼庫對 AI 更友善的三個核心實踐 
@@ -71,7 +74,7 @@
     - 命名足夠清晰且語義明確(e.g. userData 會比 data 來得明確)
     - 保持命名一致，並整理通用語言(e.g. 當提到機車，一律使用 scooter，而不是 scooter和 motorcycle 都使用)
 
-10/3
+10/3(S)
 
 10/2
 - 閱讀[1-2 透過代理技能 (Agent Skills) 讓 AI 的產出更可控 ](https://app.notion.com/p/explainthisio/1-2-Agent-Skills-AI-32e2d1d1de18803c8c06de1117191908)
