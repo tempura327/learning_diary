@@ -119,7 +119,7 @@
 
 9/22
 - 閱讀[淺談 Atomic CSS 的發展背景與 Tailwind CSS](https://blog.huli.tw/2022/05/23/atomic-css-and-tailwind-css/)
-  - atomic CSS 要解決的是「一旦 CSS 規則跟 context 有關，在大型專案中維護就會變得困難」的問題
+  - atomic CSS 要解決的是「一旦 CSS 規則跟 context 有關(e.g. .media .imgExt, .media .img)，在大型專案中維護就會變得困難」的問題
   - 優點
     - class name 變得與 context 無關，scope 也變小，因此更好維護也更好改動
     - CSS 大小是線性成長的，重複的規則都會用到同一個 class name，因此檔案大小大幅降低
@@ -247,6 +247,12 @@
 9/3
 
 9/2
+- 了解 vanilla CSS 造成的問題
+  - 最初，控制樣式的方式只有 vanilla CSS。它的樣式是全域的，所以有全域污染的問題，而全域汙染又會衍生樣式覆蓋的問題
+  - 於是後來出現了 BEM 這類使用命名結構化的方式，避免命名衝突導致的樣式覆蓋。然而，這仍然仰賴開發者遵循規則，並沒有從根本解決全域污染的問題
+  - 再後來 React 誕生後，為了讓 CSS 具有獨立的 scope，所以又出現了 CSS module
+  - 再後來 React 圈又出現了 CSS in JS。也是讓 CSS 具有獨立的 scope
+  - 再後來又出現了 Atomic CSS。以一系列不重複的 utility class 避免命名衝突導致的樣式覆蓋
 
 9/1
 - 練習Leetcode 704. Binary Search [🖌️](https://www.typescriptlang.org/play/?#code/GYVwdgxgLglg9mABAZwKYEMBOEAWAKMEAW2QC5FCiAjVTAbQF0AaRKLAc1SnMpswEoexPogDeAKERTEAGy6zUwKIgC8iAAwBuSdLnLMMdjmVrKyAHRyw7KDkQBaRAEZtOqQHccMOYjxyliAA8agZGUPxibtJSEAjIykQwACZJPmr+ygDUiACy6LbmwDJwcJh4eKHGDgpKEQD0iABM-K7R0TDAvmZ0iSlyDKoqamyYnOGRbZOImFwgmEi9qajaU4gAvuJR7Z0ExMg9yUsDgawcXBESq9EZqoiLPtkuW9JriKgyaBNXUpUmd4c+RxPVYbaIbKIzKBzJD2J5rVyxMDIOBySxwdh4NBYXB4OiwpjqJgAZiYAFYmABOJhORrMCn8fjiRHI1HFDFY7D4PFOAnEsmU5jNRnMlGoNHsjCc3E8xrE5hOBmbIA)
