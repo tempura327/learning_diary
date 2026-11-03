@@ -1,3 +1,14 @@
+11/3
+- 閱讀[]()
+  - 單一 agent 有2個先天限制，分別為輸入窗口爆炸、效率問題
+    - 輸入窗口爆炸指的是 context rot，導致產出變差
+    - 效率問題則是指無法同時並行處理多個任務
+  - sub agent 可有效解決上述問題
+    - 通常會有1個 agent 掌握全局，並將任務切分後分派 sub agents，再將各子代理的結果整合 
+    - 使用`/council n=N`可開啟 N 個 sub agent，或者也可以用自然語言要求 agent 去開 sub agent
+
+11/2
+
 11/1(S)
 - 閱讀[1-6 建立健康的 AI 驅動團隊文化](http://app.notion.com/p/explainthisio/1-6-AI-32e2d1d1de188018b371f95097b66ae0)
 
