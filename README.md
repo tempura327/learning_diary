@@ -1,5 +1,19 @@
+11/8(S)
+
+11/7(S)
+
+11/6
+
+11/5
+
+11/4
+- 閱讀[2-2 透過 git worktree 讓多代理平行操作](https://app.notion.com/p/explainthisio/2-2-git-worktree-3402d1d1de1880c59a52d66e81f40df7)
+  - 多代理同時運作，最大的挑戰是衝突。git worktree 則是目前主流解法
+  - git worktree 的概念是 把程式碼複製成多份，讓不同的分支擁有各自獨立的 HEAD。如此一來對不同分支的改動因為是同時複製多份不同的程式碼，所以就不會互相衝突
+  - 只要告訴 AI 「用 git worktree 幫我開多個子代理」即可
+
 11/3
-- 閱讀[]()
+- 閱讀[2-1 透過子代理突破單一代理的限制](https://app.notion.com/p/explainthisio/2-1-3402d1d1de1880bf83b5fa7139e96124)
   - 單一 agent 有2個先天限制，分別為輸入窗口爆炸、效率問題
     - 輸入窗口爆炸指的是 context rot，導致產出變差
     - 效率問題則是指無法同時並行處理多個任務
