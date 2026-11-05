@@ -5,6 +5,12 @@
 11/6
 
 11/5
+- 閱讀[2-3 有效縮減上下文避免 AI 代理帳單費暴漲](https://app.notion.com/p/explainthisio/2-3-AI-3402d1d1de1880f18ea5c761e0ba47a6)
+  - 帳單暴漲的常見原因有 4 個，分別為「AI 輸出過於冗長」、「同個 session 內的對話太多輪」、「模糊的指示導致的探索成本」、「殺雞焉用牛刀」
+  - 所有 AI 模型的輸出 token 計費，都遠高於輸入 token。因此省錢的重點是`如何在不影響產出品質的前提下，減少輸出的 token 數`
+  - AI 模型是無狀態的，要讓它記得之前的事，就必須把所有歷史對話都放進輸入視窗。也就是說對話輪數越多，占用的input token 就越多。利用 `/new`、`/compact`可有效避免 input token 隨對話輪數無限膨脹
+  - 指令過於模糊，AI 就需要先在整個 codebase 搜尋，才能找到要改的檔案。若已知道問題出在哪個檔案，就直接把檔案路徑附上
+  - 殺雞焉用牛刀是指用高階模型去處理不須深度思考的任務，或者開了太高的 effort 去處理簡單的任務。`/effort low`可以把effort調低
 
 11/4
 - 閱讀[2-2 透過 git worktree 讓多代理平行操作](https://app.notion.com/p/explainthisio/2-2-git-worktree-3402d1d1de1880c59a52d66e81f40df7)
