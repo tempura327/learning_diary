@@ -1,3 +1,39 @@
+11/17
+
+11/16
+- 閱讀[3-1 為團隊建置 AI 工作流](https://app.notion.com/p/explainthisio/3-1-AI-34e2d1d1de1880238bf5d9d9d71f99a5)
+  - 測試驅動開發（TDD） 步驟依序為
+    1. 先撰寫測試，此時因為還沒有對應的程式碼，測試不會通過
+    2. 撰寫最少量的程式碼，讓所有測試得以通過。此時有基本實作，但程式碼品質可能不佳
+    3. 重構
+    4. 再次跑測試。重構後所有測試皆通過，才算是完成整個功能的開發
+
+11/15(S)
+
+11/14(S)
+
+11/13
+- 閱讀[2-4 選對的模型與工具避免 AI 代理帳單費暴漲](https://app.notion.com/p/explainthisio/2-4-AI-3402d1d1de18803caecad27366e202eb)
+  - 規劃用頂規模型，執行用輕量模型
+  - Amp 團隊會定期發布模型[推薦清單](https://ampcode.com/models)，可做為選擇使用模型的參考
+  - 在工具同時提供 MCP 與 CLI 的情況下，普遍來說使用 CLI 的消耗的 tokens 更少
+  - 使用 AI 時善用搭配工具工具
+    - Caveman 可讓讓輸出更精簡，TOON 格式也可讓輸出更精簡。然而他們都是拿可讀性來換取節省 token
+    - 對codebase不熟時，用[React Grab](https://www.react-grab.com/) 輔助抓 bug，速度快 3 倍，token 省 60%
+    - codebase龐大時，用[Codegraph](https://github.com/colbymchenry/codegraph) 先掃過整個 repo，把函式、類別、模組、呼叫關係...等資訊抽出來，存成一個知識圖譜。可節省 35% token
+- 了解 React Grab
+  - AI 修改某個組件時，需要大量來回搜尋才能找到該改的 code，這很花時間與 token。人類開發者也需要在 dev tool 跟 code 之間切換才能找到
+  - 必須知道如何在畫面上重現問題，才可用 React Grab 複製 context，以定位問題。不過需要注意仍有可能找到的是症狀，而非病因。如果是這種狀況，花費在探索的 token 還是無法全省下
+  - `race condition`、`效能`、`快取問題造成的chunk error` 這類 UI 上看不到的問題幫不上忙
+
+11/12
+
+11/11
+
+11/10
+
+11/9
+
 11/8(S)
 
 11/7(S)
