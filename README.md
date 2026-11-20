@@ -1,3 +1,76 @@
+11/22(S)
+
+11/21(S)
+
+11/20
+- 閱讀[如何寫自己的 Docker 映像檔? 為什麼 Docker 要分映像層](https://app.notion.com/p/explainthisio/Docker-Docker-image-layer-3d62d1d1de18800e91b3fe0c9a06cba7)
+    - Dockerfile 是 build image的模板，docker compose 則是 container 的設定檔
+    - Dockerfile 內做的事通常有一定的套路
+    
+    ```dockerfile
+    # 以SPA的前端專案為例
+	# 1. FROM：選基底映像
+    FROM node:26.13.1-alpine AS build
+	
+	# 2. WORKDIR：設定工作目錄
+    WORKDIR /src
+	
+	# 3. COPY：先只複製依賴清單
+    COPY package.json package-lock.json ./
+	
+	# 4. RUN：裝依賴
+    RUN pnpm install --frozen-lockfile
+	
+	# 5. COPY：再複製其餘原始碼
+	COPY src ./src
+
+	# 6. RUN 建置指令
+    RUN pnpm run build:dev
+
+	# 7. EXPOSE：標明要開的 port。若是SPA前端就不必
+	
+	# 8. CMD：寫容器啟動時要跑的指令。若是SPA前端就不必
+    ```
+
+    ```dockerfile
+	# 以 Python 後端專案為例（FastAPI）
+	# 1. FROM：選基底映像
+	FROM python:3.14-slim
+	
+	# 不寫 .pyc 檔；log 直接輸出，不經過緩衝
+	ENV PYTHONDONTWRITEBYTECODE=1 \
+	    PYTHONUNBUFFERED=1
+	
+	# 2. WORKDIR：設定工作目錄
+	WORKDIR /app
+	
+	# 3. COPY：先只複製依賴清單
+	COPY requirements.txt ./
+	
+	# 4. RUN：裝依賴
+	RUN pip install --no-cache-dir -r requirements.txt
+	
+	# 5. COPY：再複製其餘原始碼
+	COPY src ./src
+	
+	# 6. 建置指令：Python 不用編譯，通常沒有這步
+	
+	# 7. EXPOSE：標明要開的 port，不會真的打開 port
+	EXPOSE 8000
+	
+	# 8. CMD：容器啟動時要跑的指令
+	CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", 	"8000"]
+    ```
+
+    - docker 在 image 的設計上採分層的形式。image 乍看之下是一體的，但在實際存的時候，會被分成很多層
+        - 由於存的時候被拆開，在下載時也就會同時下載不同層，最後 Docker 再把它們組合起來，形成容器的檔案系統
+        - COPY, RUN, ADD會增加layer，FROM則是把template的layer帶進來，所以也會增加layer
+    - docker build 有時候能跑很快，因為其實它有做快取。只要執行的指令沒變、執行指令的目標檔案也沒變，那就會用快取(舊的image)
+
+11/19
+
+11/18
+
 11/17
 
 11/16
